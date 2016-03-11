@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="Logic">
+		<CBX_INST_ENTRY INSTANCE_NAME="|Logic|PS2Main:Inst_PS2Main|lpm_add_sub:Add0" CBX_FILE_NAME="add_sub_3kh.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

@@ -1,0 +1,1546 @@
+TimeQuest Timing Analyzer report for LOGIC2
+Tue Mar 01 18:16:37 2016
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Setup Summary
+  7. Hold Summary
+  8. Recovery Summary
+  9. Removal Summary
+ 10. Minimum Pulse Width Summary
+ 11. Setup: 'CLOCK'
+ 12. Hold: 'CLOCK'
+ 13. Minimum Pulse Width: 'CLOCK'
+ 14. Minimum Pulse Width: 'RevRRset'
+ 15. Setup Times
+ 16. Hold Times
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Propagation Delay
+ 20. Minimum Propagation Delay
+ 21. Setup Transfers
+ 22. Hold Transfers
+ 23. Report TCCS
+ 24. Report RSKM
+ 25. Unconstrained Paths
+ 26. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; LOGIC2                                                            ;
+; Device Family      ; MAX7000S                                                          ;
+; Device Name        ; EPM7128SLC84-6                                                    ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Slow Model                                                        ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 3      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                               ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets      ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+; CLOCK      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { CLOCK }    ;
+; RevRRset   ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { RevRRset } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+--------------+
+
+
++--------------------------------------------------+
+; Fmax Summary                                     ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 121.95 MHz ; 121.95 MHz      ; CLOCK      ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Setup Summary                  ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; CLOCK ; -8.100 ; -210.500      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Hold Summary                  ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; CLOCK ; 4.100 ; 0.000         ;
++-------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++-----------------------------------+
+; Minimum Pulse Width Summary       ;
++----------+--------+---------------+
+; Clock    ; Slack  ; End Point TNS ;
++----------+--------+---------------+
+; CLOCK    ; -2.500 ; -175.000      ;
+; RevRRset ; -2.500 ; -5.000        ;
++----------+--------+---------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'CLOCK'                                                                                                                                       ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                         ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; -8.100 ; RevRamRom                         ; RevRRset                          ; RevRRset     ; CLOCK       ; 1.000        ; -2.300     ; 5.800      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Scan_DAVi    ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Scan_Code[4] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Scan_Code[3] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Scan_Code[5] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Scan_Code[7] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Scan_Code[2] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Scan_Code[1] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Scan_Code[0] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Scan_DAVi    ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Scan_DAVi    ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Scan_DAVi    ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Scan_DAVi    ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|Scan_DAVi    ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Scan_Code[4] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Scan_Code[4] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Scan_Code[4] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Scan_Code[3] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Scan_Code[3] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Scan_Code[3] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Scan_Code[5] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Scan_Code[5] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Scan_Code[5] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Scan_Code[7] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Scan_Code[7] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Scan_Code[7] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Scan_Code[2] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Scan_Code[2] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Scan_Code[2] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Scan_Code[1] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Scan_Code[1] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Scan_Code[1] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Scan_Code[0] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Scan_Code[0] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.200 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Scan_Code[0] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.200      ;
+; -7.100 ; PS2Main:Inst_PS2Main|Scan_DAVi    ; PS2Main:Inst_PS2Main|Scan_DAVi    ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.100      ;
+; -7.100 ; PS2Main:Inst_PS2Main|Scan_Code[3] ; PS2Main:Inst_PS2Main|Scan_Code[3] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.100      ;
+; -7.100 ; PS2Main:Inst_PS2Main|Scan_Code[5] ; PS2Main:Inst_PS2Main|Scan_Code[5] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.100      ;
+; -7.100 ; PS2Main:Inst_PS2Main|Scan_Code[7] ; PS2Main:Inst_PS2Main|Scan_Code[7] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.100      ;
+; -7.100 ; PS2Main:Inst_PS2Main|S_Reg[6]     ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.100      ;
+; -7.100 ; PS2Main:Inst_PS2Main|Scan_Code[6] ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.100      ;
+; -7.100 ; PS2Main:Inst_PS2Main|Scan_Code[2] ; PS2Main:Inst_PS2Main|Scan_Code[2] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.100      ;
+; -7.100 ; PS2Main:Inst_PS2Main|Scan_Code[0] ; PS2Main:Inst_PS2Main|Scan_Code[0] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.100      ;
+; -7.000 ; PS2Main:Inst_PS2Main|Scan_Code[4] ; PS2Main:Inst_PS2Main|Scan_Code[4] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.000      ;
+; -7.000 ; PS2Main:Inst_PS2Main|S_Reg[3]     ; PS2Main:Inst_PS2Main|Scan_Code[3] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.000      ;
+; -7.000 ; PS2Main:Inst_PS2Main|S_Reg[5]     ; PS2Main:Inst_PS2Main|Scan_Code[5] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.000      ;
+; -7.000 ; PS2Main:Inst_PS2Main|S_Reg[7]     ; PS2Main:Inst_PS2Main|Scan_Code[7] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.000      ;
+; -7.000 ; PS2Main:Inst_PS2Main|S_Reg[2]     ; PS2Main:Inst_PS2Main|Scan_Code[2] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.000      ;
+; -7.000 ; PS2Main:Inst_PS2Main|S_Reg[1]     ; PS2Main:Inst_PS2Main|Scan_Code[1] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.000      ;
+; -7.000 ; PS2Main:Inst_PS2Main|Scan_Code[1] ; PS2Main:Inst_PS2Main|Scan_Code[1] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 7.000      ;
+; -6.900 ; PS2Main:Inst_PS2Main|S_Reg[4]     ; PS2Main:Inst_PS2Main|Scan_Code[4] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.900      ;
+; -6.900 ; PS2Main:Inst_PS2Main|S_Reg[0]     ; PS2Main:Inst_PS2Main|Scan_Code[0] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.900      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|S_Reg[8]     ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|S_Reg[8]     ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|S_Reg[8]     ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|S_Reg[8]     ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|S_Reg[8]     ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|S_Reg[8]     ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|S_Reg[7]     ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|S_Reg[7]     ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|S_Reg[7]     ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|S_Reg[7]     ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|S_Reg[7]     ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|S_Reg[7]     ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|S_Reg[6]     ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|S_Reg[6]     ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
+; -6.100 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|S_Reg[6]     ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 6.100      ;
++--------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'CLOCK'                                                                                                                                       ;
++-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                         ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; 4.100 ; PS2Main:Inst_PS2Main|Filter[7]    ; PS2Main:Inst_PS2Main|Filter[6]    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Filter[6]    ; PS2Main:Inst_PS2Main|Filter[5]    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Filter[5]    ; PS2Main:Inst_PS2Main|Filter[4]    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Filter[4]    ; PS2Main:Inst_PS2Main|Filter[3]    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Filter[3]    ; PS2Main:Inst_PS2Main|Filter[2]    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Filter[2]    ; PS2Main:Inst_PS2Main|Filter[1]    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Filter[1]    ; PS2Main:Inst_PS2Main|Filter[0]    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|PS2_Clk_f    ; PS2Main:Inst_PS2Main|PS2_Clk_f    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Filter[7]    ; PS2Main:Inst_PS2Main|PS2_Clk_f    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Filter[6]    ; PS2Main:Inst_PS2Main|PS2_Clk_f    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Filter[5]    ; PS2Main:Inst_PS2Main|PS2_Clk_f    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Filter[4]    ; PS2Main:Inst_PS2Main|PS2_Clk_f    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Filter[3]    ; PS2Main:Inst_PS2Main|PS2_Clk_f    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Filter[2]    ; PS2Main:Inst_PS2Main|PS2_Clk_f    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Filter[1]    ; PS2Main:Inst_PS2Main|PS2_Clk_f    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Filter[0]    ; PS2Main:Inst_PS2Main|PS2_Clk_f    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|PS2_Clk_f    ; PS2Main:Inst_PS2Main|Fall_Clk     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Filter[7]    ; PS2Main:Inst_PS2Main|Fall_Clk     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Filter[6]    ; PS2Main:Inst_PS2Main|Fall_Clk     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Filter[5]    ; PS2Main:Inst_PS2Main|Fall_Clk     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Filter[4]    ; PS2Main:Inst_PS2Main|Fall_Clk     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Filter[3]    ; PS2Main:Inst_PS2Main|Fall_Clk     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Filter[2]    ; PS2Main:Inst_PS2Main|Fall_Clk     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Filter[1]    ; PS2Main:Inst_PS2Main|Fall_Clk     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Filter[0]    ; PS2Main:Inst_PS2Main|Fall_Clk     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|PS2_Datr     ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Scan_DAVi    ; PS2Main:Inst_PS2Main|Scan_DAVi    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|S_Reg[8]     ; PS2Main:Inst_PS2Main|S_Reg[8]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|PS2_Datr     ; PS2Main:Inst_PS2Main|S_Reg[8]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|S_Reg[7]     ; PS2Main:Inst_PS2Main|S_Reg[7]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|S_Reg[8]     ; PS2Main:Inst_PS2Main|S_Reg[7]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|S_Reg[6]     ; PS2Main:Inst_PS2Main|S_Reg[6]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|S_Reg[5]     ; PS2Main:Inst_PS2Main|S_Reg[5]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|S_Reg[4]     ; PS2Main:Inst_PS2Main|S_Reg[4]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|S_Reg[4]     ; PS2Main:Inst_PS2Main|Scan_Code[4] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Scan_Code[4] ; PS2Main:Inst_PS2Main|Scan_Code[4] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|S_Reg[3]     ; PS2Main:Inst_PS2Main|S_Reg[3]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|S_Reg[4]     ; PS2Main:Inst_PS2Main|S_Reg[3]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Scan_Code[3] ; PS2Main:Inst_PS2Main|Scan_Code[3] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Scan_Code[5] ; PS2Main:Inst_PS2Main|Scan_Code[5] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Scan_Code[7] ; PS2Main:Inst_PS2Main|Scan_Code[7] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Scan_Code[6] ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|S_Reg[2]     ; PS2Main:Inst_PS2Main|S_Reg[2]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Scan_Code[2] ; PS2Main:Inst_PS2Main|Scan_Code[2] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|S_Reg[1]     ; PS2Main:Inst_PS2Main|S_Reg[1]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Scan_Code[1] ; PS2Main:Inst_PS2Main|Scan_Code[1] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|S_Reg[0]     ; PS2Main:Inst_PS2Main|S_Reg[0]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|S_Reg[0]     ; PS2Main:Inst_PS2Main|Scan_Code[0] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.100 ; PS2Main:Inst_PS2Main|Scan_Code[0] ; PS2Main:Inst_PS2Main|Scan_Code[0] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.800      ;
+; 4.200 ; PS2Main:Inst_PS2Main|S_Reg[7]     ; PS2Main:Inst_PS2Main|S_Reg[6]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.900      ;
+; 4.200 ; PS2Main:Inst_PS2Main|S_Reg[5]     ; PS2Main:Inst_PS2Main|S_Reg[4]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.900      ;
+; 4.200 ; PS2Main:Inst_PS2Main|S_Reg[3]     ; PS2Main:Inst_PS2Main|Scan_Code[3] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.900      ;
+; 4.200 ; PS2Main:Inst_PS2Main|S_Reg[5]     ; PS2Main:Inst_PS2Main|Scan_Code[5] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.900      ;
+; 4.200 ; PS2Main:Inst_PS2Main|S_Reg[7]     ; PS2Main:Inst_PS2Main|Scan_Code[7] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.900      ;
+; 4.200 ; PS2Main:Inst_PS2Main|S_Reg[3]     ; PS2Main:Inst_PS2Main|S_Reg[2]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.900      ;
+; 4.200 ; PS2Main:Inst_PS2Main|S_Reg[2]     ; PS2Main:Inst_PS2Main|Scan_Code[2] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.900      ;
+; 4.200 ; PS2Main:Inst_PS2Main|S_Reg[2]     ; PS2Main:Inst_PS2Main|S_Reg[1]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.900      ;
+; 4.200 ; PS2Main:Inst_PS2Main|S_Reg[1]     ; PS2Main:Inst_PS2Main|Scan_Code[1] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.900      ;
+; 4.200 ; PS2Main:Inst_PS2Main|S_Reg[1]     ; PS2Main:Inst_PS2Main|S_Reg[0]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 5.900      ;
+; 4.300 ; PS2Main:Inst_PS2Main|S_Reg[6]     ; PS2Main:Inst_PS2Main|S_Reg[5]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.000      ;
+; 4.300 ; PS2Main:Inst_PS2Main|S_Reg[6]     ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.000      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Scan_DAVi    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Scan_DAVi    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Scan_DAVi    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|Scan_DAVi    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Scan_DAVi    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Scan_DAVi    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|S_Reg[8]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|S_Reg[8]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|S_Reg[8]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
+; 4.400 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|S_Reg[8]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 6.100      ;
++-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'CLOCK'                                                                                       ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                            ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------+
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Fall_Clk     ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Fall_Clk     ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Filter[0]    ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Filter[0]    ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Filter[1]    ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Filter[1]    ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Filter[2]    ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Filter[2]    ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Filter[3]    ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Filter[3]    ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Filter[4]    ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Filter[4]    ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Filter[5]    ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Filter[5]    ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Filter[6]    ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Filter[6]    ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Filter[7]    ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Filter[7]    ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|PS2_Clk_f    ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|PS2_Clk_f    ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|PS2_Datr     ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|PS2_Datr     ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|S_Reg[0]     ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|S_Reg[0]     ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|S_Reg[1]     ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|S_Reg[1]     ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|S_Reg[2]     ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|S_Reg[2]     ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|S_Reg[3]     ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|S_Reg[3]     ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|S_Reg[4]     ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|S_Reg[4]     ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|S_Reg[5]     ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|S_Reg[5]     ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|S_Reg[6]     ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|S_Reg[6]     ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|S_Reg[7]     ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|S_Reg[7]     ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|S_Reg[8]     ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|S_Reg[8]     ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Scan_Code[0] ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Scan_Code[0] ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Scan_Code[1] ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Scan_Code[1] ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Scan_Code[2] ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Scan_Code[2] ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Scan_Code[3] ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Scan_Code[3] ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Scan_Code[4] ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Scan_Code[4] ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Scan_Code[5] ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Scan_Code[5] ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Scan_Code[6] ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Scan_Code[6] ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Scan_Code[7] ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Scan_Code[7] ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Scan_DAVi    ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|Scan_DAVi    ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|State        ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; PS2Main:Inst_PS2Main|State        ;
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; CLOCK ; Rise       ; RevRRset                          ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; CLOCK ; Rise       ; RevRRset                          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; CLOCK|dataout                     ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; CLOCK|dataout                     ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; Inst_PS2Main|Bit_Cnt[0]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; Inst_PS2Main|Bit_Cnt[0]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; Inst_PS2Main|Bit_Cnt[1]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; Inst_PS2Main|Bit_Cnt[1]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; Inst_PS2Main|Bit_Cnt[2]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; Inst_PS2Main|Bit_Cnt[2]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; Inst_PS2Main|Bit_Cnt[3]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; Inst_PS2Main|Bit_Cnt[3]|clk       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; Inst_PS2Main|Fall_Clk|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; Inst_PS2Main|Fall_Clk|clk         ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; Inst_PS2Main|Filter[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; Inst_PS2Main|Filter[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; Inst_PS2Main|Filter[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; Inst_PS2Main|Filter[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; Inst_PS2Main|Filter[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; Inst_PS2Main|Filter[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; Inst_PS2Main|Filter[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; Inst_PS2Main|Filter[3]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; Inst_PS2Main|Filter[4]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; Inst_PS2Main|Filter[4]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; Inst_PS2Main|Filter[5]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; Inst_PS2Main|Filter[5]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; Inst_PS2Main|Filter[6]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; Inst_PS2Main|Filter[6]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; Inst_PS2Main|Filter[7]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; Inst_PS2Main|Filter[7]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; CLOCK ; Rise       ; Inst_PS2Main|PS2_Clk_f|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; CLOCK ; Rise       ; Inst_PS2Main|PS2_Clk_f|clk        ;
++--------+--------------+----------------+------------------+-------+------------+-----------------------------------+
+
+
++------------------------------------------------------------------------------------------------------+
+; Minimum Pulse Width: 'RevRRset'                                                                      ;
++--------+--------------+----------------+------------------+----------+------------+------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock    ; Clock Edge ; Target           ;
++--------+--------------+----------------+------------------+----------+------------+------------------+
+; -2.500 ; 0.500        ; 3.000          ; High Pulse Width ; RevRRset ; Rise       ; RevRamRom        ;
+; -2.500 ; 0.500        ; 3.000          ; Low Pulse Width  ; RevRRset ; Rise       ; RevRamRom        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RevRRset ; Rise       ; RevRRset|dataout ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RevRRset ; Rise       ; RevRRset|dataout ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; RevRRset ; Rise       ; RevRamRom|[0]    ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; RevRRset ; Rise       ; RevRamRom|[0]    ;
++--------+--------------+----------------+------------------+----------+------------+------------------+
+
+
++--------------------------------------------------------------------------+
+; Setup Times                                                              ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; A15          ; CLOCK      ; 3.400 ; 3.400 ; Rise       ; CLOCK           ;
+; BUSACK       ; CLOCK      ; 4.000 ; 4.000 ; Rise       ; CLOCK           ;
+; PS2_Clk      ; CLOCK      ; 3.400 ; 3.400 ; Rise       ; CLOCK           ;
+; PS2_Data     ; CLOCK      ; 3.400 ; 3.400 ; Rise       ; CLOCK           ;
+; VADDRLow[*]  ; CLOCK      ; 3.900 ; 3.900 ; Rise       ; CLOCK           ;
+;  VADDRLow[0] ; CLOCK      ; 3.900 ; 3.900 ; Rise       ; CLOCK           ;
+;  VADDRLow[1] ; CLOCK      ; 3.900 ; 3.900 ; Rise       ; CLOCK           ;
+;  VADDRLow[2] ; CLOCK      ; 3.900 ; 3.900 ; Rise       ; CLOCK           ;
+;  VADDRLow[3] ; CLOCK      ; 3.900 ; 3.900 ; Rise       ; CLOCK           ;
+;  VADDRLow[4] ; CLOCK      ; 3.900 ; 3.900 ; Rise       ; CLOCK           ;
+;  VADDRLow[5] ; CLOCK      ; 3.900 ; 3.900 ; Rise       ; CLOCK           ;
+;  VADDRLow[6] ; CLOCK      ; 3.900 ; 3.900 ; Rise       ; CLOCK           ;
+;  VADDRLow[7] ; CLOCK      ; 3.900 ; 3.900 ; Rise       ; CLOCK           ;
+; WR           ; CLOCK      ; 3.700 ; 3.700 ; Rise       ; CLOCK           ;
+; sIORQ        ; CLOCK      ; 3.900 ; 3.900 ; Rise       ; CLOCK           ;
+; sM1          ; CLOCK      ; 3.900 ; 3.900 ; Rise       ; CLOCK           ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Hold Times                                                                 ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; A15          ; CLOCK      ; -0.700 ; -0.700 ; Rise       ; CLOCK           ;
+; BUSACK       ; CLOCK      ; -1.300 ; -1.300 ; Rise       ; CLOCK           ;
+; PS2_Clk      ; CLOCK      ; -0.700 ; -0.700 ; Rise       ; CLOCK           ;
+; PS2_Data     ; CLOCK      ; -0.700 ; -0.700 ; Rise       ; CLOCK           ;
+; VADDRLow[*]  ; CLOCK      ; -1.200 ; -1.200 ; Rise       ; CLOCK           ;
+;  VADDRLow[0] ; CLOCK      ; -1.200 ; -1.200 ; Rise       ; CLOCK           ;
+;  VADDRLow[1] ; CLOCK      ; -1.200 ; -1.200 ; Rise       ; CLOCK           ;
+;  VADDRLow[2] ; CLOCK      ; -1.200 ; -1.200 ; Rise       ; CLOCK           ;
+;  VADDRLow[3] ; CLOCK      ; -1.200 ; -1.200 ; Rise       ; CLOCK           ;
+;  VADDRLow[4] ; CLOCK      ; -1.200 ; -1.200 ; Rise       ; CLOCK           ;
+;  VADDRLow[5] ; CLOCK      ; -1.200 ; -1.200 ; Rise       ; CLOCK           ;
+;  VADDRLow[6] ; CLOCK      ; -1.200 ; -1.200 ; Rise       ; CLOCK           ;
+;  VADDRLow[7] ; CLOCK      ; -1.200 ; -1.200 ; Rise       ; CLOCK           ;
+; WR           ; CLOCK      ; -1.000 ; -1.000 ; Rise       ; CLOCK           ;
+; sIORQ        ; CLOCK      ; -1.200 ; -1.200 ; Rise       ; CLOCK           ;
+; sM1          ; CLOCK      ; -1.200 ; -1.200 ; Rise       ; CLOCK           ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Clock to Output Times                                                   ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; DATA[*]   ; CLOCK      ; 22.400 ; 22.400 ; Rise       ; CLOCK           ;
+;  DATA[0]  ; CLOCK      ; 22.400 ; 22.400 ; Rise       ; CLOCK           ;
+;  DATA[1]  ; CLOCK      ; 9.500  ; 9.500  ; Rise       ; CLOCK           ;
+;  DATA[2]  ; CLOCK      ; 20.500 ; 20.500 ; Rise       ; CLOCK           ;
+;  DATA[3]  ; CLOCK      ; 9.600  ; 9.600  ; Rise       ; CLOCK           ;
+;  DATA[4]  ; CLOCK      ; 18.700 ; 18.700 ; Rise       ; CLOCK           ;
+;  DATA[5]  ; CLOCK      ; 18.700 ; 18.700 ; Rise       ; CLOCK           ;
+;  DATA[6]  ; CLOCK      ; 9.600  ; 9.600  ; Rise       ; CLOCK           ;
+;  DATA[7]  ; CLOCK      ; 9.600  ; 9.600  ; Rise       ; CLOCK           ;
+; INT       ; CLOCK      ; 9.600  ; 9.600  ; Rise       ; CLOCK           ;
+; PS2_Clk   ; CLOCK      ; 4.000  ; 4.000  ; Rise       ; CLOCK           ;
+; RAMEN     ; RevRRset   ; 11.700 ; 11.700 ; Rise       ; RevRRset        ;
+; REVO      ; RevRRset   ; 6.300  ; 6.300  ; Rise       ; RevRRset        ;
+; ROMEN     ; RevRRset   ; 11.700 ; 11.700 ; Rise       ; RevRRset        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++-------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                           ;
++-----------+------------+--------+--------+------------+-----------------+
+; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-----------+------------+--------+--------+------------+-----------------+
+; DATA[*]   ; CLOCK      ; 9.500  ; 9.500  ; Rise       ; CLOCK           ;
+;  DATA[0]  ; CLOCK      ; 9.600  ; 9.600  ; Rise       ; CLOCK           ;
+;  DATA[1]  ; CLOCK      ; 9.500  ; 9.500  ; Rise       ; CLOCK           ;
+;  DATA[2]  ; CLOCK      ; 9.600  ; 9.600  ; Rise       ; CLOCK           ;
+;  DATA[3]  ; CLOCK      ; 9.600  ; 9.600  ; Rise       ; CLOCK           ;
+;  DATA[4]  ; CLOCK      ; 9.500  ; 9.500  ; Rise       ; CLOCK           ;
+;  DATA[5]  ; CLOCK      ; 9.600  ; 9.600  ; Rise       ; CLOCK           ;
+;  DATA[6]  ; CLOCK      ; 9.600  ; 9.600  ; Rise       ; CLOCK           ;
+;  DATA[7]  ; CLOCK      ; 9.600  ; 9.600  ; Rise       ; CLOCK           ;
+; INT       ; CLOCK      ; 9.600  ; 9.600  ; Rise       ; CLOCK           ;
+; PS2_Clk   ; CLOCK      ; 4.000  ; 4.000  ; Rise       ; CLOCK           ;
+; RAMEN     ; RevRRset   ; 11.700 ; 11.700 ; Rise       ; RevRRset        ;
+; REVO      ; RevRRset   ; 6.300  ; 6.300  ; Rise       ; RevRRset        ;
+; ROMEN     ; RevRRset   ; 11.700 ; 11.700 ; Rise       ; RevRRset        ;
++-----------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------+
+; Propagation Delay                                             ;
++-------------+-------------+--------+--------+--------+--------+
+; Input Port  ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++-------------+-------------+--------+--------+--------+--------+
+; A15         ; RAMEN       ; 6.000  ; 6.000  ; 6.000  ; 6.000  ;
+; A15         ; ROMEN       ; 6.000  ; 6.000  ; 6.000  ; 6.000  ;
+; BUSACK      ; BUSACKout   ; 6.600  ;        ;        ; 6.600  ;
+; BUSACK      ; BUSACKout2  ; 6.600  ;        ;        ; 6.600  ;
+; BUSACK      ; BUSREQ      ; 12.100 ; 15.800 ; 15.800 ; 12.100 ;
+; BUSACK      ; DATA[0]     ; 28.700 ; 28.600 ; 28.600 ; 28.700 ;
+; BUSACK      ; DATA[1]     ; 12.300 ; 15.900 ; 15.900 ; 12.300 ;
+; BUSACK      ; DATA[2]     ; 26.800 ; 27.900 ; 27.900 ; 26.800 ;
+; BUSACK      ; DATA[3]     ; 12.300 ; 15.900 ; 15.900 ; 12.300 ;
+; BUSACK      ; DATA[4]     ; 12.300 ; 15.900 ; 15.900 ; 12.300 ;
+; BUSACK      ; DATA[5]     ; 21.200 ; 24.900 ; 24.900 ; 21.200 ;
+; BUSACK      ; DATA[6]     ; 12.300 ; 15.900 ; 15.900 ; 12.300 ;
+; BUSACK      ; DATA[7]     ; 12.300 ; 15.800 ; 15.800 ; 12.300 ;
+; BUSACK      ; DISPEN      ; 12.100 ; 15.800 ; 15.800 ; 12.100 ;
+; BUSACK      ; EPRWR       ; 14.000 ; 10.300 ; 10.300 ; 14.000 ;
+; BUSACK      ; HALTO       ; 6.600  ;        ;        ; 6.600  ;
+; BUSACK      ; INT         ; 21.200 ; 24.900 ; 24.900 ; 21.200 ;
+; BUSACK      ; IOH         ; 6.600  ;        ;        ; 6.600  ;
+; BUSACK      ; LCDEN       ; 6.600  ;        ;        ; 6.600  ;
+; BUSACK      ; LCDRS       ; 6.600  ; 10.300 ; 10.300 ; 6.600  ;
+; BUSACK      ; RAMEN       ; 6.600  ;        ;        ; 6.600  ;
+; BUSACK      ; RD          ; 6.600  ;        ;        ; 6.600  ;
+; BUSACK      ; ROMEN       ; 6.600  ;        ;        ; 6.600  ;
+; BUSACK      ; RS232SEL    ; 6.600  ;        ;        ; 6.600  ;
+; BUSACK      ; RTS         ; 6.600  ; 10.300 ; 10.300 ; 6.600  ;
+; BUSACK      ; SETADDR     ; 6.600  ;        ;        ; 6.600  ;
+; BUSACK      ; TWOO        ; 6.600  ;        ;        ; 6.600  ;
+; BUSACK      ; TX          ; 6.600  ; 10.300 ; 10.300 ; 6.600  ;
+; BUSACK      ; VIDEO9      ; 6.600  ;        ;        ; 6.600  ;
+; BUSACK      ; WR          ; 6.400  ;        ;        ; 6.400  ;
+; BUSACK      ; ZEROO       ; 6.600  ;        ;        ; 6.600  ;
+; BUSACK      ; s80L        ; 6.600  ; 10.300 ; 10.300 ; 6.600  ;
+; BUSACK      ; s3240       ; 6.600  ; 10.300 ; 10.300 ; 6.600  ;
+; BUSACK      ; s3240_2     ; 12.100 ; 15.800 ; 15.800 ; 12.100 ;
+; BUSACK      ; sFS         ; 6.600  ; 10.300 ; 10.300 ; 6.600  ;
+; BUSACK      ; sRV         ; 6.600  ; 10.300 ; 10.300 ; 6.600  ;
+; BUSACK      ; sTVPower    ; 6.600  ; 10.300 ; 10.300 ; 6.600  ;
+; BUSACK      ; sUCR        ; 6.600  ; 10.300 ; 10.300 ; 6.600  ;
+; BUSREQin    ; BUSREQ      ;        ; 6.000  ; 6.000  ;        ;
+; CLK50       ; DATA[5]     ; 15.200 ;        ;        ; 15.200 ;
+; CLK50       ; INT         ; 15.200 ;        ;        ; 15.200 ;
+; CLKCOP      ; DATA[7]     ; 11.400 ;        ;        ; 11.400 ;
+; CLKCOP      ; INT         ; 11.400 ;        ;        ; 11.400 ;
+; CTS         ; DATA[1]     ; 6.000  ;        ;        ; 6.000  ;
+; DATA[0]     ; DATA[0]     ; 11.600 ; 24.400 ; 24.400 ; 11.600 ;
+; DATA[0]     ; DATA[2]     ; 23.600 ;        ;        ; 23.600 ;
+; DATA[0]     ; DATA[5]     ; 20.600 ;        ;        ; 20.600 ;
+; DATA[0]     ; INT         ; 20.600 ;        ;        ; 20.600 ;
+; DATA[0]     ; sRV         ; 6.000  ;        ;        ; 6.000  ;
+; DATA[1]     ; DATA[0]     ;        ; 24.400 ; 24.400 ;        ;
+; DATA[1]     ; DATA[1]     ; 11.600 ;        ;        ; 11.600 ;
+; DATA[1]     ; DATA[2]     ; 23.600 ;        ;        ; 23.600 ;
+; DATA[1]     ; LCDRS       ; 6.000  ;        ;        ; 6.000  ;
+; DATA[1]     ; sFS         ; 6.000  ;        ;        ; 6.000  ;
+; DATA[2]     ; BUSREQ      ; 11.500 ;        ;        ; 11.500 ;
+; DATA[2]     ; DATA[0]     ;        ; 24.400 ; 24.400 ;        ;
+; DATA[2]     ; DATA[2]     ; 23.600 ;        ;        ; 23.600 ;
+; DATA[2]     ; DISPEN      ; 11.500 ;        ;        ; 11.500 ;
+; DATA[2]     ; s3240       ; 6.000  ;        ;        ; 6.000  ;
+; DATA[2]     ; s3240_2     ; 11.500 ;        ;        ; 11.500 ;
+; DATA[2]     ; sTVPower    ; 6.000  ;        ;        ; 6.000  ;
+; DATA[3]     ; DATA[0]     ;        ; 24.400 ; 24.400 ;        ;
+; DATA[3]     ; DATA[2]     ; 23.600 ;        ;        ; 23.600 ;
+; DATA[3]     ; DATA[3]     ; 11.600 ;        ;        ; 11.600 ;
+; DATA[3]     ; sUCR        ; 6.000  ;        ;        ; 6.000  ;
+; DATA[4]     ; DATA[0]     ;        ; 24.400 ; 24.400 ;        ;
+; DATA[4]     ; DATA[2]     ;        ; 22.500 ; 22.500 ;        ;
+; DATA[4]     ; DATA[4]     ; 11.600 ;        ;        ; 11.600 ;
+; DATA[4]     ; RTS         ; 6.000  ;        ;        ; 6.000  ;
+; DATA[5]     ; DATA[0]     ;        ; 24.400 ; 24.400 ;        ;
+; DATA[5]     ; DATA[2]     ; 22.500 ;        ;        ; 22.500 ;
+; DATA[5]     ; DATA[5]     ; 11.600 ;        ;        ; 11.600 ;
+; DATA[5]     ; TX          ; 6.000  ;        ;        ; 6.000  ;
+; DATA[6]     ; DATA[0]     ;        ; 24.400 ; 24.400 ;        ;
+; DATA[6]     ; DATA[2]     ;        ; 22.500 ; 22.500 ;        ;
+; DATA[6]     ; DATA[6]     ; 11.600 ;        ;        ; 11.600 ;
+; DATA[6]     ; s80L        ; 6.000  ;        ;        ; 6.000  ;
+; DATA[7]     ; DATA[0]     ; 24.300 ;        ;        ; 24.300 ;
+; DATA[7]     ; DATA[2]     ;        ; 22.400 ; 22.400 ;        ;
+; DATA[7]     ; DATA[7]     ; 11.500 ;        ;        ; 11.500 ;
+; MREQ        ; RAMEN       ; 6.000  ;        ;        ; 6.000  ;
+; MREQ        ; ROMEN       ;        ; 6.000  ; 6.000  ;        ;
+; RD          ; DATA[0]     ; 15.400 ; 19.100 ; 19.100 ; 15.400 ;
+; RD          ; DATA[1]     ; 10.000 ; 12.000 ; 12.000 ; 10.000 ;
+; RD          ; DATA[2]     ; 15.400 ; 12.000 ; 12.000 ; 15.400 ;
+; RD          ; DATA[3]     ;        ; 12.000 ; 12.000 ;        ;
+; RD          ; DATA[4]     ; 15.400 ; 12.000 ; 12.000 ; 15.400 ;
+; RD          ; DATA[5]     ; 15.400 ; 12.000 ; 12.000 ; 15.400 ;
+; RD          ; DATA[6]     ;        ; 12.000 ; 12.000 ;        ;
+; RD          ; DATA[7]     ;        ; 12.000 ; 12.000 ;        ;
+; RD          ; INT         ;        ; 11.700 ; 11.700 ;        ;
+; RESET       ; EPRWR       ; 9.700  ;        ;        ; 9.700  ;
+; RX          ; DATA[0]     ; 6.000  ;        ;        ; 6.000  ;
+; VADDRLow[0] ; BUSREQ      ; 12.000 ; 15.700 ; 15.700 ; 12.000 ;
+; VADDRLow[0] ; DATA[0]     ; 28.500 ; 28.600 ; 28.600 ; 28.500 ;
+; VADDRLow[0] ; DATA[1]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; VADDRLow[0] ; DATA[2]     ; 27.800 ; 26.700 ; 26.700 ; 27.800 ;
+; VADDRLow[0] ; DATA[3]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; VADDRLow[0] ; DATA[4]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; VADDRLow[0] ; DATA[5]     ; 21.100 ; 24.800 ; 24.800 ; 21.100 ;
+; VADDRLow[0] ; DATA[6]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; VADDRLow[0] ; DATA[7]     ; 15.700 ; 12.200 ; 12.200 ; 15.700 ;
+; VADDRLow[0] ; DISPEN      ; 12.000 ; 15.700 ; 15.700 ; 12.000 ;
+; VADDRLow[0] ; EPRWR       ;        ; 13.900 ; 13.900 ;        ;
+; VADDRLow[0] ; HALTO       ; 6.500  ;        ;        ; 6.500  ;
+; VADDRLow[0] ; INT         ; 21.100 ; 24.800 ; 24.800 ; 21.100 ;
+; VADDRLow[0] ; LCDEN       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[0] ; LCDRS       ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[0] ; RTS         ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[0] ; SETADDR     ; 6.500  ;        ;        ; 6.500  ;
+; VADDRLow[0] ; TWOO        ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[0] ; TX          ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[0] ; VIDEO9      ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[0] ; ZEROO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[0] ; sTVPower    ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[1] ; BUSREQ      ; 12.000 ; 15.700 ; 15.700 ; 12.000 ;
+; VADDRLow[1] ; DATA[0]     ; 28.600 ; 28.500 ; 28.500 ; 28.600 ;
+; VADDRLow[1] ; DATA[1]     ; 12.200 ; 15.800 ; 15.800 ; 12.200 ;
+; VADDRLow[1] ; DATA[2]     ; 26.700 ; 27.800 ; 27.800 ; 26.700 ;
+; VADDRLow[1] ; DATA[3]     ; 12.200 ; 15.800 ; 15.800 ; 12.200 ;
+; VADDRLow[1] ; DATA[4]     ; 12.200 ; 15.800 ; 15.800 ; 12.200 ;
+; VADDRLow[1] ; DATA[5]     ; 21.100 ; 24.800 ; 24.800 ; 21.100 ;
+; VADDRLow[1] ; DATA[6]     ; 12.200 ; 15.800 ; 15.800 ; 12.200 ;
+; VADDRLow[1] ; DATA[7]     ; 12.200 ; 15.700 ; 15.700 ; 12.200 ;
+; VADDRLow[1] ; DISPEN      ; 12.000 ; 15.700 ; 15.700 ; 12.000 ;
+; VADDRLow[1] ; EPRWR       ; 10.200 ; 13.900 ; 13.900 ; 10.200 ;
+; VADDRLow[1] ; HALTO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[1] ; INT         ; 21.100 ; 24.800 ; 24.800 ; 21.100 ;
+; VADDRLow[1] ; LCDEN       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[1] ; LCDRS       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[1] ; RTS         ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[1] ; SETADDR     ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[1] ; TWOO        ; 6.500  ;        ;        ; 6.500  ;
+; VADDRLow[1] ; TX          ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[1] ; VIDEO9      ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[1] ; ZEROO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[1] ; sTVPower    ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[2] ; BUSREQ      ; 12.000 ; 15.700 ; 15.700 ; 12.000 ;
+; VADDRLow[2] ; DATA[0]     ; 28.600 ; 28.500 ; 28.500 ; 28.600 ;
+; VADDRLow[2] ; DATA[1]     ; 12.200 ; 15.800 ; 15.800 ; 12.200 ;
+; VADDRLow[2] ; DATA[2]     ; 26.700 ; 27.800 ; 27.800 ; 26.700 ;
+; VADDRLow[2] ; DATA[3]     ; 12.200 ; 15.800 ; 15.800 ; 12.200 ;
+; VADDRLow[2] ; DATA[4]     ; 12.200 ; 15.800 ; 15.800 ; 12.200 ;
+; VADDRLow[2] ; DATA[5]     ; 21.100 ; 24.800 ; 24.800 ; 21.100 ;
+; VADDRLow[2] ; DATA[6]     ; 12.200 ; 15.800 ; 15.800 ; 12.200 ;
+; VADDRLow[2] ; DATA[7]     ; 12.200 ; 15.700 ; 15.700 ; 12.200 ;
+; VADDRLow[2] ; DISPEN      ; 12.000 ; 15.700 ; 15.700 ; 12.000 ;
+; VADDRLow[2] ; EPRWR       ; 13.900 ; 10.200 ; 10.200 ; 13.900 ;
+; VADDRLow[2] ; HALTO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[2] ; INT         ; 21.100 ; 24.800 ; 24.800 ; 21.100 ;
+; VADDRLow[2] ; LCDEN       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[2] ; LCDRS       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[2] ; RTS         ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[2] ; SETADDR     ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[2] ; TWOO        ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[2] ; TX          ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[2] ; VIDEO9      ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[2] ; ZEROO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[2] ; s80L        ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[2] ; s3240       ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[2] ; s3240_2     ; 12.000 ; 15.700 ; 15.700 ; 12.000 ;
+; VADDRLow[2] ; sFS         ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[2] ; sRV         ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[2] ; sTVPower    ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[2] ; sUCR        ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[3] ; BUSREQ      ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[3] ; DATA[0]     ; 28.500 ; 28.600 ; 28.600 ; 28.500 ;
+; VADDRLow[3] ; DATA[1]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; VADDRLow[3] ; DATA[2]     ; 27.800 ; 26.700 ; 26.700 ; 27.800 ;
+; VADDRLow[3] ; DATA[3]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; VADDRLow[3] ; DATA[4]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; VADDRLow[3] ; DATA[5]     ; 24.800 ; 21.100 ; 21.100 ; 24.800 ;
+; VADDRLow[3] ; DATA[6]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; VADDRLow[3] ; DATA[7]     ; 15.700 ; 12.200 ; 12.200 ; 15.700 ;
+; VADDRLow[3] ; DISPEN      ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[3] ; EPRWR       ; 13.900 ; 10.200 ; 10.200 ; 13.900 ;
+; VADDRLow[3] ; HALTO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[3] ; INT         ; 24.800 ; 21.100 ; 21.100 ; 24.800 ;
+; VADDRLow[3] ; LCDEN       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[3] ; LCDRS       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[3] ; RS232SEL    ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[3] ; RTS         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[3] ; SETADDR     ; 6.500  ;        ;        ; 6.500  ;
+; VADDRLow[3] ; TWOO        ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[3] ; TX          ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[3] ; VIDEO9      ; 6.500  ;        ;        ; 6.500  ;
+; VADDRLow[3] ; ZEROO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[3] ; s80L        ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[3] ; s3240       ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[3] ; s3240_2     ; 12.000 ; 15.700 ; 15.700 ; 12.000 ;
+; VADDRLow[3] ; sFS         ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[3] ; sRV         ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[3] ; sTVPower    ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[3] ; sUCR        ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[4] ; BUSREQ      ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[4] ; DATA[0]     ; 28.500 ; 28.600 ; 28.600 ; 28.500 ;
+; VADDRLow[4] ; DATA[1]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; VADDRLow[4] ; DATA[2]     ; 27.800 ; 26.700 ; 26.700 ; 27.800 ;
+; VADDRLow[4] ; DATA[3]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; VADDRLow[4] ; DATA[4]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; VADDRLow[4] ; DATA[5]     ; 24.800 ; 21.100 ; 21.100 ; 24.800 ;
+; VADDRLow[4] ; DATA[6]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; VADDRLow[4] ; DATA[7]     ; 15.700 ; 12.200 ; 12.200 ; 15.700 ;
+; VADDRLow[4] ; DISPEN      ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[4] ; EPRWR       ; 13.900 ; 10.200 ; 10.200 ; 13.900 ;
+; VADDRLow[4] ; HALTO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[4] ; INT         ; 24.800 ; 21.100 ; 21.100 ; 24.800 ;
+; VADDRLow[4] ; LCDEN       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[4] ; LCDRS       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[4] ; RS232SEL    ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[4] ; RTS         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[4] ; SETADDR     ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[4] ; TWOO        ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[4] ; TX          ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[4] ; VIDEO9      ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[4] ; ZEROO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[4] ; s80L        ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[4] ; s3240       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[4] ; s3240_2     ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[4] ; sFS         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[4] ; sRV         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[4] ; sTVPower    ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[4] ; sUCR        ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[5] ; BUSREQ      ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[5] ; DATA[0]     ; 28.500 ; 28.600 ; 28.600 ; 28.500 ;
+; VADDRLow[5] ; DATA[1]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; VADDRLow[5] ; DATA[2]     ; 27.800 ; 26.700 ; 26.700 ; 27.800 ;
+; VADDRLow[5] ; DATA[3]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; VADDRLow[5] ; DATA[4]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; VADDRLow[5] ; DATA[5]     ; 24.800 ; 21.100 ; 21.100 ; 24.800 ;
+; VADDRLow[5] ; DATA[6]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; VADDRLow[5] ; DATA[7]     ; 15.700 ; 12.200 ; 12.200 ; 15.700 ;
+; VADDRLow[5] ; DISPEN      ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[5] ; EPRWR       ; 13.900 ; 10.200 ; 10.200 ; 13.900 ;
+; VADDRLow[5] ; HALTO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[5] ; INT         ; 24.800 ; 21.100 ; 21.100 ; 24.800 ;
+; VADDRLow[5] ; LCDEN       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[5] ; LCDRS       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[5] ; RS232SEL    ; 6.500  ;        ;        ; 6.500  ;
+; VADDRLow[5] ; RTS         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[5] ; SETADDR     ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[5] ; TWOO        ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[5] ; TX          ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[5] ; VIDEO9      ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[5] ; ZEROO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[5] ; s80L        ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[5] ; s3240       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[5] ; s3240_2     ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[5] ; sFS         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[5] ; sRV         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[5] ; sTVPower    ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[5] ; sUCR        ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[6] ; BUSREQ      ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[6] ; DATA[0]     ; 28.500 ; 28.600 ; 28.600 ; 28.500 ;
+; VADDRLow[6] ; DATA[1]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; VADDRLow[6] ; DATA[2]     ; 27.800 ; 26.700 ; 26.700 ; 27.800 ;
+; VADDRLow[6] ; DATA[3]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; VADDRLow[6] ; DATA[4]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; VADDRLow[6] ; DATA[5]     ; 24.800 ; 21.100 ; 21.100 ; 24.800 ;
+; VADDRLow[6] ; DATA[6]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; VADDRLow[6] ; DATA[7]     ; 15.700 ; 12.200 ; 12.200 ; 15.700 ;
+; VADDRLow[6] ; DISPEN      ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[6] ; EPRWR       ; 13.900 ; 10.200 ; 10.200 ; 13.900 ;
+; VADDRLow[6] ; HALTO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[6] ; INT         ; 24.800 ; 21.100 ; 21.100 ; 24.800 ;
+; VADDRLow[6] ; LCDEN       ; 6.500  ;        ;        ; 6.500  ;
+; VADDRLow[6] ; LCDRS       ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[6] ; RS232SEL    ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[6] ; RTS         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[6] ; SETADDR     ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[6] ; TWOO        ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[6] ; TX          ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[6] ; VIDEO9      ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[6] ; ZEROO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[6] ; s80L        ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[6] ; s3240       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[6] ; s3240_2     ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[6] ; sFS         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[6] ; sRV         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[6] ; sTVPower    ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[6] ; sUCR        ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[7] ; BUSREQ      ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[7] ; DATA[0]     ; 28.500 ; 28.600 ; 28.600 ; 28.500 ;
+; VADDRLow[7] ; DATA[1]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; VADDRLow[7] ; DATA[2]     ; 27.800 ; 26.700 ; 26.700 ; 27.800 ;
+; VADDRLow[7] ; DATA[3]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; VADDRLow[7] ; DATA[4]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; VADDRLow[7] ; DATA[5]     ; 24.800 ; 21.100 ; 21.100 ; 24.800 ;
+; VADDRLow[7] ; DATA[6]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; VADDRLow[7] ; DATA[7]     ; 15.700 ; 12.200 ; 12.200 ; 15.700 ;
+; VADDRLow[7] ; DISPEN      ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[7] ; EPRWR       ; 10.200 ; 13.900 ; 13.900 ; 10.200 ;
+; VADDRLow[7] ; HALTO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[7] ; INT         ; 24.800 ; 21.100 ; 21.100 ; 24.800 ;
+; VADDRLow[7] ; LCDEN       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[7] ; LCDRS       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[7] ; RS232SEL    ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[7] ; RTS         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[7] ; SETADDR     ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[7] ; TWOO        ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[7] ; TX          ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[7] ; VIDEO9      ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[7] ; ZEROO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[7] ; s80L        ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[7] ; s3240       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[7] ; s3240_2     ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[7] ; sFS         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[7] ; sRV         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[7] ; sTVPower    ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[7] ; sUCR        ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; WR          ; BUSREQ      ; 15.500 ; 11.800 ; 11.800 ; 15.500 ;
+; WR          ; DATA[0]     ; 28.300 ; 28.400 ; 28.400 ; 28.300 ;
+; WR          ; DATA[1]     ; 15.600 ; 11.900 ; 11.900 ; 15.600 ;
+; WR          ; DATA[2]     ; 27.600 ; 26.500 ; 26.500 ; 27.600 ;
+; WR          ; DATA[3]     ; 15.600 ; 11.900 ; 11.900 ; 15.600 ;
+; WR          ; DATA[4]     ; 15.600 ; 11.900 ; 11.900 ; 15.600 ;
+; WR          ; DATA[5]     ; 24.600 ; 20.900 ; 20.900 ; 24.600 ;
+; WR          ; DATA[6]     ; 15.600 ; 11.900 ; 11.900 ; 15.600 ;
+; WR          ; DATA[7]     ; 15.500 ; 11.800 ; 11.800 ; 15.500 ;
+; WR          ; DISPEN      ; 15.500 ; 11.800 ; 11.800 ; 15.500 ;
+; WR          ; INT         ; 24.600 ; 20.900 ; 20.900 ; 24.600 ;
+; WR          ; LCDRS       ; 10.000 ; 6.300  ; 6.300  ; 10.000 ;
+; WR          ; RTS         ; 10.000 ; 6.300  ; 6.300  ; 10.000 ;
+; WR          ; SETADDR     ;        ; 6.300  ; 6.300  ;        ;
+; WR          ; TX          ; 10.000 ; 6.300  ; 6.300  ; 10.000 ;
+; WR          ; VIDEO9      ;        ; 6.300  ; 6.300  ;        ;
+; WR          ; s80L        ; 10.000 ; 6.300  ; 6.300  ; 10.000 ;
+; WR          ; s3240       ; 10.000 ; 6.300  ; 6.300  ; 10.000 ;
+; WR          ; s3240_2     ; 15.500 ; 11.800 ; 11.800 ; 15.500 ;
+; WR          ; sFS         ; 10.000 ; 6.300  ; 6.300  ; 10.000 ;
+; WR          ; sRV         ; 10.000 ; 6.300  ; 6.300  ; 10.000 ;
+; WR          ; sTVPower    ; 10.000 ; 6.300  ; 6.300  ; 10.000 ;
+; WR          ; sUCR        ; 10.000 ; 6.300  ; 6.300  ; 10.000 ;
+; sIORQ       ; BUSREQ      ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; sIORQ       ; DATA[0]     ; 28.500 ; 28.600 ; 28.600 ; 28.500 ;
+; sIORQ       ; DATA[1]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; sIORQ       ; DATA[2]     ; 27.800 ; 26.700 ; 26.700 ; 27.800 ;
+; sIORQ       ; DATA[3]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; sIORQ       ; DATA[4]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; sIORQ       ; DATA[5]     ; 24.800 ; 21.100 ; 21.100 ; 24.800 ;
+; sIORQ       ; DATA[6]     ; 15.800 ; 12.200 ; 12.200 ; 15.800 ;
+; sIORQ       ; DATA[7]     ; 15.700 ; 12.200 ; 12.200 ; 15.700 ;
+; sIORQ       ; DISPEN      ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; sIORQ       ; EPRWR       ; 10.200 ; 13.900 ; 13.900 ; 10.200 ;
+; sIORQ       ; HALTO       ;        ; 6.500  ; 6.500  ;        ;
+; sIORQ       ; INT         ; 24.800 ; 21.100 ; 21.100 ; 24.800 ;
+; sIORQ       ; IOH         ;        ; 6.500  ; 6.500  ;        ;
+; sIORQ       ; LCDEN       ;        ; 6.500  ; 6.500  ;        ;
+; sIORQ       ; LCDRS       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; sIORQ       ; RS232SEL    ;        ; 6.500  ; 6.500  ;        ;
+; sIORQ       ; RTS         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; sIORQ       ; SETADDR     ;        ; 6.500  ; 6.500  ;        ;
+; sIORQ       ; TWOO        ;        ; 6.500  ; 6.500  ;        ;
+; sIORQ       ; TX          ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; sIORQ       ; VIDEO9      ;        ; 6.500  ; 6.500  ;        ;
+; sIORQ       ; ZEROO       ;        ; 6.500  ; 6.500  ;        ;
+; sIORQ       ; s80L        ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; sIORQ       ; s3240       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; sIORQ       ; s3240_2     ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; sIORQ       ; sFS         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; sIORQ       ; sRV         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; sIORQ       ; sTVPower    ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; sIORQ       ; sUCR        ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; sM1         ; BUSREQ      ; 12.000 ; 15.700 ; 15.700 ; 12.000 ;
+; sM1         ; DATA[0]     ; 28.600 ; 28.500 ; 28.500 ; 28.600 ;
+; sM1         ; DATA[1]     ; 12.200 ; 15.800 ; 15.800 ; 12.200 ;
+; sM1         ; DATA[2]     ; 26.700 ; 27.800 ; 27.800 ; 26.700 ;
+; sM1         ; DATA[3]     ; 12.200 ; 15.800 ; 15.800 ; 12.200 ;
+; sM1         ; DATA[4]     ; 12.200 ; 15.800 ; 15.800 ; 12.200 ;
+; sM1         ; DATA[5]     ; 21.100 ; 24.800 ; 24.800 ; 21.100 ;
+; sM1         ; DATA[6]     ; 12.200 ; 15.800 ; 15.800 ; 12.200 ;
+; sM1         ; DATA[7]     ; 12.200 ; 15.700 ; 15.700 ; 12.200 ;
+; sM1         ; DISPEN      ; 12.000 ; 15.700 ; 15.700 ; 12.000 ;
+; sM1         ; EPRWR       ; 13.900 ; 10.200 ; 10.200 ; 13.900 ;
+; sM1         ; HALTO       ; 6.500  ;        ;        ; 6.500  ;
+; sM1         ; INT         ; 21.100 ; 24.800 ; 24.800 ; 21.100 ;
+; sM1         ; IOH         ; 6.500  ;        ;        ; 6.500  ;
+; sM1         ; LCDEN       ; 6.500  ;        ;        ; 6.500  ;
+; sM1         ; LCDRS       ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; sM1         ; RS232SEL    ; 6.500  ;        ;        ; 6.500  ;
+; sM1         ; RTS         ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; sM1         ; SETADDR     ; 6.500  ;        ;        ; 6.500  ;
+; sM1         ; TWOO        ; 6.500  ;        ;        ; 6.500  ;
+; sM1         ; TX          ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; sM1         ; VIDEO9      ; 6.500  ;        ;        ; 6.500  ;
+; sM1         ; ZEROO       ; 6.500  ;        ;        ; 6.500  ;
+; sM1         ; s80L        ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; sM1         ; s3240       ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; sM1         ; s3240_2     ; 12.000 ; 15.700 ; 15.700 ; 12.000 ;
+; sM1         ; sFS         ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; sM1         ; sRV         ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; sM1         ; sTVPower    ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; sM1         ; sUCR        ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
++-------------+-------------+--------+--------+--------+--------+
+
+
++---------------------------------------------------------------+
+; Minimum Propagation Delay                                     ;
++-------------+-------------+--------+--------+--------+--------+
+; Input Port  ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++-------------+-------------+--------+--------+--------+--------+
+; A15         ; RAMEN       ; 6.000  ; 6.000  ; 6.000  ; 6.000  ;
+; A15         ; ROMEN       ; 6.000  ; 6.000  ; 6.000  ; 6.000  ;
+; BUSACK      ; BUSACKout   ; 6.600  ;        ;        ; 6.600  ;
+; BUSACK      ; BUSACKout2  ; 6.600  ;        ;        ; 6.600  ;
+; BUSACK      ; BUSREQ      ; 12.100 ; 15.800 ; 15.800 ; 12.100 ;
+; BUSACK      ; DATA[0]     ; 6.600  ; 10.300 ; 10.300 ; 6.600  ;
+; BUSACK      ; DATA[1]     ; 6.600  ; 10.300 ; 10.300 ; 6.600  ;
+; BUSACK      ; DATA[2]     ; 6.600  ; 10.300 ; 10.300 ; 6.600  ;
+; BUSACK      ; DATA[3]     ; 6.600  ; 15.900 ; 15.900 ; 6.600  ;
+; BUSACK      ; DATA[4]     ; 6.600  ; 10.300 ; 10.300 ; 6.600  ;
+; BUSACK      ; DATA[5]     ; 6.600  ; 10.300 ; 10.300 ; 6.600  ;
+; BUSACK      ; DATA[6]     ; 6.600  ; 15.900 ; 15.900 ; 6.600  ;
+; BUSACK      ; DATA[7]     ; 6.600  ; 15.800 ; 15.800 ; 6.600  ;
+; BUSACK      ; DISPEN      ; 12.100 ; 15.800 ; 15.800 ; 12.100 ;
+; BUSACK      ; EPRWR       ; 6.600  ; 10.300 ; 10.300 ; 6.600  ;
+; BUSACK      ; HALTO       ; 6.600  ;        ;        ; 6.600  ;
+; BUSACK      ; INT         ; 12.000 ; 24.900 ; 24.900 ; 12.000 ;
+; BUSACK      ; IOH         ; 6.600  ;        ;        ; 6.600  ;
+; BUSACK      ; LCDEN       ; 6.600  ;        ;        ; 6.600  ;
+; BUSACK      ; LCDRS       ; 6.600  ; 10.300 ; 10.300 ; 6.600  ;
+; BUSACK      ; RAMEN       ; 6.600  ;        ;        ; 6.600  ;
+; BUSACK      ; RD          ; 6.600  ;        ;        ; 6.600  ;
+; BUSACK      ; ROMEN       ; 6.600  ;        ;        ; 6.600  ;
+; BUSACK      ; RS232SEL    ; 6.600  ;        ;        ; 6.600  ;
+; BUSACK      ; RTS         ; 6.600  ; 10.300 ; 10.300 ; 6.600  ;
+; BUSACK      ; SETADDR     ; 6.600  ;        ;        ; 6.600  ;
+; BUSACK      ; TWOO        ; 6.600  ;        ;        ; 6.600  ;
+; BUSACK      ; TX          ; 6.600  ; 10.300 ; 10.300 ; 6.600  ;
+; BUSACK      ; VIDEO9      ; 6.600  ;        ;        ; 6.600  ;
+; BUSACK      ; WR          ; 6.400  ;        ;        ; 6.400  ;
+; BUSACK      ; ZEROO       ; 6.600  ;        ;        ; 6.600  ;
+; BUSACK      ; s80L        ; 6.600  ; 10.300 ; 10.300 ; 6.600  ;
+; BUSACK      ; s3240       ; 6.600  ; 10.300 ; 10.300 ; 6.600  ;
+; BUSACK      ; s3240_2     ; 12.100 ; 15.800 ; 15.800 ; 12.100 ;
+; BUSACK      ; sFS         ; 6.600  ; 10.300 ; 10.300 ; 6.600  ;
+; BUSACK      ; sRV         ; 6.600  ; 10.300 ; 10.300 ; 6.600  ;
+; BUSACK      ; sTVPower    ; 6.600  ; 10.300 ; 10.300 ; 6.600  ;
+; BUSACK      ; sUCR        ; 6.600  ; 10.300 ; 10.300 ; 6.600  ;
+; BUSREQin    ; BUSREQ      ;        ; 6.000  ; 6.000  ;        ;
+; CLK50       ; DATA[5]     ; 15.200 ;        ;        ; 15.200 ;
+; CLK50       ; INT         ; 15.200 ;        ;        ; 15.200 ;
+; CLKCOP      ; DATA[7]     ; 11.400 ;        ;        ; 11.400 ;
+; CLKCOP      ; INT         ; 11.400 ;        ;        ; 11.400 ;
+; CTS         ; DATA[1]     ; 6.000  ;        ;        ; 6.000  ;
+; DATA[0]     ; DATA[0]     ; 11.600 ; 17.000 ; 17.000 ; 11.600 ;
+; DATA[0]     ; DATA[2]     ; 23.600 ;        ;        ; 23.600 ;
+; DATA[0]     ; DATA[5]     ; 20.600 ;        ;        ; 20.600 ;
+; DATA[0]     ; INT         ; 20.600 ;        ;        ; 20.600 ;
+; DATA[0]     ; sRV         ; 6.000  ;        ;        ; 6.000  ;
+; DATA[1]     ; DATA[0]     ;        ; 17.000 ; 17.000 ;        ;
+; DATA[1]     ; DATA[1]     ; 11.600 ;        ;        ; 11.600 ;
+; DATA[1]     ; DATA[2]     ; 23.600 ;        ;        ; 23.600 ;
+; DATA[1]     ; LCDRS       ; 6.000  ;        ;        ; 6.000  ;
+; DATA[1]     ; sFS         ; 6.000  ;        ;        ; 6.000  ;
+; DATA[2]     ; BUSREQ      ; 11.500 ;        ;        ; 11.500 ;
+; DATA[2]     ; DATA[0]     ;        ; 17.000 ; 17.000 ;        ;
+; DATA[2]     ; DATA[2]     ; 11.600 ;        ;        ; 11.600 ;
+; DATA[2]     ; DISPEN      ; 11.500 ;        ;        ; 11.500 ;
+; DATA[2]     ; s3240       ; 6.000  ;        ;        ; 6.000  ;
+; DATA[2]     ; s3240_2     ; 11.500 ;        ;        ; 11.500 ;
+; DATA[2]     ; sTVPower    ; 6.000  ;        ;        ; 6.000  ;
+; DATA[3]     ; DATA[0]     ;        ; 17.000 ; 17.000 ;        ;
+; DATA[3]     ; DATA[2]     ; 23.600 ;        ;        ; 23.600 ;
+; DATA[3]     ; DATA[3]     ; 11.600 ;        ;        ; 11.600 ;
+; DATA[3]     ; sUCR        ; 6.000  ;        ;        ; 6.000  ;
+; DATA[4]     ; DATA[0]     ;        ; 17.000 ; 17.000 ;        ;
+; DATA[4]     ; DATA[2]     ;        ; 22.500 ; 22.500 ;        ;
+; DATA[4]     ; DATA[4]     ; 11.600 ;        ;        ; 11.600 ;
+; DATA[4]     ; RTS         ; 6.000  ;        ;        ; 6.000  ;
+; DATA[5]     ; DATA[0]     ;        ; 17.000 ; 17.000 ;        ;
+; DATA[5]     ; DATA[2]     ; 22.500 ;        ;        ; 22.500 ;
+; DATA[5]     ; DATA[5]     ; 11.600 ;        ;        ; 11.600 ;
+; DATA[5]     ; TX          ; 6.000  ;        ;        ; 6.000  ;
+; DATA[6]     ; DATA[0]     ;        ; 17.000 ; 17.000 ;        ;
+; DATA[6]     ; DATA[2]     ;        ; 22.500 ; 22.500 ;        ;
+; DATA[6]     ; DATA[6]     ; 11.600 ;        ;        ; 11.600 ;
+; DATA[6]     ; s80L        ; 6.000  ;        ;        ; 6.000  ;
+; DATA[7]     ; DATA[0]     ; 16.900 ;        ;        ; 16.900 ;
+; DATA[7]     ; DATA[2]     ;        ; 22.400 ; 22.400 ;        ;
+; DATA[7]     ; DATA[7]     ; 11.500 ;        ;        ; 11.500 ;
+; MREQ        ; RAMEN       ; 6.000  ;        ;        ; 6.000  ;
+; MREQ        ; ROMEN       ;        ; 6.000  ; 6.000  ;        ;
+; RD          ; DATA[0]     ; 10.000 ; 6.300  ; 6.300  ; 10.000 ;
+; RD          ; DATA[1]     ; 10.000 ; 6.300  ; 6.300  ; 10.000 ;
+; RD          ; DATA[2]     ; 10.000 ; 6.300  ; 6.300  ; 10.000 ;
+; RD          ; DATA[3]     ;        ; 6.300  ; 6.300  ;        ;
+; RD          ; DATA[4]     ; 10.000 ; 6.300  ; 6.300  ; 10.000 ;
+; RD          ; DATA[5]     ; 10.000 ; 6.300  ; 6.300  ; 10.000 ;
+; RD          ; DATA[6]     ;        ; 6.300  ; 6.300  ;        ;
+; RD          ; DATA[7]     ;        ; 6.300  ; 6.300  ;        ;
+; RD          ; INT         ;        ; 11.700 ; 11.700 ;        ;
+; RESET       ; EPRWR       ; 9.700  ;        ;        ; 9.700  ;
+; RX          ; DATA[0]     ; 6.000  ;        ;        ; 6.000  ;
+; VADDRLow[0] ; BUSREQ      ; 12.000 ; 15.700 ; 15.700 ; 12.000 ;
+; VADDRLow[0] ; DATA[0]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[0] ; DATA[1]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[0] ; DATA[2]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[0] ; DATA[3]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[0] ; DATA[4]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[0] ; DATA[5]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[0] ; DATA[6]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[0] ; DATA[7]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[0] ; DISPEN      ; 12.000 ; 15.700 ; 15.700 ; 12.000 ;
+; VADDRLow[0] ; EPRWR       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[0] ; HALTO       ; 6.500  ;        ;        ; 6.500  ;
+; VADDRLow[0] ; INT         ; 21.100 ; 11.900 ; 11.900 ; 21.100 ;
+; VADDRLow[0] ; LCDEN       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[0] ; LCDRS       ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[0] ; RTS         ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[0] ; SETADDR     ; 6.500  ;        ;        ; 6.500  ;
+; VADDRLow[0] ; TWOO        ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[0] ; TX          ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[0] ; VIDEO9      ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[0] ; ZEROO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[0] ; sTVPower    ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[1] ; BUSREQ      ; 12.000 ; 15.700 ; 15.700 ; 12.000 ;
+; VADDRLow[1] ; DATA[0]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[1] ; DATA[1]     ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[1] ; DATA[2]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[1] ; DATA[3]     ; 6.500  ; 15.800 ; 15.800 ; 6.500  ;
+; VADDRLow[1] ; DATA[4]     ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[1] ; DATA[5]     ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[1] ; DATA[6]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[1] ; DATA[7]     ; 6.500  ; 15.700 ; 15.700 ; 6.500  ;
+; VADDRLow[1] ; DISPEN      ; 12.000 ; 15.700 ; 15.700 ; 12.000 ;
+; VADDRLow[1] ; EPRWR       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[1] ; HALTO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[1] ; INT         ; 11.900 ; 12.000 ; 12.000 ; 11.900 ;
+; VADDRLow[1] ; LCDEN       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[1] ; LCDRS       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[1] ; RTS         ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[1] ; SETADDR     ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[1] ; TWOO        ; 6.500  ;        ;        ; 6.500  ;
+; VADDRLow[1] ; TX          ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[1] ; VIDEO9      ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[1] ; ZEROO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[1] ; sTVPower    ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[2] ; BUSREQ      ; 12.000 ; 15.700 ; 15.700 ; 12.000 ;
+; VADDRLow[2] ; DATA[0]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[2] ; DATA[1]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[2] ; DATA[2]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[2] ; DATA[3]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[2] ; DATA[4]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[2] ; DATA[5]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[2] ; DATA[6]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[2] ; DATA[7]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[2] ; DISPEN      ; 12.000 ; 15.700 ; 15.700 ; 12.000 ;
+; VADDRLow[2] ; EPRWR       ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[2] ; HALTO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[2] ; INT         ; 11.900 ; 24.800 ; 24.800 ; 11.900 ;
+; VADDRLow[2] ; LCDEN       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[2] ; LCDRS       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[2] ; RTS         ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[2] ; SETADDR     ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[2] ; TWOO        ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[2] ; TX          ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[2] ; VIDEO9      ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[2] ; ZEROO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[2] ; s80L        ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[2] ; s3240       ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[2] ; s3240_2     ; 12.000 ; 15.700 ; 15.700 ; 12.000 ;
+; VADDRLow[2] ; sFS         ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[2] ; sRV         ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[2] ; sTVPower    ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[2] ; sUCR        ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[3] ; BUSREQ      ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[3] ; DATA[0]     ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[3] ; DATA[1]     ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[3] ; DATA[2]     ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[3] ; DATA[3]     ; 15.800 ; 6.500  ; 6.500  ; 15.800 ;
+; VADDRLow[3] ; DATA[4]     ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[3] ; DATA[5]     ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[3] ; DATA[6]     ; 15.800 ; 6.500  ; 6.500  ; 15.800 ;
+; VADDRLow[3] ; DATA[7]     ; 15.700 ; 6.500  ; 6.500  ; 15.700 ;
+; VADDRLow[3] ; DISPEN      ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[3] ; EPRWR       ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[3] ; HALTO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[3] ; INT         ; 24.800 ; 11.900 ; 11.900 ; 24.800 ;
+; VADDRLow[3] ; LCDEN       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[3] ; LCDRS       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[3] ; RS232SEL    ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[3] ; RTS         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[3] ; SETADDR     ; 6.500  ;        ;        ; 6.500  ;
+; VADDRLow[3] ; TWOO        ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[3] ; TX          ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[3] ; VIDEO9      ; 6.500  ;        ;        ; 6.500  ;
+; VADDRLow[3] ; ZEROO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[3] ; s80L        ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[3] ; s3240       ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[3] ; s3240_2     ; 12.000 ; 15.700 ; 15.700 ; 12.000 ;
+; VADDRLow[3] ; sFS         ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[3] ; sRV         ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[3] ; sTVPower    ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[3] ; sUCR        ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[4] ; BUSREQ      ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[4] ; DATA[0]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[4] ; DATA[1]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[4] ; DATA[2]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[4] ; DATA[3]     ; 12.200 ; 6.500  ; 6.500  ; 12.200 ;
+; VADDRLow[4] ; DATA[4]     ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[4] ; DATA[5]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[4] ; DATA[6]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[4] ; DATA[7]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[4] ; DISPEN      ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[4] ; EPRWR       ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[4] ; HALTO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[4] ; INT         ; 24.800 ; 11.900 ; 11.900 ; 24.800 ;
+; VADDRLow[4] ; LCDEN       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[4] ; LCDRS       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[4] ; RS232SEL    ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[4] ; RTS         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[4] ; SETADDR     ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[4] ; TWOO        ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[4] ; TX          ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[4] ; VIDEO9      ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[4] ; ZEROO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[4] ; s80L        ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[4] ; s3240       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[4] ; s3240_2     ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[4] ; sFS         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[4] ; sRV         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[4] ; sTVPower    ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[4] ; sUCR        ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[5] ; BUSREQ      ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[5] ; DATA[0]     ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[5] ; DATA[1]     ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[5] ; DATA[2]     ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[5] ; DATA[3]     ; 15.800 ; 6.500  ; 6.500  ; 15.800 ;
+; VADDRLow[5] ; DATA[4]     ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[5] ; DATA[5]     ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[5] ; DATA[6]     ; 15.800 ; 6.500  ; 6.500  ; 15.800 ;
+; VADDRLow[5] ; DATA[7]     ; 15.700 ; 6.500  ; 6.500  ; 15.700 ;
+; VADDRLow[5] ; DISPEN      ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[5] ; EPRWR       ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[5] ; HALTO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[5] ; INT         ; 24.800 ; 11.900 ; 11.900 ; 24.800 ;
+; VADDRLow[5] ; LCDEN       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[5] ; LCDRS       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[5] ; RS232SEL    ; 6.500  ;        ;        ; 6.500  ;
+; VADDRLow[5] ; RTS         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[5] ; SETADDR     ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[5] ; TWOO        ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[5] ; TX          ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[5] ; VIDEO9      ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[5] ; ZEROO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[5] ; s80L        ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[5] ; s3240       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[5] ; s3240_2     ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[5] ; sFS         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[5] ; sRV         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[5] ; sTVPower    ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[5] ; sUCR        ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[6] ; BUSREQ      ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[6] ; DATA[0]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[6] ; DATA[1]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[6] ; DATA[2]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[6] ; DATA[3]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[6] ; DATA[4]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[6] ; DATA[5]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[6] ; DATA[6]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[6] ; DATA[7]     ; 6.500  ; 6.500  ; 6.500  ; 6.500  ;
+; VADDRLow[6] ; DISPEN      ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[6] ; EPRWR       ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[6] ; HALTO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[6] ; INT         ; 24.800 ; 11.900 ; 11.900 ; 24.800 ;
+; VADDRLow[6] ; LCDEN       ; 6.500  ;        ;        ; 6.500  ;
+; VADDRLow[6] ; LCDRS       ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; VADDRLow[6] ; RS232SEL    ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[6] ; RTS         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[6] ; SETADDR     ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[6] ; TWOO        ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[6] ; TX          ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[6] ; VIDEO9      ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[6] ; ZEROO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[6] ; s80L        ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[6] ; s3240       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[6] ; s3240_2     ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[6] ; sFS         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[6] ; sRV         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[6] ; sTVPower    ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[6] ; sUCR        ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[7] ; BUSREQ      ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[7] ; DATA[0]     ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[7] ; DATA[1]     ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[7] ; DATA[2]     ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[7] ; DATA[3]     ; 15.800 ; 6.500  ; 6.500  ; 15.800 ;
+; VADDRLow[7] ; DATA[4]     ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[7] ; DATA[5]     ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[7] ; DATA[6]     ; 15.800 ; 6.500  ; 6.500  ; 15.800 ;
+; VADDRLow[7] ; DATA[7]     ; 15.700 ; 6.500  ; 6.500  ; 15.700 ;
+; VADDRLow[7] ; DISPEN      ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[7] ; EPRWR       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[7] ; HALTO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[7] ; INT         ; 24.800 ; 11.900 ; 11.900 ; 24.800 ;
+; VADDRLow[7] ; LCDEN       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[7] ; LCDRS       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[7] ; RS232SEL    ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[7] ; RTS         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[7] ; SETADDR     ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[7] ; TWOO        ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[7] ; TX          ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[7] ; VIDEO9      ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[7] ; ZEROO       ;        ; 6.500  ; 6.500  ;        ;
+; VADDRLow[7] ; s80L        ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[7] ; s3240       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[7] ; s3240_2     ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; VADDRLow[7] ; sFS         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[7] ; sRV         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[7] ; sTVPower    ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; VADDRLow[7] ; sUCR        ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; WR          ; BUSREQ      ; 15.500 ; 11.800 ; 11.800 ; 15.500 ;
+; WR          ; DATA[0]     ; 15.600 ; 11.900 ; 11.900 ; 15.600 ;
+; WR          ; DATA[1]     ; 15.600 ; 11.900 ; 11.900 ; 15.600 ;
+; WR          ; DATA[2]     ; 15.600 ; 11.900 ; 11.900 ; 15.600 ;
+; WR          ; DATA[3]     ; 15.600 ; 11.900 ; 11.900 ; 15.600 ;
+; WR          ; DATA[4]     ; 15.600 ; 11.900 ; 11.900 ; 15.600 ;
+; WR          ; DATA[5]     ; 15.600 ; 11.900 ; 11.900 ; 15.600 ;
+; WR          ; DATA[6]     ; 15.600 ; 11.900 ; 11.900 ; 15.600 ;
+; WR          ; DATA[7]     ; 15.500 ; 11.800 ; 11.800 ; 15.500 ;
+; WR          ; DISPEN      ; 15.500 ; 11.800 ; 11.800 ; 15.500 ;
+; WR          ; INT         ; 24.600 ; 20.900 ; 20.900 ; 24.600 ;
+; WR          ; LCDRS       ; 10.000 ; 6.300  ; 6.300  ; 10.000 ;
+; WR          ; RTS         ; 10.000 ; 6.300  ; 6.300  ; 10.000 ;
+; WR          ; SETADDR     ;        ; 6.300  ; 6.300  ;        ;
+; WR          ; TX          ; 10.000 ; 6.300  ; 6.300  ; 10.000 ;
+; WR          ; VIDEO9      ;        ; 6.300  ; 6.300  ;        ;
+; WR          ; s80L        ; 10.000 ; 6.300  ; 6.300  ; 10.000 ;
+; WR          ; s3240       ; 10.000 ; 6.300  ; 6.300  ; 10.000 ;
+; WR          ; s3240_2     ; 15.500 ; 11.800 ; 11.800 ; 15.500 ;
+; WR          ; sFS         ; 10.000 ; 6.300  ; 6.300  ; 10.000 ;
+; WR          ; sRV         ; 10.000 ; 6.300  ; 6.300  ; 10.000 ;
+; WR          ; sTVPower    ; 10.000 ; 6.300  ; 6.300  ; 10.000 ;
+; WR          ; sUCR        ; 10.000 ; 6.300  ; 6.300  ; 10.000 ;
+; sIORQ       ; BUSREQ      ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; sIORQ       ; DATA[0]     ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; sIORQ       ; DATA[1]     ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; sIORQ       ; DATA[2]     ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; sIORQ       ; DATA[3]     ; 15.800 ; 6.500  ; 6.500  ; 15.800 ;
+; sIORQ       ; DATA[4]     ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; sIORQ       ; DATA[5]     ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; sIORQ       ; DATA[6]     ; 15.800 ; 6.500  ; 6.500  ; 15.800 ;
+; sIORQ       ; DATA[7]     ; 15.700 ; 6.500  ; 6.500  ; 15.700 ;
+; sIORQ       ; DISPEN      ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; sIORQ       ; EPRWR       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; sIORQ       ; HALTO       ;        ; 6.500  ; 6.500  ;        ;
+; sIORQ       ; INT         ; 24.800 ; 11.900 ; 11.900 ; 24.800 ;
+; sIORQ       ; IOH         ;        ; 6.500  ; 6.500  ;        ;
+; sIORQ       ; LCDEN       ;        ; 6.500  ; 6.500  ;        ;
+; sIORQ       ; LCDRS       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; sIORQ       ; RS232SEL    ;        ; 6.500  ; 6.500  ;        ;
+; sIORQ       ; RTS         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; sIORQ       ; SETADDR     ;        ; 6.500  ; 6.500  ;        ;
+; sIORQ       ; TWOO        ;        ; 6.500  ; 6.500  ;        ;
+; sIORQ       ; TX          ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; sIORQ       ; VIDEO9      ;        ; 6.500  ; 6.500  ;        ;
+; sIORQ       ; ZEROO       ;        ; 6.500  ; 6.500  ;        ;
+; sIORQ       ; s80L        ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; sIORQ       ; s3240       ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; sIORQ       ; s3240_2     ; 15.700 ; 12.000 ; 12.000 ; 15.700 ;
+; sIORQ       ; sFS         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; sIORQ       ; sRV         ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; sIORQ       ; sTVPower    ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; sIORQ       ; sUCR        ; 10.200 ; 6.500  ; 6.500  ; 10.200 ;
+; sM1         ; BUSREQ      ; 12.000 ; 15.700 ; 15.700 ; 12.000 ;
+; sM1         ; DATA[0]     ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; sM1         ; DATA[1]     ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; sM1         ; DATA[2]     ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; sM1         ; DATA[3]     ; 6.500  ; 15.800 ; 15.800 ; 6.500  ;
+; sM1         ; DATA[4]     ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; sM1         ; DATA[5]     ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; sM1         ; DATA[6]     ; 6.500  ; 15.800 ; 15.800 ; 6.500  ;
+; sM1         ; DATA[7]     ; 6.500  ; 15.700 ; 15.700 ; 6.500  ;
+; sM1         ; DISPEN      ; 12.000 ; 15.700 ; 15.700 ; 12.000 ;
+; sM1         ; EPRWR       ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; sM1         ; HALTO       ; 6.500  ;        ;        ; 6.500  ;
+; sM1         ; INT         ; 11.900 ; 24.800 ; 24.800 ; 11.900 ;
+; sM1         ; IOH         ; 6.500  ;        ;        ; 6.500  ;
+; sM1         ; LCDEN       ; 6.500  ;        ;        ; 6.500  ;
+; sM1         ; LCDRS       ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; sM1         ; RS232SEL    ; 6.500  ;        ;        ; 6.500  ;
+; sM1         ; RTS         ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; sM1         ; SETADDR     ; 6.500  ;        ;        ; 6.500  ;
+; sM1         ; TWOO        ; 6.500  ;        ;        ; 6.500  ;
+; sM1         ; TX          ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; sM1         ; VIDEO9      ; 6.500  ;        ;        ; 6.500  ;
+; sM1         ; ZEROO       ; 6.500  ;        ;        ; 6.500  ;
+; sM1         ; s80L        ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; sM1         ; s3240       ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; sM1         ; s3240_2     ; 12.000 ; 15.700 ; 15.700 ; 12.000 ;
+; sM1         ; sFS         ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; sM1         ; sRV         ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; sM1         ; sTVPower    ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
+; sM1         ; sUCR        ; 6.500  ; 10.200 ; 10.200 ; 6.500  ;
++-------------+-------------+--------+--------+--------+--------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK      ; CLOCK    ; 626      ; 0        ; 0        ; 0        ;
+; RevRRset   ; CLOCK    ; 1        ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; CLOCK      ; CLOCK    ; 626      ; 0        ; 0        ; 0        ;
+; RevRRset   ; CLOCK    ; 1        ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 31    ; 31   ;
+; Unconstrained Input Port Paths  ; 445   ; 445  ;
+; Unconstrained Output Ports      ; 38    ; 38   ;
+; Unconstrained Output Port Paths ; 417   ; 417  ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Tue Mar 01 18:16:34 2016
+Info: Command: quartus_sta LOGIC2 -c LOGIC2
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (306004): Started post-fitting delay annotation
+Info (306005): Delay annotation completed successfully
+Warning (335095): TimeQuest Timing Analyzer does not support the analysis of latches as synchronous elements for the currently selected device family.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'LOGIC2.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name CLOCK CLOCK
+    Info (332105): create_clock -period 1.000 -name RevRRset RevRRset
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "VidCTRsig[0]~45|[1]"
+    Warning (332126): Node "VidCTRsig[0]~45|dataout"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "VidCTRsig[2]~39|[1]"
+    Warning (332126): Node "VidCTRsig[2]~39|dataout"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "ENABLEREG[2]~32|[1]"
+    Warning (332126): Node "ENABLEREG[2]~32|dataout"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "sLCDRS~10|[1]"
+    Warning (332126): Node "sLCDRS~10|dataout"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "VidCTRsig[1]~35|[1]"
+    Warning (332126): Node "VidCTRsig[1]~35|dataout"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "VidCTRsig[3]~31|[1]"
+    Warning (332126): Node "VidCTRsig[3]~31|dataout"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "ENABLEREG[4]~28|[1]"
+    Warning (332126): Node "ENABLEREG[4]~28|dataout"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "ENABLEREG[5]~24|[1]"
+    Warning (332126): Node "ENABLEREG[5]~24|dataout"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "VidCTRsig[6]~27|[1]"
+    Warning (332126): Node "VidCTRsig[6]~27|dataout"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "EPRWRsig~17|[0]"
+    Warning (332126): Node "EPRWRsig~17|dataout"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "COPINT~9|dataout"
+    Warning (332126): Node "COPINT~9|[1]"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "COPCTL2[5]~40|dataout"
+    Warning (332126): Node "COPCTL2[5]~40|[0]"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "FRMFREQ~13|dataout"
+    Warning (332126): Node "FRMFREQ~13|[0]"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "ENABLEREG[0]~38|dataout"
+    Warning (332126): Node "ENABLEREG[0]~38|[1]"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "COPCTL2[2]~43|dataout"
+    Warning (332126): Node "COPCTL2[2]~43|[1]"
+Warning (332125): Found combinational loop of 5 nodes
+    Warning (332126): Node "KB_Stop~13|dataout"
+    Warning (332126): Node "KB_Stop~30|[0]"
+    Warning (332126): Node "KB_Stop~30|pexpout"
+    Warning (332126): Node "KB_Stop~13|pexpin"
+    Warning (332126): Node "KB_Stop~13|[0]"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "COPCTL2[4]~37|dataout"
+    Warning (332126): Node "COPCTL2[4]~37|[0]"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "COPCTL2[0]~49|dataout"
+    Warning (332126): Node "COPCTL2[0]~49|[0]"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "COPCTL[4]~54|dataout"
+    Warning (332126): Node "COPCTL[4]~54|[1]"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "COPCTL[3]~58|dataout"
+    Warning (332126): Node "COPCTL[3]~58|[1]"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "COPCTL[2]~66|dataout"
+    Warning (332126): Node "COPCTL[2]~66|[1]"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "COPCTL[7]~42|dataout"
+    Warning (332126): Node "COPCTL[7]~42|[1]"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "COPCTL[1]~62|dataout"
+    Warning (332126): Node "COPCTL[1]~62|[1]"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "COPCTL[5]~50|dataout"
+    Warning (332126): Node "COPCTL[5]~50|[1]"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "COPCTL[6]~46|dataout"
+    Warning (332126): Node "COPCTL[6]~46|[1]"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "COPCTL[0]~38|dataout"
+    Warning (332126): Node "COPCTL[0]~38|[1]"
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -8.100
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -8.100      -210.500 CLOCK 
+Info (332146): Worst-case hold slack is 4.100
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     4.100         0.000 CLOCK 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.500
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.500      -175.000 CLOCK 
+    Info (332119):    -2.500        -5.000 RevRRset 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 85 warnings
+    Info: Peak virtual memory: 313 megabytes
+    Info: Processing ended: Tue Mar 01 18:16:37 2016
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
+
+

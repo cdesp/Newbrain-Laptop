@@ -1,0 +1,109 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 32-bit
+# Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+# Date created = 18:47:50  January 23, 2016
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		Logic_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY MAX7000S
+set_global_assignment -name DEVICE "EPM7128SLC84-15"
+set_global_assignment -name TOP_LEVEL_ENTITY Logic
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "18:47:50  JANUARY 23, 2016"
+set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name VHDL_FILE flipflop.vhd
+set_global_assignment -name VHDL_FILE PS2Main.vhd
+set_global_assignment -name VHDL_FILE Logic.vhd
+set_global_assignment -name DEVICE_FILTER_PACKAGE PLCC
+set_global_assignment -name MAX7000_DEVICE_IO_STANDARD TTL
+set_location_assignment PIN_16 -to LCD16SEL
+set_location_assignment PIN_9 -to BUSACK
+set_location_assignment PIN_27 -to BUSACKout
+set_location_assignment PIN_28 -to BUSACKout2
+set_location_assignment PIN_6 -to BUSREQ
+set_location_assignment PIN_29 -to BUSREQin
+set_location_assignment PIN_22 -to CLK50
+set_location_assignment PIN_24 -to CLKCOP
+set_location_assignment PIN_83 -to CLOCK
+set_location_assignment PIN_69 -to DATA[7]
+set_location_assignment PIN_70 -to DATA[6]
+set_location_assignment PIN_73 -to DATA[5]
+set_location_assignment PIN_74 -to DATA[4]
+set_location_assignment PIN_76 -to DATA[3]
+set_location_assignment PIN_75 -to DATA[2]
+set_location_assignment PIN_77 -to DATA[1]
+set_location_assignment PIN_79 -to DATA[0]
+set_location_assignment PIN_25 -to DISPEN
+set_location_assignment PIN_21 -to INT
+set_location_assignment PIN_33 -to IOH
+set_location_assignment PIN_18 -to MREQ
+set_location_assignment PIN_20 -to NMI
+set_location_assignment PIN_5 -to RESET
+set_location_assignment PIN_44 -to PS2_Clk
+set_location_assignment PIN_45 -to PS2_Data
+set_location_assignment PIN_81 -to RAMEN
+set_location_assignment PIN_11 -to RD
+set_location_assignment PIN_80 -to ROMEN
+set_location_assignment PIN_12 -to RS232SEL
+set_location_assignment PIN_8 -to sWAIT
+set_location_assignment PIN_4 -to sM1
+set_location_assignment PIN_17 -to sIORQ
+set_location_assignment PIN_49 -to SETADDR
+set_location_assignment PIN_34 -to TWOO
+set_location_assignment PIN_31 -to HALTO
+set_location_assignment PIN_10 -to WR
+set_location_assignment PIN_30 -to ZEROO
+set_location_assignment PIN_58 -to VADDRLow[7]
+set_location_assignment PIN_60 -to VADDRLow[6]
+set_location_assignment PIN_61 -to VADDRLow[5]
+set_location_assignment PIN_63 -to VADDRLow[4]
+set_location_assignment PIN_64 -to VADDRLow[3]
+set_location_assignment PIN_65 -to VADDRLow[2]
+set_location_assignment PIN_67 -to VADDRLow[1]
+set_location_assignment PIN_68 -to VADDRLow[0]
+set_location_assignment PIN_15 -to A15
+set_location_assignment PIN_54 -to sRV
+set_location_assignment PIN_55 -to sFS
+set_location_assignment PIN_52 -to s3240
+set_location_assignment PIN_51 -to s80L
+set_location_assignment PIN_50 -to sUCR
+set_location_assignment PIN_46 -to VIDEO9
+set_location_assignment PIN_48 -to s3240_2
+set_location_assignment PIN_40 -to LCDRS
+set_location_assignment PIN_41 -to LCDEN
+set_location_assignment PIN_35 -to CTS
+set_location_assignment PIN_39 -to RTS
+set_location_assignment PIN_37 -to TX
+set_location_assignment PIN_36 -to RX

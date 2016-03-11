@@ -1,0 +1,9 @@
+Fitter Status : Successful - Tue Mar 01 18:31:23 2016
+Quartus II 32-bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : Logic
+Top-level Entity Name : Logic
+Family : MAX7000S
+Device : EPM7128SLC84-15
+Timing Models : Final
+Total macrocells : 102 / 128 ( 80 % )
+Total pins : 66 / 68 ( 97 % )

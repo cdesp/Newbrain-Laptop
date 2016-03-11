@@ -1,0 +1,9 @@
+Fitter Status : Successful - Sat Feb 13 16:37:22 2016
+Quartus II 32-bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
+Revision Name : CRT
+Top-level Entity Name : CRT
+Family : MAX7000S
+Device : EPM7160SLC84-10
+Timing Models : Final
+Total macrocells : 156 / 160 ( 98 % )
+Total pins : 59 / 64 ( 92 % )
