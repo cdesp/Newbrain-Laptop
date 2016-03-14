@@ -204,7 +204,7 @@ signal BUSACKr:std_logic;
 Signal rs232ce:std_logic;
 Signal IRQ:std_logic;
 
-Signal sRVsig,s3240sig,sUCRsig,s80Lsig,sFSsig:std_logic:='1';
+Signal sRVsig,s3240sig,sUCRsig,s80Lsig,sFSsig,sVideo9:std_logic:='1';
 Signal EPRWRsig:std_logic:='0';
 
 
@@ -541,10 +541,12 @@ end process;
 	sFS<=sFSsig;
 	sRV<=sRVsig;	
 	sTVPower<=rtvon; -- rtvon  is like newbrain enablereg bit 2
+	VIDEO9<=sVideo9;
 	SetAddr <= '1' WHEN IRQ='0' AND WRin='0' AND (VADDRLow=x"09" )
 	  ELSE '0';
-	VIDEO9 <= '1' WHEN IRQ='0' AND WRin='0' AND (VADDRLow=x"08" )
-		ELSE '0';
+	sVideo9 <= '1' WHEN IRQ='0' AND WRin='0' AND (VADDRLow=x"08" )
+		ELSE	  '0' WHEN IRQ='0' AND WRin='0' AND (VADDRLow=x"09" )
+		ELSE sVideo9;
 	
 	--DISPEN<=dispvis; -- if video is on dispvis is out 126 127
 	DISPEN<=rtvon;

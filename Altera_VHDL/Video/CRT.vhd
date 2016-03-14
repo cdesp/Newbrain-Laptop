@@ -119,9 +119,9 @@ signal start:std_logic;
 
 signal addrcol:std_logic_vector(7-1 downto 0);--7 bits 
 signal addrrow:std_logic_vector(8-1 downto 0);--8 bits
-signal strtcnt:std_logic_vector(2-1 downto 0);--2 bits
+--signal strtcnt:std_logic_vector(2-1 downto 0);--2 bits
 signal pxlshft:std_logic;
-signal datout:std_logic;
+--signal datout:std_logic;
 
 signal FRMST:std_logic;
 signal DATAREAD:std_logic;
@@ -143,6 +143,7 @@ signal EOT:std_logic:='0';
 signal SKIP:std_logic:='0';
 signal RECOUNT:std_logic:='0';
 
+
 begin
 
 process (CLOCKIN,FRMST,DATAREAD,ENABLE) --CLOCK
@@ -151,7 +152,7 @@ begin
   if FRMST='1' then -- frame start
   
   
-	  strtcnt<="00";
+	 -- strtcnt<="00";
 	  
   	  if s80L='0' then
 			 addrcol<="0000010"; --skip 2 bytes for initilization
@@ -174,7 +175,7 @@ begin
 	  screenend<='0';  
 	  start<='0';
 	  pxlshft<='0';
-	  datout<='0';
+	--  datout<='0';
 	  EOT<='0';
 	  RECOUNT<='0';
 	  	  
@@ -183,7 +184,7 @@ begin
       --istest <= '0';
 		pxlshft<='0';
 	  	
-      datout<='0';
+     -- datout<='0';
 		IF SETADDR='1' AND BUSACK='1' THEN --AND SCREENEND='1' -- FROM Z80
 		
 			STADDR<=DATAIN ;
@@ -197,6 +198,7 @@ begin
 	   if  start='0' then --getting the data byte we need >70ns			
 		   start<='1';			
 			bitcnt <= 7;
+			addrcol(6)<=video9;
 		   if (DATAIN="00000000") then
 			  EOT<='1';
 			  datanext<=DATAIN;		
@@ -377,6 +379,7 @@ end process;
    sTVCLK <= '1' WHEN (BITCNT=2  and dataread='1') ELSE
 	          '1' WHEN FRMST='1'
 				 ELSE '0';--textclock in char
+	
 	
 	
 	TVCLK <= sTVCLK;
