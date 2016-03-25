@@ -97,7 +97,7 @@ Signal staddr:std_logic_vector(8-1 downto 0):="00000101";
 --Signal staddrIN:std_logic_vector(8-1 downto 0):="00000101";
 --Signal addrcnt : integer range 0 to 32767;
 --Signal addrvec:std_logic_vector(15-1 downto 0);
-Signal bitcnt : integer range 0 to 7:=0;
+Signal bitcnt : integer range 0 to 8:=0;
 
 --signal row:integer range 0 to 313:= 0;
 signal col:integer range 0 to 645 := 0;
@@ -142,19 +142,20 @@ signal VISLN:std_logic:='0';
 signal EOT:std_logic:='0';
 signal SKIP:std_logic:='0';
 signal RECOUNT:std_logic:='0';
-
+signal RVF:std_logic:='0';
+signal sRVUP:std_logic:='0';
+signal RVUP:std_logic:='0';
+signal pxl:std_logic:='0';
 
 begin
+
+
 
 process (CLOCKIN,FRMST,DATAREAD,ENABLE) --CLOCK
+
+procedure initframe is
 begin
- 
-  if FRMST='1' then -- frame start
-  
-  
-	 -- strtcnt<="00";
-	  
-  	  if s80L='0' then
+     if s80L='0' then
 			 addrcol<="0000010"; --skip 2 bytes for initilization
 	  else
 			 addrcol<="0000100"; --skip 4 bytes for initilization
@@ -163,7 +164,8 @@ begin
 	  addrrow<=staddr	  ;--"00000101";--5=start address =640
     
 	  
-	  bitcnt <= 7;
+	  bitcnt <= 0;
+	  redo<='0';
 	 -- istest <= '1';
 	  istext <= '1';
 	  isgraph <= '0'; 
@@ -171,63 +173,50 @@ begin
 	  col <=0;
 	  row <=0;
 	  rowcnt<="0000";	  
-	  redo<='0';
+	  
 	  screenend<='0';  
 	  start<='0';
-	  pxlshft<='0';
+	  
+	  pxl<='0';
 	--  datout<='0';
 	  EOT<='0';
 	  RECOUNT<='0';
+	  sRVUP<='0';
 	  	  
 	  byteval <= "00000000";
-	 elsif rising_edge(CLOCKIN) then --CLOCK
-      --istest <= '0';
-		pxlshft<='0';
-	  	
-     -- datout<='0';
-		IF SETADDR='1' AND BUSACK='1' THEN --AND SCREENEND='1' -- FROM Z80
-		
-			STADDR<=DATAIN ;
-		END IF;	
-		
+end procedure;
 
-		
-		
-	if DATAREAD='1' and busack='0' and (screenend='0') then
-		
-	   if  start='0' then --getting the data byte we need >70ns			
+
+procedure framestart is
+begin
+  if  start='0' then --getting the data byte we need >70ns			
 		   start<='1';			
-			bitcnt <= 7;
-			addrcol(6)<=video9;
-		   if (DATAIN="00000000") then
+			bitcnt <= 1;
+			redo<='1';
+			addrcol(6)<=video9;--set from NB through out 8
+			if (DATAIN="00000000") then
 			  EOT<='1';
-			  datanext<=DATAIN;		
-			else 
-			  datanext<=chardataIN;	        
-			end if;  
-			byteval<=datanext;			
-		end if;	
-	  --main screen paint
+			END IF;		
+			--byteval<=chardataIN;	
+	      pxl<='0';--byteval(bitcnt);
 
-	      pxlshft <= byteval(bitcnt) AND NOT SKIP; 	 				
-		  
-			if ( s80L='0') then	--all pixels are doubled		  
-			  redo <= not redo;			  
-			else 
-           redo <= '0';
-			end if;  
+	end if;	
 
-		if redo='0' then
-  		   bitcnt <= bitcnt + 1;
+end procedure;
 
-			IF bitcnt=0 then
-				SKIP<='0';	  
-				if zerocnt=2 and istext='1' then
-				   istext<='0'; -- text end
-				end if;		
-			   
-				
-				IF ISGRAPH='0' AND zerocnt=4 THEN
+
+procedure setTextOrGraph is
+begin
+
+	if zerocnt=2 and istext='1' then
+	   istext<='0'; -- text end
+   end if;		
+
+	if istext='0' and isgraph='0' and zerocnt = 0  then--check this 0,0,20,20 end the text screen and no graphics
+      screenend <='1'; 
+   end if;	
+	
+			IF ISGRAPH='0' AND zerocnt=4 THEN -- check for graphics stream
 				 IF (S80L AND S3240)='1' THEN			
 				    IF RECOUNT='1'  THEN-- 8 BYTES ON NARROW 80LINE SCREEN
 					  isgraph<='1'; -- graph on
@@ -242,55 +231,45 @@ begin
 					 EOT<='0';
 					 SKIP<='1';
 				 END IF;	 
-				END IF; 	
-				
-				
-				if istext='0' and isgraph='0' and zerocnt = 0 then--check this 0,0,20,20 end the text screen
-		         screenend <='1'; 
-		      end if;	
+			END IF; 		
+	
+end procedure;
 
-				
-			
-				
-			--elsif bitcnt=1  then	--NEXT ADDRESS
- 		   	
-			  -- IF NOT (S3240='1' AND ISGRAPH='1' AND NEXTISGRAPH='0' AND (col<64 OR COL>575) ) THEN --512 PIXELS
-				
-			   IF (S3240='1' AND ISGRAPH='1'  AND (col<64 OR COL>575) ) THEN --512 PIXELS					
-					SKIP<='1';
-				ELSE	
-				  addrcol<=addrcol+1; --count column bytes 127 for graphics								  
-				END IF;
-				
-				if isgraph='1' then
-				  if addrcol="1111111"  then
-			        addrrow<=addrrow+1;				 
-				  end if; 
-				 END IF; 
-				if istext='1' then
-				   if s80L='1' then -- hi def 80 pixels per line
-					 if addrcol="1010011" then  --4-84 for 80l
+procedure DoGraphNxtRow is
+begin
+  if addrcol="1111111"  then
+        addrrow<=addrrow+1;				 
+  end if; 
+end procedure;
+
+procedure DoTextNxtRow is
+
+     procedure doHiDef is
+     Begin
+                if addrcol="1010011" then  --4-84 for 80l
 						rowcnt<=rowcnt+1;
 						addrcol<="0000100";-- start 0n 4
 						EOT<='0';
 						if (UCR='0' and rowcnt=9)  or (UCR='1' and rowcnt=7) then	
 						  rowcnt<= "0000";
 						  addrrow<=addrrow+1;
-						  EOT<='0';
+						 -- EOT<='0';
 						end if; 
 					 end if;	
-					else --s80l='0' low def 40 pixels per line					  
-  					  if addrcol="0101001" then  --2-41 set 7th bit for odd
+     end procedure;
+	  procedure doLoDef is
+	  begin
+  					  if addrcol="0101001" then  --2-41 set 7th bit for odd '01'
 						rowcnt<=rowcnt+1;
 						addrcol<="0000010";	-- start on 2
 						EOT<='0';
 						if (UCR='0' and rowcnt=9) or (UCR='1' and rowcnt=7) then					     
 						  rowcnt<= "0000";	
 						  addrcol<="1000010";	--instead of adding a row we just move a little further skip 24 excess bytes					  
-						  EOT<='0';
+						  --EOT<='0';
 						end if; 	
 					  end if;
-					  if addrcol="1101001"  then  --66-106 add new row for even				  		 
+					  if addrcol="1101001"  then  --66-106 add new row for even	'01'
 						rowcnt<=rowcnt+1;
 						addrcol<="1000010";
 						EOT<='0';
@@ -298,51 +277,143 @@ begin
 						  rowcnt<= "0000";
 						  addrcol<="0000010";
 						  addrrow<=addrrow+1;
-						  EOT<='0';
+						  --EOT<='0';
 						end if; 						
 					  end if;												   
-					  
-					end if; -- else s80l =0  				   	 				  
-			   end if;		-- if is text				
-		--   elsif (bitcnt=3 OR bitcnt=4)  AND ISTEXT='1' then	--NEXT CHAR	
-	   --    sTVCLK <= '1';	
-			
-			elsif bitcnt=3  then	--PREPARE NEXT BYTE	
+	  end procedure;
+
+
+begin
+    if s80L='1' then -- hi def 80 pixels per line
+	  doHiDef;
+    else --s80l='0' low def 40 pixels per line					  
+	  doLoDef;
+	 end if; -- else s80l =0  
+end procedure;
+
+procedure prepNxtByte is
+begin			  
 			  if istext='1' then			   	
-				 DATANEXT<=chardataIN;
-			  elsif isgraph='1' then
-				DATANEXT<=DATAIN; -- get the next data as we had the time to stabilize ram
-			  else
-				DATANEXT<= DATAIN;  
+				 DATANEXT<=chardataIN;		 
+			  else --graph
+			    DATANEXT<=DATAIN; -- get the next data as we had the time to stabilize ram  
 			  end if;	
-			    
-				if DATAIN="00000000" then -- test end of screen or eot or graph
-				  zerocnt<=zerocnt+1;
-				else
-				  zerocnt<=0;
-				end if;  
-							
-			
-			elsif bitcnt=7  then -- NEXT BYTE
-				--bitcnt<=0;
-				
+			  
+			  if DATAIN="00000000" then -- test end of screen or eot or graph
+				    zerocnt<=zerocnt+1;
+			  else
+				    zerocnt<=0;
+			  end if;  		
+end procedure;
+
+procedure setNxtByte is
+begin
+            byteval<=DATANEXT;					
 				IF ISTEXT='1' AND DATAIN="00000000" THEN
   			     EOT<='1';
-				  byteval<=DATAIN;
-				else 
-		        byteval<=datanext;		
-			   END IF;			  				
-         
-			END IF; --END BITCNT
+				  byteval<=DATAIN;					  	        	
+			   END IF;			  
+end procedure;		
+
+procedure doNewByte is
+begin
+				SKIP<='0';	 
+			   sRVUP <= DATAIN(7);	--	for charset 1,3 char 128-255 reversed
+				
+			   setTextOrGraph;	
+				
+			   IF (S3240='1' AND ISGRAPH='1'  AND (col<64 OR COL>575) ) THEN --512 PIXELS					
+					SKIP<='1';
+				ELSE	
+				  addrcol<=addrcol+1; --count column bytes 127 for graphics								  
+				END IF;	
+				
+				if isgraph='1' then
+				  DoGraphNxtRow;
+				END IF; 
+				if istext='1' then
+				  DoTextNxtRow;							  
+			   end if;		-- if is text						
 			
-		end if;  --IF REDO END
-		 
-	--	END IF; --IF SKIP=0  
+end procedure;
+
+procedure bithandler is
+begin
+         pxl<=byteval(bitcnt);  
+			IF bitcnt=0 then				
+				doNewByte;	
+			elsif bitcnt=6  then	--PREPARE NEXT BYTE				  
+			  prepNxtByte;
+			elsif bitcnt=7  then	
+			  -- bitcnt<=0;		
+           	setNxtByte;	
+			  	
+			end if; --if bit
 		
+
+end procedure;
+
+procedure NextBit is
+begin
+             bitcnt <= bitcnt + 1;
+				 if bitcnt=7  then	
+			      bitcnt<=0;		
+				 end if;	
+				  
+end procedure;
+
+
+--process start
+begin
+ 
+  if FRMST='1' then -- frame start
+  
+  	initframe; 
+  	
+  elsif rising_edge(CLOCKIN) then --CLOCK
+      
+		pxlshft<='0';
+	  	
+     --get start address from NB through out 8,a
+		IF SETADDR='1' AND BUSACK='1' THEN --AND SCREENEND='1' -- FROM Z80		
+			STADDR<=DATAIN ;
+		END IF;	
+		
+
+		
+		
+	if DATAREAD='1' and busack='0' and screenend='0' then
+		
+	   framestart;--run just once at 1st pixel
+	  
+	  --main screen paint
+	      
+			
+		 if s80l='1' then
+		    NextBit;		    
+		 end if;
+		 
+		  redo<=not redo;	 
+		  if s80L='0' and redo='1' then
+		    NextBit;
+		  else 
+		    bithandler;  
+		  end if;  
+		 
+		  
+       
+      
+		 				
+		
+		pxlshft <= pxl AND NOT SKIP; 	 				
+		
+		
+		--these should be deleted not needed when we put screenend =1 somewhere else
 		  col<=col+1;		   
 		   if col>=639 then
 			  col<=0;
 			  row<=row+1;
+			--  bitcnt<=0;
 			end if;
 			if row>249 then
 			  screenend<='1';
@@ -354,30 +425,31 @@ begin
 	end if; -- if clock	
 
 end process;
-   
-	PXLOUT<= pxlshft XOR rv when busack='0' and dataread='1' and start='1' and EOT='0'
-				ELSE '0' XOR rv when busack='0' and dataread='1' and start='1' and EOT='1'
+  
+   RVUP <= sRVUP WHEN sFS='0' AND ISTEXT='1'
+	     ELSE '0';
+   	
+	RVF <= RV XOR RVUP;
+	
+	PXLOUT<= pxlshft XOR RVF when busack='0' and dataread='1' and start='1' and EOT='0' 
+				ELSE '0' XOR RVF when busack='0' and dataread='1' and start='1' and EOT='1' 
 				ELSE '0' ;
 	
-	--PXLOUT<=pxlshft when busack='0' and dataread='1' and start='1' and RV='0' 
-	--        else not pxlshft when busack='0' and dataread='1' and start='1' and RV='1' 
-	--        else '0';	
-	--PXLOUT3<=datout when dataread='1' else '0';
-	PXLOUT2<= '1' when dataread='1' and (col=0 OR col=639 OR row=0 or row=249 OR col=319 or row=124 ) else '0';
+--   PXLOUT<= pxlshft XOR RVF when busack='0' and dataread='1' and start='1' and EOT='0'  
+--				ELSE '0' ;	
+	
+	--PXLOUT2<= '1' when dataread='1' and (col=0 OR col=639 OR row=0 or row=249 OR col=319 or row=124 ) else '0';
 
    VIDADDR <= '0'&addrrow&addrcol when  busack='0' 
 			else (others=>'Z');
 
 
-	CHARCOUNT <= rowcnt when busack='0' and dataread='1' --TODO:change R4 with UCR always count 0-7
+	CHARCOUNT <= rowcnt when busack='0' and dataread='1' 
 	    else (others=>'0');										  --UCR=0 ~ 8x10chars  UCR=1 ~ 8x8 char
 	
-	--STADDR <= "00000101";
---	STADDR <= DATA WHEN SETADDR='1'
---	 ELSE STADDR;
 	
-   sTVCLK <= '1' WHEN (BITCNT=2  and dataread='1') ELSE
-	          '1' WHEN FRMST='1'
+	
+   sTVCLK <= '1' WHEN (BITCNT=3  and dataread='1') or (FRMST='1') 
 				 ELSE '0';--textclock in char
 	
 	

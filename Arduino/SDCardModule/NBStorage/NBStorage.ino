@@ -30,9 +30,9 @@ LiquidCrystal_I2C lcd(I2C_ADDR, 16, 2); // set the LCD address to 0x27 for a 16 
 
 //SD Card
 #define  cspin 10
-
-
-
+//  sck pin 13 
+// mosi pin 11
+// miso pin 12
 
 
 char t[20];
@@ -303,7 +303,7 @@ void sendSelectedFile() {
     // read from the file until there's nothing else in it:
     while (myFile.available()) {
       i++;
-      if (i % 200 == 0) { // every 10 bytes
+      if (i % 50 == 0) { // every 10 bytes
         lcd.setCursor(12, 1);
         b = !b;
         if (b)

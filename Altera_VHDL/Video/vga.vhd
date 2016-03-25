@@ -258,7 +258,7 @@ end process;
 	dataO <= videoh and videov when busack='0' else '0';-- if we should output to screen 
 		
 	--this is for the whole 1024 pixels OF 250 line maybe more
-	enbus<='1' when (hcount>leftgap-96) and (hcount<leftgap+640+96) else '0';
+	enbus<='1' when (hcount>leftgap-128) and (hcount<leftgap+640+128) else '0';
 	 
 	--Busreq <= '0' when vcount>39 and vcount <291  and VGAen='1' else '1'; -- active low	
 	Busreq <= '0' when (vcount>40 and vcount <291) and enbus='1' and VGAen='1' else '1'; -- active low	
