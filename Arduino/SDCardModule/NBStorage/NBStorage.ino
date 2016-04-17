@@ -78,16 +78,36 @@ void setup() {
   while (!Serial) {
     ; // wait for serial port to connect. Needed for native USB port only
   }
+  Serial.println(F("Serial OK."));
 
+  pinMode(butPlay, INPUT);
+  pinMode(butREC, INPUT);
+  pinMode(butPrev, INPUT);
+  pinMode(butNext, INPUT);
+  pinMode(butStop, INPUT);  
+
+  
+  pinMode(CTSpin, INPUT_PULLUP);
+  pinMode(RTSpin, OUTPUT);
+
+  // Switch on the backlight
+  lcd.init();
+  lcd.backlight();
+  lcd.clear();
+  lcd.print(F("LCD OK!!!")); delay(1000);
+  Serial.println(F("LCD OK."));
 
   Serial.print(F("Initializing SD card..."));
 
   if (!SD.begin(cspin)) {
     Serial.println(F("failed!"));
+    lcd.clear();
+    lcd.print(F("SD CARD FAILED!"));
     return;
   }
   Serial.println(F("done."));
-
+  lcd.clear();
+  lcd.print(F("SD CARD OK!!!"));delay(1000);
 
 
   /*
@@ -135,26 +155,16 @@ void setup() {
     else Serial.println("err open root");*/
 
   //  scanWire();
-  // Switch on the backlight
-  lcd.init();
-  lcd.backlight();
-  lcd.clear();
-  lcd.print(F("LCD OK!!!")); delay(2000);
+
 
 
   openRoot();
 
-  pinMode(CTSpin, INPUT_PULLUP);
-  pinMode(RTSpin, OUTPUT);
 
   RTSON();
   NBSerial.begin(9600);
 
-  pinMode(butPlay, INPUT);
-  pinMode(butREC, INPUT);
-  pinMode(butPrev, INPUT);
-  pinMode(butNext, INPUT);
-  pinMode(butStop, INPUT);  
+
 
   Serial.println(F("done!"));
 }
