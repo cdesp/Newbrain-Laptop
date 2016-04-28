@@ -478,6 +478,7 @@ void printfile() {
 }
 
 void printDirectory(){
+     lcdprintline1("READING DIRECTORY");
      if (strcmp(curDir.name(),"/")==0)
        strcpy(t, "ROOT DIR");
      else {
@@ -504,7 +505,8 @@ void loop() {
   else
   if (butStopPressed()) ch='x';
 
-  
+ //Serial.print(int(ch),DEC);
+  if (int(ch)>0) {Serial.print("Button=");Serial.write(ch);Serial.println("");}
  
   switch (ch) {
 
@@ -524,14 +526,13 @@ void loop() {
       else sendSelectedFile(); //send to NB
 
       break;
-    case 'r': lcdprintline1("AGN TO RECORD?");delay(butdel);
+    case 'r': lcdprintline1("AGN TO RECORD?  ");//delay(butdel);
               do {
-                if (butRECPressed()) {lcdprintline1("RECORDING");NBRecord();printDirectory();
-                        printfile();break;}
-                if (butStopPressed()) {printDirectory(); break;}
-                } while (true);
-              
-
+                if (butStopPressed()) {Serial.println("Cancel Record");printDirectory(); break;}
+                else
+                 if (butRECPressed()) {lcdprintline1("RECORDING");NBRecord();printDirectory();
+                        printfile();break;}                
+                } while (true);              
       break;
       case 'x': openRoot();
                 break;
