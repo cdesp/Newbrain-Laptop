@@ -1,5 +1,5 @@
 --lpm_constant LPM_CVALUE=00 LPM_WIDTH=8
---VERSION_BEGIN 13.0 cbx_lpm_constant 2013:06:12:18:03:40:SJ cbx_mgl 2013:06:12:18:04:42:SJ  VERSION_END
+--VERSION_BEGIN 13.0 cbx_lpm_constant 2013:06:12:18:03:43:SJ cbx_mgl 2013:06:12:18:05:10:SJ  VERSION_END
 
 
 -- Copyright (C) 1991-2013 Altera Corporation

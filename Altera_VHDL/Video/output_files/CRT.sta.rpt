@@ -1,6 +1,6 @@
 TimeQuest Timing Analyzer report for CRT
-Sat Feb 13 16:37:26 2016
-Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Fri May 13 19:35:42 2016
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -95,7 +95,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------+-----------------+------------+------+
 ; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
 +-----------+-----------------+------------+------+
-; 25.64 MHz ; 25.64 MHz       ; CLOCKIN    ;      ;
+; 17.24 MHz ; 17.24 MHz       ; CLOCKIN    ;      ;
 +-----------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -105,7 +105,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------+---------+---------------+
 ; Clock   ; Slack   ; End Point TNS ;
 +---------+---------+---------------+
-; CLOCKIN ; -38.000 ; -2483.000     ;
+; CLOCKIN ; -57.000 ; -3517.000     ;
 +---------+---------+---------------+
 
 
@@ -123,7 +123,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------+---------+---------------+
 ; Clock   ; Slack   ; End Point TNS ;
 +---------+---------+---------------+
-; CLOCKIN ; -20.000 ; -1172.000     ;
+; CLOCKIN ; -20.000 ; -960.000      ;
 +---------+---------+---------------+
 
 
@@ -141,7 +141,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------+--------+---------------+
 ; Clock   ; Slack  ; End Point TNS ;
 +---------+--------+---------------+
-; CLOCKIN ; -3.500 ; -742.000      ;
+; CLOCKIN ; -3.500 ; -672.000      ;
 +---------+--------+---------------+
 
 
@@ -150,106 +150,106 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------+--------------------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack   ; From Node                                  ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +---------+--------------------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
-; -38.000 ; vga:vga1|vcount[0]                         ; screenend                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 37.000     ;
-; -38.000 ; vga:vga1|vcount[0]                         ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 37.000     ;
-; -38.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[6]  ; screenend                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 37.000     ;
-; -38.000 ; vga:vga1|vcount[6]                         ; screenend                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 37.000     ;
-; -38.000 ; vga:vga1|vcount[1]                         ; screenend                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 37.000     ;
-; -38.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[6]  ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 37.000     ;
-; -38.000 ; vga:vga1|vcount[6]                         ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 37.000     ;
-; -38.000 ; vga:vga1|vcount[1]                         ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 37.000     ;
-; -38.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[4]  ; screenend                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 37.000     ;
-; -38.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[5]  ; screenend                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 37.000     ;
-; -38.000 ; vga:vga1|vcount[2]                         ; screenend                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 37.000     ;
-; -38.000 ; vga:vga1|vcount[7]                         ; screenend                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 37.000     ;
-; -38.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[4]  ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 37.000     ;
-; -38.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[5]  ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 37.000     ;
-; -38.000 ; vga:vga1|vcount[2]                         ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 37.000     ;
-; -38.000 ; vga:vga1|vcount[7]                         ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 37.000     ;
-; -33.000 ; vga:vga1|vcount[4]                         ; screenend                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 32.000     ;
-; -33.000 ; vga:vga1|vcount[8]                         ; screenend                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 32.000     ;
-; -33.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[10] ; screenend                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 32.000     ;
-; -33.000 ; vga:vga1|vcount[3]                         ; screenend                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 32.000     ;
-; -33.000 ; vga:vga1|vcount[5]                         ; screenend                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 32.000     ;
-; -33.000 ; vga:vga1|vcount[4]                         ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 32.000     ;
-; -33.000 ; vga:vga1|vcount[8]                         ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 32.000     ;
-; -33.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[10] ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 32.000     ;
-; -33.000 ; vga:vga1|vcount[3]                         ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 32.000     ;
-; -33.000 ; vga:vga1|vcount[5]                         ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 32.000     ;
-; -33.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[8]  ; screenend                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 32.000     ;
-; -33.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[9]  ; screenend                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 32.000     ;
-; -33.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[7]  ; screenend                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 32.000     ;
-; -33.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[8]  ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 32.000     ;
-; -33.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[9]  ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 32.000     ;
-; -33.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[7]  ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 32.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; zerocnt[1]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; zerocnt[2]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; RECOUNT                           ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; isgraph                           ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; zerocnt[0]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; lpm_counter:row_rtl_0|dffs[1]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; lpm_counter:row_rtl_0|dffs[2]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; lpm_counter:row_rtl_0|dffs[3]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; lpm_counter:row_rtl_0|dffs[4]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; lpm_counter:row_rtl_0|dffs[5]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; lpm_counter:row_rtl_0|dffs[6]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; lpm_counter:row_rtl_0|dffs[7]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; SKIP                              ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; DATANEXT[4]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; byteval[4]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; DATANEXT[0]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; byteval[0]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; DATANEXT[1]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; byteval[1]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; DATANEXT[3]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; byteval[3]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; DATANEXT[2]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; byteval[2]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; DATANEXT[5]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; byteval[5]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; DATANEXT[7]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; byteval[7]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; DATANEXT[6]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; byteval[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; pxlshft                           ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; addrcol[0]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; addrcol[2]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; addrcol[5]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; addrcol[3]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; addrcol[4]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; lpm_counter:rowcnt_rtl_0|dffs[0]  ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; lpm_counter:rowcnt_rtl_0|dffs[3]  ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; lpm_counter:rowcnt_rtl_0|dffs[1]  ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; lpm_counter:rowcnt_rtl_0|dffs[2]  ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; addrcol[1]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[4]                         ; vga:vga1|vsync                    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; lpm_counter:addrrow_rtl_0|dffs[0] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; lpm_counter:addrrow_rtl_0|dffs[1] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; lpm_counter:addrrow_rtl_0|dffs[2] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; lpm_counter:addrrow_rtl_0|dffs[3] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; lpm_counter:addrrow_rtl_0|dffs[4] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; lpm_counter:addrrow_rtl_0|dffs[5] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; lpm_counter:addrrow_rtl_0|dffs[6] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[0]                         ; lpm_counter:addrrow_rtl_0|dffs[7] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[6]  ; zerocnt[1]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[6]                         ; zerocnt[1]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[1]                         ; zerocnt[1]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[6]  ; zerocnt[2]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[6]                         ; zerocnt[2]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[1]                         ; zerocnt[2]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[6]  ; RECOUNT                           ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[6]                         ; RECOUNT                           ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[1]                         ; RECOUNT                           ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[6]  ; isgraph                           ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[6]                         ; isgraph                           ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[1]                         ; isgraph                           ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[6]  ; zerocnt[0]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[6]                         ; zerocnt[0]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[1]                         ; zerocnt[0]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[6]  ; lpm_counter:row_rtl_0|dffs[1]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[6]                         ; lpm_counter:row_rtl_0|dffs[1]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|vcount[1]                         ; lpm_counter:row_rtl_0|dffs[1]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
-; -30.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[6]  ; lpm_counter:row_rtl_0|dffs[2]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 29.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[9]  ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[9]  ; lpm_counter:addrrow_rtl_0|dffs[0] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[9]  ; lpm_counter:addrrow_rtl_0|dffs[1] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[9]  ; lpm_counter:addrrow_rtl_0|dffs[2] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[9]  ; lpm_counter:addrrow_rtl_0|dffs[3] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[9]  ; lpm_counter:addrrow_rtl_0|dffs[4] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[9]  ; lpm_counter:addrrow_rtl_0|dffs[5] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[9]  ; lpm_counter:addrrow_rtl_0|dffs[6] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[9]  ; lpm_counter:addrrow_rtl_0|dffs[7] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[8]  ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[7]  ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[6]  ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[10] ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[4]  ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[5]  ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[1]  ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[3]  ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[0]  ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[2]  ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[8]  ; lpm_counter:addrrow_rtl_0|dffs[0] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[7]  ; lpm_counter:addrrow_rtl_0|dffs[0] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[6]  ; lpm_counter:addrrow_rtl_0|dffs[0] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[10] ; lpm_counter:addrrow_rtl_0|dffs[0] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[4]  ; lpm_counter:addrrow_rtl_0|dffs[0] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[5]  ; lpm_counter:addrrow_rtl_0|dffs[0] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[1]  ; lpm_counter:addrrow_rtl_0|dffs[0] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[3]  ; lpm_counter:addrrow_rtl_0|dffs[0] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[0]  ; lpm_counter:addrrow_rtl_0|dffs[0] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[2]  ; lpm_counter:addrrow_rtl_0|dffs[0] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[8]  ; lpm_counter:addrrow_rtl_0|dffs[1] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[7]  ; lpm_counter:addrrow_rtl_0|dffs[1] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[6]  ; lpm_counter:addrrow_rtl_0|dffs[1] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[10] ; lpm_counter:addrrow_rtl_0|dffs[1] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[4]  ; lpm_counter:addrrow_rtl_0|dffs[1] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[5]  ; lpm_counter:addrrow_rtl_0|dffs[1] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[1]  ; lpm_counter:addrrow_rtl_0|dffs[1] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[3]  ; lpm_counter:addrrow_rtl_0|dffs[1] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[0]  ; lpm_counter:addrrow_rtl_0|dffs[1] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[2]  ; lpm_counter:addrrow_rtl_0|dffs[1] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[8]  ; lpm_counter:addrrow_rtl_0|dffs[2] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[7]  ; lpm_counter:addrrow_rtl_0|dffs[2] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[6]  ; lpm_counter:addrrow_rtl_0|dffs[2] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[10] ; lpm_counter:addrrow_rtl_0|dffs[2] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[4]  ; lpm_counter:addrrow_rtl_0|dffs[2] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[5]  ; lpm_counter:addrrow_rtl_0|dffs[2] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[1]  ; lpm_counter:addrrow_rtl_0|dffs[2] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[3]  ; lpm_counter:addrrow_rtl_0|dffs[2] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[0]  ; lpm_counter:addrrow_rtl_0|dffs[2] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[2]  ; lpm_counter:addrrow_rtl_0|dffs[2] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[8]  ; lpm_counter:addrrow_rtl_0|dffs[3] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[7]  ; lpm_counter:addrrow_rtl_0|dffs[3] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[6]  ; lpm_counter:addrrow_rtl_0|dffs[3] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[10] ; lpm_counter:addrrow_rtl_0|dffs[3] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[4]  ; lpm_counter:addrrow_rtl_0|dffs[3] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[5]  ; lpm_counter:addrrow_rtl_0|dffs[3] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[1]  ; lpm_counter:addrrow_rtl_0|dffs[3] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[3]  ; lpm_counter:addrrow_rtl_0|dffs[3] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[0]  ; lpm_counter:addrrow_rtl_0|dffs[3] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[2]  ; lpm_counter:addrrow_rtl_0|dffs[3] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[8]  ; lpm_counter:addrrow_rtl_0|dffs[4] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[7]  ; lpm_counter:addrrow_rtl_0|dffs[4] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[6]  ; lpm_counter:addrrow_rtl_0|dffs[4] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[10] ; lpm_counter:addrrow_rtl_0|dffs[4] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[4]  ; lpm_counter:addrrow_rtl_0|dffs[4] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[5]  ; lpm_counter:addrrow_rtl_0|dffs[4] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[1]  ; lpm_counter:addrrow_rtl_0|dffs[4] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[3]  ; lpm_counter:addrrow_rtl_0|dffs[4] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[0]  ; lpm_counter:addrrow_rtl_0|dffs[4] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[2]  ; lpm_counter:addrrow_rtl_0|dffs[4] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[8]  ; lpm_counter:addrrow_rtl_0|dffs[5] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[7]  ; lpm_counter:addrrow_rtl_0|dffs[5] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[6]  ; lpm_counter:addrrow_rtl_0|dffs[5] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[10] ; lpm_counter:addrrow_rtl_0|dffs[5] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[4]  ; lpm_counter:addrrow_rtl_0|dffs[5] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[5]  ; lpm_counter:addrrow_rtl_0|dffs[5] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[1]  ; lpm_counter:addrrow_rtl_0|dffs[5] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[3]  ; lpm_counter:addrrow_rtl_0|dffs[5] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[0]  ; lpm_counter:addrrow_rtl_0|dffs[5] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[2]  ; lpm_counter:addrrow_rtl_0|dffs[5] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[8]  ; lpm_counter:addrrow_rtl_0|dffs[6] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[7]  ; lpm_counter:addrrow_rtl_0|dffs[6] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[6]  ; lpm_counter:addrrow_rtl_0|dffs[6] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[10] ; lpm_counter:addrrow_rtl_0|dffs[6] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[4]  ; lpm_counter:addrrow_rtl_0|dffs[6] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[5]  ; lpm_counter:addrrow_rtl_0|dffs[6] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[1]  ; lpm_counter:addrrow_rtl_0|dffs[6] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[3]  ; lpm_counter:addrrow_rtl_0|dffs[6] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[0]  ; lpm_counter:addrrow_rtl_0|dffs[6] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[2]  ; lpm_counter:addrrow_rtl_0|dffs[6] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[8]  ; lpm_counter:addrrow_rtl_0|dffs[7] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[7]  ; lpm_counter:addrrow_rtl_0|dffs[7] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[6]  ; lpm_counter:addrrow_rtl_0|dffs[7] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[10] ; lpm_counter:addrrow_rtl_0|dffs[7] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[4]  ; lpm_counter:addrrow_rtl_0|dffs[7] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[5]  ; lpm_counter:addrrow_rtl_0|dffs[7] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[1]  ; lpm_counter:addrrow_rtl_0|dffs[7] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[3]  ; lpm_counter:addrrow_rtl_0|dffs[7] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[0]  ; lpm_counter:addrrow_rtl_0|dffs[7] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -57.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[2]  ; lpm_counter:addrrow_rtl_0|dffs[7] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 56.000     ;
+; -49.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[9]  ; zerocnt[1]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 48.000     ;
 +---------+--------------------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -334,6 +334,14 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 5.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[8]  ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[10] ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[9]  ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[10] ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[10] ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[10] ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; vga:vga1|vcount[0]                         ; vga:vga1|vcount[0]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; vga:vga1|vcount[3]                         ; vga:vga1|vcount[0]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; vga:vga1|vcount[4]                         ; vga:vga1|vcount[0]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; vga:vga1|vcount[5]                         ; vga:vga1|vcount[0]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; vga:vga1|vcount[8]                         ; vga:vga1|vcount[0]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; vga:vga1|vcount[6]                         ; vga:vga1|vcount[0]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[10] ; vga:vga1|vcount[0]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; vga:vga1|vcount[7]                         ; vga:vga1|vcount[0]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; vga:vga1|vcount[0]                         ; vga:vga1|vcount[1]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; vga:vga1|vcount[1]                         ; vga:vga1|vcount[1]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; vga:vga1|vcount[6]                         ; vga:vga1|vcount[1]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
@@ -347,126 +355,118 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 5.000 ; vga:vga1|vcount[0]                         ; vga:vga1|vcount[2]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; vga:vga1|vcount[1]                         ; vga:vga1|vcount[2]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
 ; 5.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[10] ; vga:vga1|vcount[2]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; vga:vga1|vcount[8]                         ; vga:vga1|vcount[8]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; vga:vga1|vcount[3]                         ; vga:vga1|vcount[8]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; vga:vga1|vcount[6]                         ; vga:vga1|vcount[8]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; vga:vga1|vcount[7]                         ; vga:vga1|vcount[8]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; vga:vga1|vcount[4]                         ; vga:vga1|vcount[8]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; vga:vga1|vcount[5]                         ; vga:vga1|vcount[8]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; vga:vga1|vcount[2]                         ; vga:vga1|vcount[8]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; vga:vga1|vcount[0]                         ; vga:vga1|vcount[8]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; vga:vga1|vcount[1]                         ; vga:vga1|vcount[8]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; vga:vga1|lpm_counter:hcount_rtl_0|dffs[10] ; vga:vga1|vcount[8]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
-; 5.000 ; vga:vga1|vcount[8]                         ; vga:vga1|vcount[4]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; vga:vga1|vcount[7]                         ; vga:vga1|vcount[7]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; vga:vga1|vcount[6]                         ; vga:vga1|vcount[7]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
+; 5.000 ; vga:vga1|vcount[5]                         ; vga:vga1|vcount[7]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 8.000      ;
 +-------+--------------------------------------------+--------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-; Recovery: 'CLOCKIN'                                                                                                                   ;
-+---------+--------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack   ; From Node          ; To Node                          ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+---------+--------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
-; -20.000 ; vga:vga1|vcount[4] ; redo                             ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; redo                             ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; bitcnt[0]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; bitcnt[0]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; bitcnt[1]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; bitcnt[1]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; bitcnt[2]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; bitcnt[2]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; zerocnt[1]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; zerocnt[1]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; zerocnt[2]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; zerocnt[2]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; RECOUNT                          ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; RECOUNT                          ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; isgraph                          ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; isgraph                          ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; zerocnt[0]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; zerocnt[0]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; istext                           ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; istext                           ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:col_rtl_0|dffs[0]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; lpm_counter:col_rtl_0|dffs[0]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:col_rtl_0|dffs[1]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; lpm_counter:col_rtl_0|dffs[1]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:col_rtl_0|dffs[2]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; lpm_counter:col_rtl_0|dffs[2]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:col_rtl_0|dffs[3]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; lpm_counter:col_rtl_0|dffs[3]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:col_rtl_0|dffs[4]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; lpm_counter:col_rtl_0|dffs[4]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:col_rtl_0|dffs[5]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; lpm_counter:col_rtl_0|dffs[5]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:col_rtl_0|dffs[7]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; lpm_counter:col_rtl_0|dffs[7]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:col_rtl_0|dffs[8]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; lpm_counter:col_rtl_0|dffs[8]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:col_rtl_0|dffs[9]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; lpm_counter:col_rtl_0|dffs[9]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:col_rtl_0|dffs[6]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; lpm_counter:col_rtl_0|dffs[6]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[0]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; lpm_counter:row_rtl_0|dffs[0]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[1]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; lpm_counter:row_rtl_0|dffs[1]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[2]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; lpm_counter:row_rtl_0|dffs[2]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[3]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; lpm_counter:row_rtl_0|dffs[3]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[4]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; lpm_counter:row_rtl_0|dffs[4]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[5]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; lpm_counter:row_rtl_0|dffs[5]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[6]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; lpm_counter:row_rtl_0|dffs[6]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[7]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; lpm_counter:row_rtl_0|dffs[7]    ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; screenend                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; screenend                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; byteval[4]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; byteval[4]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; byteval[0]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; byteval[0]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; byteval[1]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; byteval[1]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; byteval[3]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; byteval[3]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; byteval[2]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; byteval[2]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; byteval[5]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; byteval[5]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; byteval[7]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; byteval[7]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; byteval[6]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; byteval[6]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; pxlshft                          ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; pxlshft                          ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; addrcol[0]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; addrcol[0]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; addrcol[2]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; addrcol[2]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; addrcol[5]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; addrcol[5]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; addrcol[3]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; addrcol[3]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; addrcol[4]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; addrcol[4]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:rowcnt_rtl_0|dffs[0] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; lpm_counter:rowcnt_rtl_0|dffs[0] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:rowcnt_rtl_0|dffs[3] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; lpm_counter:rowcnt_rtl_0|dffs[3] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:rowcnt_rtl_0|dffs[1] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; lpm_counter:rowcnt_rtl_0|dffs[1] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:rowcnt_rtl_0|dffs[2] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; lpm_counter:rowcnt_rtl_0|dffs[2] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; addrcol[6]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; addrcol[6]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; addrcol[1]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; addrcol[1]                       ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[4] ; EOT                              ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-; -20.000 ; vga:vga1|vcount[5] ; EOT                              ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
-+---------+--------------------+----------------------------------+--------------+-------------+--------------+------------+------------+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Recovery: 'CLOCKIN'                                                                                                                    ;
++---------+--------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node          ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+--------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
+; -20.000 ; vga:vga1|vcount[4] ; bitcnt[0]                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; bitcnt[0]                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; bitcnt[1]                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; bitcnt[1]                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; bitcnt[2]                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; bitcnt[2]                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; zerocnt[1]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; zerocnt[1]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; zerocnt[2]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; zerocnt[2]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; isgraph                           ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; isgraph                           ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; RECOUNT                           ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; RECOUNT                           ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; zerocnt[0]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; zerocnt[0]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; start                             ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; start                             ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; addrcol[2]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; addrcol[2]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; addrcol[3]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; addrcol[3]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; addrcol[5]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; addrcol[5]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; addrcol[4]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; addrcol[4]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; addrcol[1]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; addrcol[1]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; rowcnt[0]                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; rowcnt[0]                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; rowcnt[2]                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; rowcnt[2]                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; rowcnt[3]                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; rowcnt[3]                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; rowcnt[1]                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; rowcnt[1]                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; addrcol[0]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; addrcol[0]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[0]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; lpm_counter:row_rtl_0|dffs[0]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[1]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; lpm_counter:row_rtl_0|dffs[1]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[2]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; lpm_counter:row_rtl_0|dffs[2]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[3]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; lpm_counter:row_rtl_0|dffs[3]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[4]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; lpm_counter:row_rtl_0|dffs[4]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[5]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; lpm_counter:row_rtl_0|dffs[5]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[6]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; lpm_counter:row_rtl_0|dffs[6]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[7]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; lpm_counter:row_rtl_0|dffs[7]     ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; redo                              ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; redo                              ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; istext                            ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; istext                            ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; sRVUP                             ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; sRVUP                             ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; byteval[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; byteval[6]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; byteval[5]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; byteval[5]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; byteval[7]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; byteval[7]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; byteval[0]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; byteval[0]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; byteval[1]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; byteval[1]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; byteval[3]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; byteval[3]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; byteval[2]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; byteval[2]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; byteval[4]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; byteval[4]                        ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; pxl                               ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; pxl                               ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:addrrow_rtl_0|dffs[0] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; lpm_counter:addrrow_rtl_0|dffs[0] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:addrrow_rtl_0|dffs[1] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; lpm_counter:addrrow_rtl_0|dffs[1] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:addrrow_rtl_0|dffs[2] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; lpm_counter:addrrow_rtl_0|dffs[2] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:addrrow_rtl_0|dffs[3] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; lpm_counter:addrrow_rtl_0|dffs[3] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:addrrow_rtl_0|dffs[4] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; lpm_counter:addrrow_rtl_0|dffs[4] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:addrrow_rtl_0|dffs[5] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; lpm_counter:addrrow_rtl_0|dffs[5] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:addrrow_rtl_0|dffs[6] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; lpm_counter:addrrow_rtl_0|dffs[6] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[4] ; lpm_counter:addrrow_rtl_0|dffs[7] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[3] ; lpm_counter:addrrow_rtl_0|dffs[7] ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[8] ; bitcnt[0]                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[6] ; bitcnt[0]                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[7] ; bitcnt[0]                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
+; -20.000 ; vga:vga1|vcount[2] ; bitcnt[0]                         ; CLOCKIN      ; CLOCKIN     ; 1.000        ; 0.000      ; 19.000     ;
++---------+--------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------+
@@ -474,15 +474,6 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------+--------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node          ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+--------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
-; 8.000  ; vga:vga1|vcount[4] ; start                             ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 11.000     ;
-; 8.000  ; vga:vga1|vcount[8] ; start                             ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 11.000     ;
-; 8.000  ; vga:vga1|vcount[6] ; start                             ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 11.000     ;
-; 8.000  ; vga:vga1|vcount[7] ; start                             ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 11.000     ;
-; 8.000  ; vga:vga1|vcount[5] ; start                             ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 11.000     ;
-; 8.000  ; vga:vga1|vcount[3] ; start                             ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 11.000     ;
-; 8.000  ; vga:vga1|vcount[0] ; start                             ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 11.000     ;
-; 8.000  ; vga:vga1|vcount[2] ; start                             ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 11.000     ;
-; 8.000  ; vga:vga1|vcount[1] ; start                             ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 11.000     ;
 ; 8.000  ; staddr[0]          ; lpm_counter:addrrow_rtl_0|dffs[0] ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 11.000     ;
 ; 8.000  ; staddr[1]          ; lpm_counter:addrrow_rtl_0|dffs[1] ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 11.000     ;
 ; 8.000  ; staddr[2]          ; lpm_counter:addrrow_rtl_0|dffs[2] ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 11.000     ;
@@ -491,89 +482,98 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 8.000  ; staddr[5]          ; lpm_counter:addrrow_rtl_0|dffs[5] ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 11.000     ;
 ; 8.000  ; staddr[6]          ; lpm_counter:addrrow_rtl_0|dffs[6] ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 11.000     ;
 ; 8.000  ; staddr[7]          ; lpm_counter:addrrow_rtl_0|dffs[7] ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 11.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; redo                              ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; redo                              ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
 ; 16.000 ; vga:vga1|vcount[4] ; bitcnt[0]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; bitcnt[0]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; bitcnt[0]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
 ; 16.000 ; vga:vga1|vcount[4] ; bitcnt[1]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; bitcnt[1]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; bitcnt[1]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
 ; 16.000 ; vga:vga1|vcount[4] ; bitcnt[2]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; bitcnt[2]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; bitcnt[2]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
 ; 16.000 ; vga:vga1|vcount[4] ; zerocnt[1]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; zerocnt[1]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; zerocnt[1]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
 ; 16.000 ; vga:vga1|vcount[4] ; zerocnt[2]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; zerocnt[2]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; RECOUNT                           ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; RECOUNT                           ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; zerocnt[2]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
 ; 16.000 ; vga:vga1|vcount[4] ; isgraph                           ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; isgraph                           ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; isgraph                           ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; RECOUNT                           ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; RECOUNT                           ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
 ; 16.000 ; vga:vga1|vcount[4] ; zerocnt[0]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; zerocnt[0]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; istext                            ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; istext                            ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:col_rtl_0|dffs[0]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; lpm_counter:col_rtl_0|dffs[0]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:col_rtl_0|dffs[1]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; lpm_counter:col_rtl_0|dffs[1]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:col_rtl_0|dffs[2]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; lpm_counter:col_rtl_0|dffs[2]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:col_rtl_0|dffs[3]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; lpm_counter:col_rtl_0|dffs[3]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:col_rtl_0|dffs[4]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; lpm_counter:col_rtl_0|dffs[4]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:col_rtl_0|dffs[5]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; lpm_counter:col_rtl_0|dffs[5]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:col_rtl_0|dffs[7]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; lpm_counter:col_rtl_0|dffs[7]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:col_rtl_0|dffs[8]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; lpm_counter:col_rtl_0|dffs[8]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:col_rtl_0|dffs[9]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; lpm_counter:col_rtl_0|dffs[9]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:col_rtl_0|dffs[6]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; lpm_counter:col_rtl_0|dffs[6]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[0]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; lpm_counter:row_rtl_0|dffs[0]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[1]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; lpm_counter:row_rtl_0|dffs[1]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[2]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; lpm_counter:row_rtl_0|dffs[2]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[3]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; lpm_counter:row_rtl_0|dffs[3]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[4]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; lpm_counter:row_rtl_0|dffs[4]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[5]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; lpm_counter:row_rtl_0|dffs[5]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[6]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; lpm_counter:row_rtl_0|dffs[6]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[7]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; lpm_counter:row_rtl_0|dffs[7]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; screenend                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; screenend                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; byteval[4]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; byteval[4]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; byteval[0]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; byteval[0]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; byteval[1]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; byteval[1]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; byteval[3]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; byteval[3]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; byteval[2]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; byteval[2]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; byteval[5]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; byteval[5]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; byteval[7]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; byteval[7]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; byteval[6]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; byteval[6]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; pxlshft                           ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; pxlshft                           ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; addrcol[0]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; addrcol[0]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; zerocnt[0]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; start                             ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; start                             ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
 ; 16.000 ; vga:vga1|vcount[4] ; addrcol[2]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; addrcol[2]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[4] ; addrcol[5]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
-; 16.000 ; vga:vga1|vcount[5] ; addrcol[5]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; addrcol[2]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
 ; 16.000 ; vga:vga1|vcount[4] ; addrcol[3]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; addrcol[3]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; addrcol[5]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; addrcol[5]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; addrcol[4]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; addrcol[4]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; addrcol[1]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; addrcol[1]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; rowcnt[0]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; rowcnt[0]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; rowcnt[2]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; rowcnt[2]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; rowcnt[3]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; rowcnt[3]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; rowcnt[1]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; rowcnt[1]                         ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; addrcol[6]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; addrcol[0]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; addrcol[0]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[0]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; lpm_counter:row_rtl_0|dffs[0]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[1]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; lpm_counter:row_rtl_0|dffs[1]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[2]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; lpm_counter:row_rtl_0|dffs[2]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[3]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; lpm_counter:row_rtl_0|dffs[3]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[4]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; lpm_counter:row_rtl_0|dffs[4]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[5]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; lpm_counter:row_rtl_0|dffs[5]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[6]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; lpm_counter:row_rtl_0|dffs[6]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:row_rtl_0|dffs[7]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; lpm_counter:row_rtl_0|dffs[7]     ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; redo                              ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; redo                              ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; istext                            ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; istext                            ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; sRVUP                             ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; sRVUP                             ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; byteval[6]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; byteval[6]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; byteval[5]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; byteval[5]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; byteval[7]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; byteval[7]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; byteval[0]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; byteval[0]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; byteval[1]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; byteval[1]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; byteval[3]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; byteval[3]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; byteval[2]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; byteval[2]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; byteval[4]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; byteval[4]                        ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; pxl                               ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; pxl                               ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:addrrow_rtl_0|dffs[0] ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; lpm_counter:addrrow_rtl_0|dffs[0] ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:addrrow_rtl_0|dffs[1] ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; lpm_counter:addrrow_rtl_0|dffs[1] ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:addrrow_rtl_0|dffs[2] ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; lpm_counter:addrrow_rtl_0|dffs[2] ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:addrrow_rtl_0|dffs[3] ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; lpm_counter:addrrow_rtl_0|dffs[3] ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:addrrow_rtl_0|dffs[4] ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; lpm_counter:addrrow_rtl_0|dffs[4] ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[4] ; lpm_counter:addrrow_rtl_0|dffs[5] ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
+; 16.000 ; vga:vga1|vcount[3] ; lpm_counter:addrrow_rtl_0|dffs[5] ; CLOCKIN      ; CLOCKIN     ; 0.000        ; 0.000      ; 19.000     ;
 +--------+--------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -598,8 +598,6 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; DATANEXT[6]                       ;
 ; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; DATANEXT[7]                       ;
 ; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; DATANEXT[7]                       ;
-; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; EOT                               ;
-; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; EOT                               ;
 ; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; RECOUNT                           ;
 ; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; RECOUNT                           ;
 ; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; SKIP                              ;
@@ -660,28 +658,30 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; lpm_counter:addrrow_rtl_0|dffs[6] ;
 ; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; lpm_counter:addrrow_rtl_0|dffs[7] ;
 ; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; lpm_counter:addrrow_rtl_0|dffs[7] ;
-; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; lpm_counter:col_rtl_0|dffs[0]     ;
-; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; lpm_counter:col_rtl_0|dffs[0]     ;
-; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; lpm_counter:col_rtl_0|dffs[1]     ;
-; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; lpm_counter:col_rtl_0|dffs[1]     ;
-; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; lpm_counter:col_rtl_0|dffs[2]     ;
-; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; lpm_counter:col_rtl_0|dffs[2]     ;
-; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; lpm_counter:col_rtl_0|dffs[3]     ;
-; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; lpm_counter:col_rtl_0|dffs[3]     ;
-; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; lpm_counter:col_rtl_0|dffs[4]     ;
-; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; lpm_counter:col_rtl_0|dffs[4]     ;
-; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; lpm_counter:col_rtl_0|dffs[5]     ;
-; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; lpm_counter:col_rtl_0|dffs[5]     ;
-; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; lpm_counter:col_rtl_0|dffs[6]     ;
-; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; lpm_counter:col_rtl_0|dffs[6]     ;
-; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; lpm_counter:col_rtl_0|dffs[7]     ;
-; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; lpm_counter:col_rtl_0|dffs[7]     ;
-; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; lpm_counter:col_rtl_0|dffs[8]     ;
-; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; lpm_counter:col_rtl_0|dffs[8]     ;
-; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; lpm_counter:col_rtl_0|dffs[9]     ;
-; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; lpm_counter:col_rtl_0|dffs[9]     ;
 ; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; lpm_counter:row_rtl_0|dffs[0]     ;
 ; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; lpm_counter:row_rtl_0|dffs[0]     ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; lpm_counter:row_rtl_0|dffs[1]     ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; lpm_counter:row_rtl_0|dffs[1]     ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; lpm_counter:row_rtl_0|dffs[2]     ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; lpm_counter:row_rtl_0|dffs[2]     ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; lpm_counter:row_rtl_0|dffs[3]     ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; lpm_counter:row_rtl_0|dffs[3]     ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; lpm_counter:row_rtl_0|dffs[4]     ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; lpm_counter:row_rtl_0|dffs[4]     ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; lpm_counter:row_rtl_0|dffs[5]     ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; lpm_counter:row_rtl_0|dffs[5]     ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; lpm_counter:row_rtl_0|dffs[6]     ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; lpm_counter:row_rtl_0|dffs[6]     ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; lpm_counter:row_rtl_0|dffs[7]     ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; lpm_counter:row_rtl_0|dffs[7]     ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; pxl                               ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; pxl                               ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; pxlshft                           ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; pxlshft                           ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; redo                              ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; redo                              ;
+; -3.500 ; 0.500        ; 4.000          ; High Pulse Width ; CLOCKIN ; Rise       ; rowcnt[0]                         ;
+; -3.500 ; 0.500        ; 4.000          ; Low Pulse Width  ; CLOCKIN ; Rise       ; rowcnt[0]                         ;
 +--------+--------------+----------------+------------------+---------+------------+-----------------------------------+
 
 
@@ -690,7 +690,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +--------------+------------+--------+--------+------------+-----------------+
 ; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +--------------+------------+--------+--------+------------+-----------------+
-; BUSACK       ; CLOCKIN    ; 31.000 ; 31.000 ; Rise       ; CLOCKIN         ;
+; BUSACK       ; CLOCKIN    ; 18.000 ; 18.000 ; Rise       ; CLOCKIN         ;
 ; CHARDATA[*]  ; CLOCKIN    ; 7.000  ; 7.000  ; Rise       ; CLOCKIN         ;
 ;  CHARDATA[0] ; CLOCKIN    ; 7.000  ; 7.000  ; Rise       ; CLOCKIN         ;
 ;  CHARDATA[1] ; CLOCKIN    ; 7.000  ; 7.000  ; Rise       ; CLOCKIN         ;
@@ -700,51 +700,55 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ;  CHARDATA[5] ; CLOCKIN    ; 7.000  ; 7.000  ; Rise       ; CLOCKIN         ;
 ;  CHARDATA[6] ; CLOCKIN    ; 7.000  ; 7.000  ; Rise       ; CLOCKIN         ;
 ;  CHARDATA[7] ; CLOCKIN    ; 7.000  ; 7.000  ; Rise       ; CLOCKIN         ;
-; DATA[*]      ; CLOCKIN    ; 23.000 ; 23.000 ; Rise       ; CLOCKIN         ;
-;  DATA[0]     ; CLOCKIN    ; 23.000 ; 23.000 ; Rise       ; CLOCKIN         ;
-;  DATA[1]     ; CLOCKIN    ; 23.000 ; 23.000 ; Rise       ; CLOCKIN         ;
-;  DATA[2]     ; CLOCKIN    ; 23.000 ; 23.000 ; Rise       ; CLOCKIN         ;
-;  DATA[3]     ; CLOCKIN    ; 23.000 ; 23.000 ; Rise       ; CLOCKIN         ;
-;  DATA[4]     ; CLOCKIN    ; 23.000 ; 23.000 ; Rise       ; CLOCKIN         ;
-;  DATA[5]     ; CLOCKIN    ; 23.000 ; 23.000 ; Rise       ; CLOCKIN         ;
-;  DATA[6]     ; CLOCKIN    ; 23.000 ; 23.000 ; Rise       ; CLOCKIN         ;
-;  DATA[7]     ; CLOCKIN    ; 23.000 ; 23.000 ; Rise       ; CLOCKIN         ;
-; S3240        ; CLOCKIN    ; 23.000 ; 23.000 ; Rise       ; CLOCKIN         ;
-; SETADDR      ; CLOCKIN    ; 7.000  ; 7.000  ; Rise       ; CLOCKIN         ;
-; UCR          ; CLOCKIN    ; 15.000 ; 15.000 ; Rise       ; CLOCKIN         ;
-; s80L         ; CLOCKIN    ; 23.000 ; 23.000 ; Rise       ; CLOCKIN         ;
+; DATA[*]      ; CLOCKIN    ; 18.000 ; 18.000 ; Rise       ; CLOCKIN         ;
+;  DATA[0]     ; CLOCKIN    ; 7.000  ; 7.000  ; Rise       ; CLOCKIN         ;
+;  DATA[1]     ; CLOCKIN    ; 18.000 ; 18.000 ; Rise       ; CLOCKIN         ;
+;  DATA[2]     ; CLOCKIN    ; 18.000 ; 18.000 ; Rise       ; CLOCKIN         ;
+;  DATA[3]     ; CLOCKIN    ; 18.000 ; 18.000 ; Rise       ; CLOCKIN         ;
+;  DATA[4]     ; CLOCKIN    ; 18.000 ; 18.000 ; Rise       ; CLOCKIN         ;
+;  DATA[5]     ; CLOCKIN    ; 18.000 ; 18.000 ; Rise       ; CLOCKIN         ;
+;  DATA[6]     ; CLOCKIN    ; 18.000 ; 18.000 ; Rise       ; CLOCKIN         ;
+;  DATA[7]     ; CLOCKIN    ; 18.000 ; 18.000 ; Rise       ; CLOCKIN         ;
+; ENABLE       ; CLOCKIN    ; 34.000 ; 34.000 ; Rise       ; CLOCKIN         ;
+; S3240        ; CLOCKIN    ; 26.000 ; 26.000 ; Rise       ; CLOCKIN         ;
+; SETADDR      ; CLOCKIN    ; 18.000 ; 18.000 ; Rise       ; CLOCKIN         ;
+; UCR          ; CLOCKIN    ; 31.000 ; 31.000 ; Rise       ; CLOCKIN         ;
+; VIDEO9       ; CLOCKIN    ; 20.000 ; 20.000 ; Rise       ; CLOCKIN         ;
+; s80L         ; CLOCKIN    ; 31.000 ; 31.000 ; Rise       ; CLOCKIN         ;
 +--------------+------------+--------+--------+------------+-----------------+
 
 
-+----------------------------------------------------------------------------+
-; Hold Times                                                                 ;
-+--------------+------------+--------+--------+------------+-----------------+
-; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
-+--------------+------------+--------+--------+------------+-----------------+
-; BUSACK       ; CLOCKIN    ; -2.000 ; -2.000 ; Rise       ; CLOCKIN         ;
-; CHARDATA[*]  ; CLOCKIN    ; -2.000 ; -2.000 ; Rise       ; CLOCKIN         ;
-;  CHARDATA[0] ; CLOCKIN    ; -2.000 ; -2.000 ; Rise       ; CLOCKIN         ;
-;  CHARDATA[1] ; CLOCKIN    ; -2.000 ; -2.000 ; Rise       ; CLOCKIN         ;
-;  CHARDATA[2] ; CLOCKIN    ; -2.000 ; -2.000 ; Rise       ; CLOCKIN         ;
-;  CHARDATA[3] ; CLOCKIN    ; -2.000 ; -2.000 ; Rise       ; CLOCKIN         ;
-;  CHARDATA[4] ; CLOCKIN    ; -2.000 ; -2.000 ; Rise       ; CLOCKIN         ;
-;  CHARDATA[5] ; CLOCKIN    ; -2.000 ; -2.000 ; Rise       ; CLOCKIN         ;
-;  CHARDATA[6] ; CLOCKIN    ; -2.000 ; -2.000 ; Rise       ; CLOCKIN         ;
-;  CHARDATA[7] ; CLOCKIN    ; -2.000 ; -2.000 ; Rise       ; CLOCKIN         ;
-; DATA[*]      ; CLOCKIN    ; -2.000 ; -2.000 ; Rise       ; CLOCKIN         ;
-;  DATA[0]     ; CLOCKIN    ; -2.000 ; -2.000 ; Rise       ; CLOCKIN         ;
-;  DATA[1]     ; CLOCKIN    ; -2.000 ; -2.000 ; Rise       ; CLOCKIN         ;
-;  DATA[2]     ; CLOCKIN    ; -2.000 ; -2.000 ; Rise       ; CLOCKIN         ;
-;  DATA[3]     ; CLOCKIN    ; -2.000 ; -2.000 ; Rise       ; CLOCKIN         ;
-;  DATA[4]     ; CLOCKIN    ; -2.000 ; -2.000 ; Rise       ; CLOCKIN         ;
-;  DATA[5]     ; CLOCKIN    ; -2.000 ; -2.000 ; Rise       ; CLOCKIN         ;
-;  DATA[6]     ; CLOCKIN    ; -2.000 ; -2.000 ; Rise       ; CLOCKIN         ;
-;  DATA[7]     ; CLOCKIN    ; -2.000 ; -2.000 ; Rise       ; CLOCKIN         ;
-; S3240        ; CLOCKIN    ; -2.000 ; -2.000 ; Rise       ; CLOCKIN         ;
-; SETADDR      ; CLOCKIN    ; -2.000 ; -2.000 ; Rise       ; CLOCKIN         ;
-; UCR          ; CLOCKIN    ; -2.000 ; -2.000 ; Rise       ; CLOCKIN         ;
-; s80L         ; CLOCKIN    ; -2.000 ; -2.000 ; Rise       ; CLOCKIN         ;
-+--------------+------------+--------+--------+------------+-----------------+
++------------------------------------------------------------------------------+
+; Hold Times                                                                   ;
++--------------+------------+---------+---------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise    ; Fall    ; Clock Edge ; Clock Reference ;
++--------------+------------+---------+---------+------------+-----------------+
+; BUSACK       ; CLOCKIN    ; -2.000  ; -2.000  ; Rise       ; CLOCKIN         ;
+; CHARDATA[*]  ; CLOCKIN    ; -2.000  ; -2.000  ; Rise       ; CLOCKIN         ;
+;  CHARDATA[0] ; CLOCKIN    ; -2.000  ; -2.000  ; Rise       ; CLOCKIN         ;
+;  CHARDATA[1] ; CLOCKIN    ; -2.000  ; -2.000  ; Rise       ; CLOCKIN         ;
+;  CHARDATA[2] ; CLOCKIN    ; -2.000  ; -2.000  ; Rise       ; CLOCKIN         ;
+;  CHARDATA[3] ; CLOCKIN    ; -2.000  ; -2.000  ; Rise       ; CLOCKIN         ;
+;  CHARDATA[4] ; CLOCKIN    ; -2.000  ; -2.000  ; Rise       ; CLOCKIN         ;
+;  CHARDATA[5] ; CLOCKIN    ; -2.000  ; -2.000  ; Rise       ; CLOCKIN         ;
+;  CHARDATA[6] ; CLOCKIN    ; -2.000  ; -2.000  ; Rise       ; CLOCKIN         ;
+;  CHARDATA[7] ; CLOCKIN    ; -2.000  ; -2.000  ; Rise       ; CLOCKIN         ;
+; DATA[*]      ; CLOCKIN    ; -2.000  ; -2.000  ; Rise       ; CLOCKIN         ;
+;  DATA[0]     ; CLOCKIN    ; -2.000  ; -2.000  ; Rise       ; CLOCKIN         ;
+;  DATA[1]     ; CLOCKIN    ; -2.000  ; -2.000  ; Rise       ; CLOCKIN         ;
+;  DATA[2]     ; CLOCKIN    ; -2.000  ; -2.000  ; Rise       ; CLOCKIN         ;
+;  DATA[3]     ; CLOCKIN    ; -2.000  ; -2.000  ; Rise       ; CLOCKIN         ;
+;  DATA[4]     ; CLOCKIN    ; -2.000  ; -2.000  ; Rise       ; CLOCKIN         ;
+;  DATA[5]     ; CLOCKIN    ; -2.000  ; -2.000  ; Rise       ; CLOCKIN         ;
+;  DATA[6]     ; CLOCKIN    ; -2.000  ; -2.000  ; Rise       ; CLOCKIN         ;
+;  DATA[7]     ; CLOCKIN    ; -2.000  ; -2.000  ; Rise       ; CLOCKIN         ;
+; ENABLE       ; CLOCKIN    ; -18.000 ; -18.000 ; Rise       ; CLOCKIN         ;
+; S3240        ; CLOCKIN    ; -2.000  ; -2.000  ; Rise       ; CLOCKIN         ;
+; SETADDR      ; CLOCKIN    ; -2.000  ; -2.000  ; Rise       ; CLOCKIN         ;
+; UCR          ; CLOCKIN    ; -10.000 ; -10.000 ; Rise       ; CLOCKIN         ;
+; VIDEO9       ; CLOCKIN    ; -2.000  ; -2.000  ; Rise       ; CLOCKIN         ;
+; s80L         ; CLOCKIN    ; -2.000  ; -2.000  ; Rise       ; CLOCKIN         ;
++--------------+------------+---------+---------+------------+-----------------+
 
 
 +-----------------------------------------------------------------------------+
@@ -752,18 +756,17 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------+------------+--------+--------+------------+-----------------+
 ; Data Port     ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +---------------+------------+--------+--------+------------+-----------------+
-; Busreq        ; CLOCKIN    ; 48.000 ; 48.000 ; Rise       ; CLOCKIN         ;
-; CHARCOUNT[*]  ; CLOCKIN    ; 37.000 ; 37.000 ; Rise       ; CLOCKIN         ;
-;  CHARCOUNT[0] ; CLOCKIN    ; 37.000 ; 37.000 ; Rise       ; CLOCKIN         ;
-;  CHARCOUNT[1] ; CLOCKIN    ; 37.000 ; 37.000 ; Rise       ; CLOCKIN         ;
-;  CHARCOUNT[2] ; CLOCKIN    ; 37.000 ; 37.000 ; Rise       ; CLOCKIN         ;
-;  CHARCOUNT[3] ; CLOCKIN    ; 37.000 ; 37.000 ; Rise       ; CLOCKIN         ;
+; Busreq        ; CLOCKIN    ; 45.000 ; 45.000 ; Rise       ; CLOCKIN         ;
+; CHARCOUNT[*]  ; CLOCKIN    ; 5.000  ; 5.000  ; Rise       ; CLOCKIN         ;
+;  CHARCOUNT[0] ; CLOCKIN    ; 5.000  ; 5.000  ; Rise       ; CLOCKIN         ;
+;  CHARCOUNT[1] ; CLOCKIN    ; 5.000  ; 5.000  ; Rise       ; CLOCKIN         ;
+;  CHARCOUNT[2] ; CLOCKIN    ; 5.000  ; 5.000  ; Rise       ; CLOCKIN         ;
+;  CHARCOUNT[3] ; CLOCKIN    ; 5.000  ; 5.000  ; Rise       ; CLOCKIN         ;
 ; CSYNC         ; CLOCKIN    ; 48.000 ; 48.000 ; Rise       ; CLOCKIN         ;
 ; NBCLKINT      ; CLOCKIN    ; 24.000 ; 24.000 ; Rise       ; CLOCKIN         ;
-; NBCOPINT      ; CLOCKIN    ; 24.000 ; 24.000 ; Rise       ; CLOCKIN         ;
-; PXLOUT        ; CLOCKIN    ; 37.000 ; 37.000 ; Rise       ; CLOCKIN         ;
-; PXLOUT2       ; CLOCKIN    ; 43.000 ; 43.000 ; Rise       ; CLOCKIN         ;
-; TVCLK         ; CLOCKIN    ; 37.000 ; 37.000 ; Rise       ; CLOCKIN         ;
+; NBCOPINT      ; CLOCKIN    ; 13.000 ; 13.000 ; Rise       ; CLOCKIN         ;
+; PXLOUT        ; CLOCKIN    ; 64.000 ; 64.000 ; Rise       ; CLOCKIN         ;
+; TVCLK         ; CLOCKIN    ; 56.000 ; 56.000 ; Rise       ; CLOCKIN         ;
 ; VIDADDR[*]    ; CLOCKIN    ; 5.000  ; 5.000  ; Rise       ; CLOCKIN         ;
 ;  VIDADDR[0]   ; CLOCKIN    ; 5.000  ; 5.000  ; Rise       ; CLOCKIN         ;
 ;  VIDADDR[1]   ; CLOCKIN    ; 5.000  ; 5.000  ; Rise       ; CLOCKIN         ;
@@ -788,17 +791,16 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------+------------+--------+--------+------------+-----------------+
 ; Data Port     ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +---------------+------------+--------+--------+------------+-----------------+
-; Busreq        ; CLOCKIN    ; 32.000 ; 32.000 ; Rise       ; CLOCKIN         ;
-; CHARCOUNT[*]  ; CLOCKIN    ; 24.000 ; 24.000 ; Rise       ; CLOCKIN         ;
-;  CHARCOUNT[0] ; CLOCKIN    ; 24.000 ; 24.000 ; Rise       ; CLOCKIN         ;
-;  CHARCOUNT[1] ; CLOCKIN    ; 24.000 ; 24.000 ; Rise       ; CLOCKIN         ;
-;  CHARCOUNT[2] ; CLOCKIN    ; 24.000 ; 24.000 ; Rise       ; CLOCKIN         ;
-;  CHARCOUNT[3] ; CLOCKIN    ; 24.000 ; 24.000 ; Rise       ; CLOCKIN         ;
+; Busreq        ; CLOCKIN    ; 13.000 ; 13.000 ; Rise       ; CLOCKIN         ;
+; CHARCOUNT[*]  ; CLOCKIN    ; 5.000  ; 5.000  ; Rise       ; CLOCKIN         ;
+;  CHARCOUNT[0] ; CLOCKIN    ; 5.000  ; 5.000  ; Rise       ; CLOCKIN         ;
+;  CHARCOUNT[1] ; CLOCKIN    ; 5.000  ; 5.000  ; Rise       ; CLOCKIN         ;
+;  CHARCOUNT[2] ; CLOCKIN    ; 5.000  ; 5.000  ; Rise       ; CLOCKIN         ;
+;  CHARCOUNT[3] ; CLOCKIN    ; 5.000  ; 5.000  ; Rise       ; CLOCKIN         ;
 ; CSYNC         ; CLOCKIN    ; 13.000 ; 13.000 ; Rise       ; CLOCKIN         ;
 ; NBCLKINT      ; CLOCKIN    ; 24.000 ; 24.000 ; Rise       ; CLOCKIN         ;
-; NBCOPINT      ; CLOCKIN    ; 24.000 ; 24.000 ; Rise       ; CLOCKIN         ;
+; NBCOPINT      ; CLOCKIN    ; 13.000 ; 13.000 ; Rise       ; CLOCKIN         ;
 ; PXLOUT        ; CLOCKIN    ; 24.000 ; 24.000 ; Rise       ; CLOCKIN         ;
-; PXLOUT2       ; CLOCKIN    ; 32.000 ; 32.000 ; Rise       ; CLOCKIN         ;
 ; TVCLK         ; CLOCKIN    ; 24.000 ; 24.000 ; Rise       ; CLOCKIN         ;
 ; VIDADDR[*]    ; CLOCKIN    ; 5.000  ; 5.000  ; Rise       ; CLOCKIN         ;
 ;  VIDADDR[0]   ; CLOCKIN    ; 5.000  ; 5.000  ; Rise       ; CLOCKIN         ;
@@ -819,72 +821,64 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------+------------+--------+--------+------------+-----------------+
 
 
-+---------------------------------------------------------------+
-; Propagation Delay                                             ;
-+------------+--------------+--------+--------+--------+--------+
-; Input Port ; Output Port  ; RR     ; RF     ; FR     ; FF     ;
-+------------+--------------+--------+--------+--------+--------+
-; BUSACK     ; CHARCOUNT[0] ;        ; 29.000 ; 29.000 ;        ;
-; BUSACK     ; CHARCOUNT[1] ;        ; 29.000 ; 29.000 ;        ;
-; BUSACK     ; CHARCOUNT[2] ;        ; 29.000 ; 29.000 ;        ;
-; BUSACK     ; CHARCOUNT[3] ;        ; 29.000 ; 29.000 ;        ;
-; BUSACK     ; PXLOUT       ;        ; 29.000 ; 29.000 ;        ;
-; BUSACK     ; PXLOUT2      ;        ; 29.000 ; 29.000 ;        ;
-; BUSACK     ; TVCLK        ;        ; 29.000 ; 29.000 ;        ;
-; BUSACK     ; VIDADDR[0]   ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[1]   ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[2]   ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[3]   ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[4]   ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[5]   ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[6]   ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[7]   ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[8]   ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[9]   ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[10]  ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[11]  ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[12]  ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[13]  ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[14]  ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[15]  ; 21.000 ;        ;        ; 21.000 ;
-; ENABLE     ; Busreq       ; 40.000 ;        ;        ; 40.000 ;
-; RV         ; PXLOUT       ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
-; S3240_2    ; TEST         ; 10.000 ;        ;        ; 10.000 ;
-+------------+--------------+--------+--------+--------+--------+
++--------------------------------------------------------------+
+; Propagation Delay                                            ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; BUSACK     ; PXLOUT      ;        ; 21.000 ; 21.000 ;        ;
+; BUSACK     ; VIDADDR[0]  ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[1]  ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[2]  ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[3]  ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[4]  ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[5]  ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[6]  ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[7]  ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[8]  ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[9]  ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[10] ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[11] ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[12] ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[13] ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[14] ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[15] ; 10.000 ;        ;        ; 10.000 ;
+; ENABLE     ; Busreq      ;        ; 18.000 ; 18.000 ;        ;
+; ENABLE     ; PXLOUT      ; 48.000 ;        ;        ; 48.000 ;
+; ENABLE     ; TVCLK       ; 48.000 ;        ;        ; 48.000 ;
+; RV         ; PXLOUT      ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; sFS        ; PXLOUT      ; 37.000 ; 21.000 ; 21.000 ; 37.000 ;
++------------+-------------+--------+--------+--------+--------+
 
 
-+---------------------------------------------------------------+
-; Minimum Propagation Delay                                     ;
-+------------+--------------+--------+--------+--------+--------+
-; Input Port ; Output Port  ; RR     ; RF     ; FR     ; FF     ;
-+------------+--------------+--------+--------+--------+--------+
-; BUSACK     ; CHARCOUNT[0] ;        ; 29.000 ; 29.000 ;        ;
-; BUSACK     ; CHARCOUNT[1] ;        ; 29.000 ; 29.000 ;        ;
-; BUSACK     ; CHARCOUNT[2] ;        ; 29.000 ; 29.000 ;        ;
-; BUSACK     ; CHARCOUNT[3] ;        ; 29.000 ; 29.000 ;        ;
-; BUSACK     ; PXLOUT       ;        ; 29.000 ; 29.000 ;        ;
-; BUSACK     ; PXLOUT2      ;        ; 29.000 ; 29.000 ;        ;
-; BUSACK     ; TVCLK        ;        ; 29.000 ; 29.000 ;        ;
-; BUSACK     ; VIDADDR[0]   ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[1]   ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[2]   ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[3]   ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[4]   ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[5]   ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[6]   ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[7]   ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[8]   ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[9]   ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[10]  ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[11]  ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[12]  ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[13]  ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[14]  ; 8.500  ;        ;        ; 8.500  ;
-; BUSACK     ; VIDADDR[15]  ; 21.000 ;        ;        ; 21.000 ;
-; ENABLE     ; Busreq       ; 40.000 ;        ;        ; 40.000 ;
-; RV         ; PXLOUT       ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
-; S3240_2    ; TEST         ; 10.000 ;        ;        ; 10.000 ;
-+------------+--------------+--------+--------+--------+--------+
++--------------------------------------------------------------+
+; Minimum Propagation Delay                                    ;
++------------+-------------+--------+--------+--------+--------+
+; Input Port ; Output Port ; RR     ; RF     ; FR     ; FF     ;
++------------+-------------+--------+--------+--------+--------+
+; BUSACK     ; PXLOUT      ;        ; 21.000 ; 21.000 ;        ;
+; BUSACK     ; VIDADDR[0]  ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[1]  ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[2]  ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[3]  ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[4]  ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[5]  ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[6]  ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[7]  ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[8]  ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[9]  ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[10] ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[11] ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[12] ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[13] ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[14] ; 8.500  ;        ;        ; 8.500  ;
+; BUSACK     ; VIDADDR[15] ; 10.000 ;        ;        ; 10.000 ;
+; ENABLE     ; Busreq      ;        ; 18.000 ; 18.000 ;        ;
+; ENABLE     ; PXLOUT      ; 48.000 ;        ;        ; 48.000 ;
+; ENABLE     ; TVCLK       ; 48.000 ;        ;        ; 48.000 ;
+; RV         ; PXLOUT      ; 21.000 ; 21.000 ; 21.000 ; 21.000 ;
+; sFS        ; PXLOUT      ; 37.000 ; 21.000 ; 21.000 ; 37.000 ;
++------------+-------------+--------+--------+--------+--------+
 
 
 +-------------------------------------------------------------------+
@@ -892,7 +886,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; CLOCKIN    ; CLOCKIN  ; 6855     ; 0        ; 0        ; 0        ;
+; CLOCKIN    ; CLOCKIN  ; 171285   ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -902,7 +896,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; CLOCKIN    ; CLOCKIN  ; 6855     ; 0        ; 0        ; 0        ;
+; CLOCKIN    ; CLOCKIN  ; 171285   ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -912,7 +906,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; CLOCKIN    ; CLOCKIN  ; 637      ; 0        ; 0        ; 0        ;
+; CLOCKIN    ; CLOCKIN  ; 538      ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -922,7 +916,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; CLOCKIN    ; CLOCKIN  ; 637      ; 0        ; 0        ; 0        ;
+; CLOCKIN    ; CLOCKIN  ; 538      ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -946,10 +940,10 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 +---------------------------------+-------+------+
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
-; Unconstrained Input Ports       ; 24    ; 24   ;
-; Unconstrained Input Port Paths  ; 338   ; 338  ;
-; Unconstrained Output Ports      ; 28    ; 28   ;
-; Unconstrained Output Port Paths ; 240   ; 240  ;
+; Unconstrained Input Ports       ; 25    ; 25   ;
+; Unconstrained Input Port Paths  ; 289   ; 289  ;
+; Unconstrained Output Ports      ; 26    ; 26   ;
+; Unconstrained Output Port Paths ; 154   ; 154  ;
 +---------------------------------+-------+------+
 
 
@@ -957,9 +951,9 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 ; TimeQuest Timing Analyzer Messages ;
 +------------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Feb 13 16:37:25 2016
+    Info: Processing started: Fri May 13 19:35:40 2016
 Info: Command: quartus_sta CRT -c CRT
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -970,12 +964,21 @@ Critical Warning (332012): Synopsys Design Constraints File file not found: 'CRT
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name CLOCKIN CLOCKIN
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "screenend~24|dataout"
+    Warning (332126): Node "screenend~24|[0]"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "EOT~13|dataout"
+    Warning (332126): Node "EOT~13|[1]"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "sEOT2~15|dataout"
+    Warning (332126): Node "sEOT2~15|[1]"
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -38.000
+Info (332146): Worst-case setup slack is -57.000
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):   -38.000     -2483.000 CLOCKIN 
+    Info (332119):   -57.000     -3517.000 CLOCKIN 
 Info (332146): Worst-case hold slack is 5.000
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
@@ -983,7 +986,7 @@ Info (332146): Worst-case hold slack is 5.000
 Info (332146): Worst-case recovery slack is -20.000
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):   -20.000     -1172.000 CLOCKIN 
+    Info (332119):   -20.000      -960.000 CLOCKIN 
 Info (332146): Worst-case removal slack is 8.000
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
@@ -991,14 +994,14 @@ Info (332146): Worst-case removal slack is 8.000
 Info (332146): Worst-case minimum pulse width slack is -3.500
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -3.500      -742.000 CLOCKIN 
+    Info (332119):    -3.500      -672.000 CLOCKIN 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 305 megabytes
-    Info: Processing ended: Sat Feb 13 16:37:26 2016
-    Info: Elapsed time: 00:00:01
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 13 warnings
+    Info: Peak virtual memory: 370 megabytes
+    Info: Processing ended: Fri May 13 19:35:42 2016
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 

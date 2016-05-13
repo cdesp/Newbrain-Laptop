@@ -21,7 +21,10 @@ entity vga is
 			FRMst: out std_logic; -- frame start		
 					
 			CLOCKINT: out std_logic;
-			COPREGINT: out std_logic
+			COPREGINT: out std_logic;
+			enbusO: out std_logic;
+			lastbus: out std_logic;
+			snarrow:out std_logic
 			);
 end vga;
 
@@ -52,7 +55,9 @@ constant SSc : integer :=40; --640 div 8
 signal clktmp:std_logic:='0';
 signal copcnt:integer range 0 to 195:=0;
 
-signal enbus:std_logic:='0';
+
+signal sBusReq:std_logic;
+signal enbus:std_logic;
 --Signal stinit:std_logic:='0';
 
 --16Mhz Clock makes 1024pixels at 64us
@@ -91,8 +96,8 @@ begin
 	 --640pixels visible 
 	  videoh <= '0';
 	--  if vcount=41 and  (hcount>=leftgap-2) and (hcount<(640+leftgap)) then --two more pixels for the 1st line
-	  --   videoh <= '1';
-	  --elsif (hcount>=leftgap) and (hcount<(640+leftgap)) then 
+	 --    videoh <= '1';
+	 -- elsif (hcount>=leftgap) and (hcount<(640+leftgap)) then 
 	  if (hcount>=leftgap) and (hcount<(640+leftgap)) then 
         videoh <= '1';
      end if;
@@ -255,13 +260,22 @@ end process;
 
 
 
-	dataO <= videoh and videov when busack='0' else '0';-- if we should output to screen 
+--	dataO <= videoh and videov when busack='0' else '0';-- if we should output to screen --4/5/2016
+	dataO <= videoh and videov when sBusReq='0' else '0';-- if we should output to screen 
 		
 	--this is for the whole 1024 pixels OF 250 line maybe more
-	enbus<='1' when (hcount>leftgap-128) and (hcount<leftgap+640+128) else '0';
+	enbus<='1' when (hcount>leftgap-48) and (hcount<leftgap+640+8) else '0'; --128 Enabled Bus Request
+	enbusO<='1' when (hcount>leftgap-48) and (hcount<leftgap)  --Reset EOT Signal = End OF Text
+	 else '0';
+	lastbus<='1' when (hcount>leftgap+640-48) and (hcount<leftgap+640)--Enable BusReq when EOT=1 just for the last char
+	  else '0';  
 	 
+	snarrow<='0' when (hcount<leftgap+64) or (hcount>leftgap+575)--Narrow Graphics Screen Area
+	 else '1';
 	--Busreq <= '0' when vcount>39 and vcount <291  and VGAen='1' else '1'; -- active low	
-	Busreq <= '0' when (vcount>40 and vcount <291) and enbus='1' and VGAen='1' else '1'; -- active low	
+	
+	sBusReq <= '0' when (vcount>40 and vcount <291) and enbus='1' and VGAen='1' else '1'; -- active low	
+	BusReq<=sBusReq;
 	
 --	VISLN <=videov when   busack='0' else '0';
 	COPREGINT <= '0' WHEN copcnt=1 else '1'; -- every 12,5 ms

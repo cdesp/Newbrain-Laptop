@@ -1,9 +1,9 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="CRT">
+		<CBX_INST_ENTRY INSTANCE_NAME="|CRT|lpm_add_sub:Add2" CBX_FILE_NAME="add_sub_qnh.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CRT|lpm_counter:addrrow_rtl_0|lpm_add_sub:add_sub" CBX_FILE_NAME="add_sub_3ve.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CRT|vga:vga1|lpm_add_sub:Add1" CBX_FILE_NAME="add_sub_snh.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|CRT|lpm_add_sub:Add1" CBX_FILE_NAME="add_sub_qnh.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CRT|lpm_counter:addrrow_rtl_0|lpm_constant:scdw" CBX_FILE_NAME="lpm_constant_ki3.tdf"/>
 		<CBX_INST_ENTRY INSTANCE_NAME="|CRT|vga:vga1|lpm_add_sub:Add2" CBX_FILE_NAME="add_sub_rnh.tdf"/>
 	</PROJECT>

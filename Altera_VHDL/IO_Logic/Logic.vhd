@@ -104,8 +104,8 @@ Port (
 			  REVO:out STD_LOGIC; --	
 			  EPRWR:out STD_LOGIC; --	
 			  
-			 -- TEST:out STD_LOGIC; --
-			 -- TEST1:out STD_LOGIC; --
+			  TEST:out STD_LOGIC; --
+			  TEST1:out STD_LOGIC; --
 			 -- IKB:out STD_LOGIC; --
 			 CTS:in STD_LOGIC; -- v24 cts
 			 RTS:out STD_LOGIC; -- v24 rts
@@ -116,9 +116,9 @@ Port (
 			  LCDRS:out STD_LOGIC; -- PUT RS = DATA(1) 
 			  LCDEN:out STD_LOGIC; ----LCD 16x2 selected WHEN 1
 			  
-			  HALTO:out STD_LOGIC; --	
-			  ZEROO:out STD_LOGIC; --	
-			  TWOO:out STD_LOGIC; --
+		--	  HALTO:out STD_LOGIC; --	
+		--	  ZEROO:out STD_LOGIC; --	
+		--	  TWOO:out STD_LOGIC; --
 			  IOH:out STD_LOGIC; --			  
 			  DISPEN:out STD_LOGIC --	
 			  );
@@ -166,7 +166,9 @@ signal ENABLEREG :  std_logic_vector(8-1 downto 0);
 --signal validdata:STD_LOGIC;
 
 signal COPINT:STD_LOGIC; -- set from cop
+signal COPINTpre:STD_LOGIC; -- set from cop
 signal FRMFREQ:STD_LOGIC:='1'; -- 50Hz should get it from other XC9572 FS
+signal FRMFREQpre:STD_LOGIC;
 signal cntr:integer:=0;
 signal CLK4:STD_LOGIC; -- clock for 50hz
 
@@ -416,23 +418,29 @@ end process;
 	IRQ <= '0' WHEN sIORQ='0' and BUSACK='1' and sM1='1' 
 	 ELSE  '1';
 	 
-	ZEROO <= '1' WHEN IRQ='0' and  VADDRLow=x"00"
-	 ELSE '0';
-	HALTO <= '1' WHEN IRQ='0' and  VADDRLow=x"01"
-	 ELSE '0';
-	TWOO  <= '1' WHEN IRQ='0' and  VADDRLow=x"02"
-	 ELSE '0';
+--	ZEROO <= '1' WHEN IRQ='0' and  VADDRLow=x"00"
+--	 ELSE '0';
+--	HALTO <= '1' WHEN IRQ='0' and  VADDRLow=x"01"
+--	 ELSE '0';
+--	TWOO  <= '1' WHEN IRQ='0' and  VADDRLow=x"02"
+--	 ELSE '0';
 	--Z80 INTERRUPT IN
    FRMFREQ<='0' WHEN CLK50='0'  AND frmfreqon='0'
 		 ELSE '1' WHEN	(IRQ='0' and  VADDRLow=x"04" ) 
+		 ELSE '1' WHEN IRQ='0' and  VADDRLow=x"14" AND RDin='0' --4/5/2016
 		-- ELSE '1' WHEN frmfreqon='1'
 	    ELSE FRMFREQ;
+   FRMFREQpre<=FRMFREQ;
    COPINT <='0' WHEN CLKCOP='0' 
-	    ELSE '1' WHEN IRQ='0' and  VADDRLow=x"06" AND RDin='0' --was WRin='0' 7/2/2016
+	    ELSE '1' WHEN IRQ='0' and  VADDRLow=x"14" AND RDin='0' --was WRin='0' 7/2/2016 ,VADDRLow=x"06" 4/5/2016
 		 ELSE COPINT;
+	COPINTpre<=COPINT;
+	
+	TEST<=FRMFREQ;
+	TEST1<=COPINT;
 	
 	KB_Int <= not Scan_DAV ;
-	INT <= FRMFREQ and COPINT and KB_int ; -- ACTIVE LOW
+	INT <= FRMFREQpre and COPINTpre and KB_int ; -- ACTIVE LOW
 	PS2_CLK<= '0' WHEN KB_INT='0' ELSE 'Z';
 	KB_Stop<='1' WHEN KB_Int='0'  and mydata=x"77" --BREAK KEY
 	   ELSE  '0' WHEN COPCTL=x"D0"
@@ -524,7 +532,7 @@ end process;
    DATAout <= 
 			 COPCTL2 WHEN IRQ='0' and  RDin='0' AND  VADDRLow=x"06"
 	  ELSE mydata WHEN IRQ='0' AND RDin='0' AND VADDRLow=KBPORT -- from ps/2 data
-	  ELSE COPINT&'1'&FRMFREQ&"00101" WHEN IRQ='0' and  RDin='0' AND  VADDRLow=x"14" --IN 20 STATUS REGISTER
+	  ELSE COPINTpre&'1'&FRMFREQpre&"00101" WHEN IRQ='0' and  RDin='0' AND  VADDRLow=x"14" --IN 20 STATUS REGISTER
 																				--bit 1 is pwrup should be 0 when we are ready
      ELSE COPCTL WHEN IRQ='0' AND RDin='0' AND VADDRLow=x"3"	
 	  ELSE "101000"&CTS&RX WHEN IRQ='0' AND RDin='0' AND VADDRLow=x"16"	--IN 22 GET V24 SIGNALS (ZEROES NOT USED)

@@ -3,8 +3,8 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Setup 'CLOCKIN'
-Slack : -38.000
-TNS   : -2483.000
+Slack : -57.000
+TNS   : -3517.000
 
 Type  : Hold 'CLOCKIN'
 Slack : 5.000
@@ -12,7 +12,7 @@ TNS   : 0.000
 
 Type  : Recovery 'CLOCKIN'
 Slack : -20.000
-TNS   : -1172.000
+TNS   : -960.000
 
 Type  : Removal 'CLOCKIN'
 Slack : 8.000
@@ -20,6 +20,6 @@ TNS   : 0.000
 
 Type  : Minimum Pulse Width 'CLOCKIN'
 Slack : -3.500
-TNS   : -742.000
+TNS   : -672.000
 
 ------------------------------------------------------------
