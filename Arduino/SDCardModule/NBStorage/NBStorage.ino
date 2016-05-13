@@ -89,6 +89,7 @@ void setup() {
   
   pinMode(CTSpin, INPUT_PULLUP);
   pinMode(RTSpin, OUTPUT);
+//  pinMode(TX, OUTPUT);
 
   // Switch on the backlight
   lcd.init();
@@ -495,6 +496,7 @@ void printDirectory(){
 void loop() {
   //char ts[10];
   char ch = Serial.read();
+  if (int(ch)==-1) {
   if (butNextPressed()) ch='w';
   else
   if (butPrevPressed()) ch='q';
@@ -504,7 +506,8 @@ void loop() {
   if (butRECPressed()) ch='r';
   else
   if (butStopPressed()) ch='x';
-
+  }
+  
  //Serial.print(int(ch),DEC);
   if (int(ch)>0) {Serial.print("Button=");Serial.write(ch);Serial.println("");}
  
@@ -563,6 +566,10 @@ void loop() {
              break;
     case 'm':RTSOFF();
              break;   
+    case ',':digitalWrite(TX, HIGH);
+             break;                
+  case '.':digitalWrite(TX, LOW);
+             break;                
   }
 
 }
