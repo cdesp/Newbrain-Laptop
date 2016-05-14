@@ -270,9 +270,10 @@ end process;
 	lastbus<='1' when (hcount>leftgap+640-48) and (hcount<leftgap+640)--Enable BusReq when EOT=1 just for the last char
 	  else '0';  
 	 
-	snarrow<='0' when (hcount<leftgap+64) or (hcount>leftgap+575)--Narrow Graphics Screen Area
-	 else '1';
-	--Busreq <= '0' when vcount>39 and vcount <291  and VGAen='1' else '1'; -- active low	
+	snarrow<='0'; 
+--	snarrow<='0' when (hcount<leftgap+64) or (hcount>leftgap+575)--Narrow Graphics Screen Area
+--	 else '1';
+	----Busreq <= '0' when vcount>39 and vcount <291  and VGAen='1' else '1'; -- active low	
 	
 	sBusReq <= '0' when (vcount>40 and vcount <291) and enbus='1' and VGAen='1' else '1'; -- active low	
 	BusReq<=sBusReq;

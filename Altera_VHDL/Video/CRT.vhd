@@ -58,7 +58,7 @@ entity CRT is
 			  UCR:in STD_LOGIC; --10 PIXEL PER CHAR
 			  s80L:in STD_LOGIC; -- 80 CHARS PER LINE (MEANS 1 PIXEL HORIZ)
 			  S3240:in STD_LOGIC; --
-			  S3240_2:in STD_LOGIC;
+			--  S3240_2:in STD_LOGIC;
 			  sFS:in STD_LOGIC; --
 			  RV:in STD_LOGIC; -- REVERSE FIELD
 			--  TVP:in STD_LOGIC; -- eNABLE
@@ -150,15 +150,15 @@ signal OUTOK:std_logic;
 
 signal sTVCLK:std_logic:='0';
 signal VISLN:std_logic:='0';
-signal EOT:std_logic:='0';
-signal SKIP:std_logic:='0';
+signal EOT,sEOT2:std_logic:='0'; -- for end of text code 0 on text screen
+signal SKIP:std_logic:='0'; -- for narrow screen
 signal RECOUNT:std_logic:='0';
 signal RVF:std_logic:='0';
 signal sRVUP:std_logic:='0';
 signal RVUP:std_logic:='0';
 signal pxl:std_logic:='0';
 
-signal sBusreq,enbus,sEOT2,sNewFrm,sOdd,slastbus:std_logic;
+signal sBusreq,enbus,slastbus:std_logic;
 signal snarrow:std_logic;
 
 
@@ -189,9 +189,9 @@ begin
 	  row <=0;
 	  rowcnt<="0000";	   --"0000"
 	  --sNewFrm<='0';
-	  sOdd<='1';
+	 
 	  
-	  --screenend<='0';  
+	  screenend<='0';  
 	  start<='0';
 	  
 	  pxl<='0';
@@ -214,10 +214,14 @@ begin
 	if zerocnt=2 and istext='1' then
 	   istext<='0'; -- text end
    end if;		
+   if istext='1' and (enbus='1' or slastbus='1') then
+     zerocnt<=0;
+	end if;  
+	
 
---	if istext='0' and isgraph='0' and zerocnt = 0  then--check this 0,0,20,20 end the text screen and no graphics
- --     screenend <='1'; 
-  -- end if;	
+	if (istext='0' and isgraph='0' and zerocnt = 0) or row>249  then--check this 0,0,20,20 end the text screen and no graphics
+     screenend <='1'; 
+   end if;	
 	
 			IF ISGRAPH='0' AND zerocnt=4 THEN -- check for graphics stream
 				 IF (S80L AND S3240)='1' THEN			
@@ -233,6 +237,7 @@ begin
 					 SKIP<='1';
 				 END IF;	 
 			END IF; 		
+	
 	--isgraph<='0';-- disable graph temp 9/5/2016
 end procedure;
 
@@ -290,7 +295,7 @@ begin
 	  doHiDef; --9/5/2016 temp
     else --s80l='0' low def 40 pixels per line					  
 	  doLoDef;
-	 end if; -- else s80l =0  
+	 end if; -- else s80l =0 
 end procedure;
 
 procedure prepNxtByte is
@@ -307,6 +312,8 @@ begin
 			  else
 				    zerocnt<=0;
 			  end if;  		
+			  
+			  
 			
 end procedure;
 
@@ -404,10 +411,11 @@ begin
        -- EOT<='0';		
 		  --if istext='1' then			   	
 			 -- BYTEVAL<=chardataIN;
-		--  END IF;	 
+		   -- END IF;	 
 		  
 	    -- BYTEVAL	<="01000010";
 		  --doNewByte;
+		  --zerocnt<=0;
       --end if;
 		pxlshft<='0';
 	  	
@@ -439,8 +447,9 @@ begin
 		     bithandler;  
 			 elsif bitcnt=0 then 
 			  addrcol<=addrcol+1; 
-			  --col<=col+1;
-			  DoTextNxtRow;	
+			  --col<=col+1;			  
+			  --DoTextNxtRow;	
+			  --zerocnt<=0;
 			 end if; 
 		  end if;  
 		     
@@ -487,7 +496,8 @@ end process;
 	  PXLOUT<= --'1' when dataread='1' and bitcnt=5 and addrcol="0000011"  --we always print the previous and prepare the next byte
 	          --'1' when sEOT2='1' and (busack='0' or dataread='1')
 				 --'1' when busack='0'
-				  pxlshft XOR RVF when busack='0' and dataread='1' and start='1' and EOT='0' --and (addrcol="0000010" or addrcol="0000011" or addrcol="0000100"  )
+				-- '1' when Datain="00000000" and dataread='1'
+				 pxlshft XOR RVF when busack='0' and dataread='1' and start='1' and EOT='0' --and (addrcol="0000010" or addrcol="0000011" or addrcol="0000100"  )
 				--else '1' when (enbus='1') --and  (col=0 or col=639) else
 				ELSE '0' XOR RVF when  busack='0' and dataread='1' and start='1' and EOT='1' 
 				ELSE '0' ;
@@ -515,7 +525,7 @@ end process;
 	 -- else '0';
 	Busreq<=
 	   sBusreq when slastbus='1'
-		else '1' when (EOT='1' and ISTEXT='1') --or SCREENEND='1'		
+		else '1' when (EOT='1' and ISTEXT='1') --or SCREENEND='1'	
 		else sBusreq;
 	
 	--Busreq<=sBusreq;
@@ -526,18 +536,10 @@ end process;
    DATAin <= DATA;
 	CHARDATAin <=CHARDATA;	
 	
-  -- VIDADDR <= '0'&std_logic_vector(to_unsigned(addrrow,8))&std_logic_vector(to_unsigned(addrcol,7)) when busack='0' and dataread='1' else (others=>'Z');			
- --VIDADDR <= std_logic_vector(to_unsigned(addrcnt,16)) when   dataread='1' else (others=>'Z');
- --VIDADDR <= '0'&addrvec when busack='0' and dataread='1' else (others=>'Z');
- --CHARCOUNT <= std_logic_vector(to_unsigned(rowcnt,4)) when busack='0' else (others=>'0');
-
- 	
-	--STADDR<=DATAIN when SETADDR='1' AND BUSACK='1'
-	-- else STADDR;
 	
-   screenend<='1' when row>249 or (istext='0' and isgraph='0' and zerocnt = 0 )
-	 else '0' when FRMST='1'
-	 else screenend;
+   --screenend<='1' when row>249 or (istext='0' and isgraph='0' and zerocnt = 0 )
+	-- else '0' when FRMST='1'
+	-- else screenend;
  
    vga1 : entity work.vga port map(CLOCKIN,sBusreq,busack,ENABLE,DATAREAD,CSYNC, FRMST,NBCLKINT,NBCOPINT,enbus,slastbus,snarrow); 
 	
