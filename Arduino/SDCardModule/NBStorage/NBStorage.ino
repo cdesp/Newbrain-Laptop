@@ -1,6 +1,3 @@
-
-
-
 #include <SPI.h>
 #include <SD.h>
 #include <Wire.h>
@@ -34,6 +31,8 @@ LiquidCrystal_I2C lcd(I2C_ADDR, 16, 2); // set the LCD address to 0x27 for a 16 
 // mosi pin 11
 // miso pin 12
 
+//Sound beeper
+#define buzpin 9
 
 char t[20];
 int totalFiles=0;
@@ -91,6 +90,9 @@ void setup() {
   pinMode(RTSpin, OUTPUT);
 //  pinMode(TX, OUTPUT);
 
+
+  pinMode(buzpin, OUTPUT);  
+  
   // Switch on the backlight
   lcd.init();
   lcd.backlight();
@@ -168,6 +170,13 @@ void setup() {
 
 
   Serial.println(F("done!"));
+  beep();delay(500);beep();delay(200);beep();
+  
+}
+
+
+void beep(){
+ tone(buzpin, 1000 , 80);
 }
 
 boolean butStopPressed(){
@@ -495,6 +504,8 @@ void printDirectory(){
 
 void loop() {
   //char ts[10];
+  
+  
   char ch = Serial.read();
   if (int(ch)==-1) {
   if (butNextPressed()) ch='w';
@@ -515,12 +526,15 @@ void loop() {
 
     
     case 'q': prevFile(); //button 1
+      beep();
       printfile();
       break;
     case 'w': nextFile(); //button 2
+      beep();
       printfile();
       break;
     case 'o'://open dir or send file              //button 3 select or play
+      beep();
       if (curFile.isDirectory()){
         openCurrentDirectory(curFile,false);
         printDirectory();
@@ -529,7 +543,7 @@ void loop() {
       else sendSelectedFile(); //send to NB
 
       break;
-    case 'r': lcdprintline1("AGN TO RECORD?  ");//delay(butdel);
+    case 'r': beep();lcdprintline1("AGN TO RECORD?  ");//delay(butdel);
               do {
                 if (butStopPressed()) {Serial.println("Cancel Record");printDirectory(); break;}
                 else
@@ -537,7 +551,7 @@ void loop() {
                         printfile();break;}                
                 } while (true);              
       break;
-      case 'x': openRoot();
+      case 'x': beep();openRoot();
                 break;
     /*
     case 'p':myFile=SD.open("DESP");
@@ -568,8 +582,8 @@ void loop() {
              break;   
     case ',':digitalWrite(TX, HIGH);
              break;                
-  case '.':digitalWrite(TX, LOW);
-             break;                
+    case '.':digitalWrite(TX, LOW);
+             break;                             
   }
 
 }
