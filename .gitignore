@@ -22,3 +22,7 @@
 *.summary
 *.jdi
 *.pof
+Altera_VHDL/VideoNew/output_files/
+Altera_VHDL/VideoNew/db/NBVideoContr.atom.rvd
+Altera_VHDL/VideoNew/db/
+Altera_VHDL/VideoNew/incremental_db/

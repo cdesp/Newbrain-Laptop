@@ -36,76 +36,188 @@
 # -------------------------------------------------------------------------- #
 
 
-set_global_assignment -name FAMILY MAX7000S
-set_global_assignment -name DEVICE "EPM7160SLC84-10"
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE6E22C6
 set_global_assignment -name TOP_LEVEL_ENTITY NBVideoContr
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:06:07  JUNE 19, 2016"
 set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
 set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
-set_global_assignment -name DEVICE_FILTER_PACKAGE PLCC
 set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR "-1"
 set_global_assignment -name MAX7000_OPTIMIZATION_TECHNIQUE AREA
-set_global_assignment -name DEVICE_FILTER_PIN_COUNT 84
-set_global_assignment -name VHDL_FILE NBVideoContr.vhd
 set_global_assignment -name MAX7000_DEVICE_IO_STANDARD TTL
-set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS OFF
-set_global_assignment -name OPTIMIZE_HOLD_TIMING OFF
-set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING OFF
-set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
-set_global_assignment -name ALM_REGISTER_PACKING_EFFORT HIGH
-set_global_assignment -name AUTO_RESOURCE_SHARING ON
-set_global_assignment -name OPTIMIZE_IOC_REGISTER_PLACEMENT_FOR_TIMING "PACK ALL IO REGISTERS"
+set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS ON
+set_global_assignment -name OPTIMIZE_HOLD_TIMING "ALL PATHS"
+set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
+set_global_assignment -name FITTER_EFFORT "AUTO FIT"
+set_global_assignment -name ALM_REGISTER_PACKING_EFFORT MEDIUM
+set_global_assignment -name AUTO_RESOURCE_SHARING OFF
+set_global_assignment -name OPTIMIZE_IOC_REGISTER_PLACEMENT_FOR_TIMING NORMAL
 set_global_assignment -name SLOW_SLEW_RATE ON
-set_location_assignment PIN_84 -to BUSACK
-set_location_assignment PIN_67 -to Busreq
-set_location_assignment PIN_54 -to CHARCOUNT[3]
-set_location_assignment PIN_55 -to CHARCOUNT[2]
-set_location_assignment PIN_52 -to CHARCOUNT[1]
-set_location_assignment PIN_51 -to CHARCOUNT[0]
-set_location_assignment PIN_40 -to CHARDATA[7]
-set_location_assignment PIN_37 -to CHARDATA[6]
-set_location_assignment PIN_36 -to CHARDATA[5]
-set_location_assignment PIN_35 -to CHARDATA[4]
-set_location_assignment PIN_33 -to CHARDATA[3]
-set_location_assignment PIN_34 -to CHARDATA[2]
-set_location_assignment PIN_31 -to CHARDATA[1]
-set_location_assignment PIN_30 -to CHARDATA[0]
-set_location_assignment PIN_83 -to CLOCKIN
-set_location_assignment PIN_41 -to CSYNC
-set_location_assignment PIN_69 -to DATA[7]
-set_location_assignment PIN_70 -to DATA[6]
-set_location_assignment PIN_73 -to DATA[5]
-set_location_assignment PIN_74 -to DATA[4]
-set_location_assignment PIN_76 -to DATA[3]
-set_location_assignment PIN_75 -to DATA[2]
-set_location_assignment PIN_77 -to DATA[1]
-set_location_assignment PIN_80 -to DATA[0]
-set_location_assignment PIN_49 -to ENABLE
-set_location_assignment PIN_29 -to NBCOPINT
-set_location_assignment PIN_68 -to PXLOUT
-set_location_assignment PIN_48 -to TVCLK
-set_location_assignment PIN_27 -to VIDADDR[15]
-set_location_assignment PIN_25 -to VIDADDR[14]
-set_location_assignment PIN_24 -to VIDADDR[13]
-set_location_assignment PIN_22 -to VIDADDR[12]
-set_location_assignment PIN_21 -to VIDADDR[11]
-set_location_assignment PIN_20 -to VIDADDR[10]
-set_location_assignment PIN_18 -to VIDADDR[9]
-set_location_assignment PIN_17 -to VIDADDR[8]
-set_location_assignment PIN_5 -to VIDADDR[7]
-set_location_assignment PIN_8 -to VIDADDR[6]
-set_location_assignment PIN_9 -to VIDADDR[5]
-set_location_assignment PIN_10 -to VIDADDR[4]
-set_location_assignment PIN_11 -to VIDADDR[3]
-set_location_assignment PIN_15 -to VIDADDR[2]
-set_location_assignment PIN_12 -to VIDADDR[1]
-set_location_assignment PIN_16 -to VIDADDR[0]
-set_location_assignment PIN_56 -to sRV
-set_location_assignment PIN_57 -to s80L
-set_location_assignment PIN_58 -to s3240
-set_location_assignment PIN_60 -to sVIDEO9
-set_location_assignment PIN_61 -to sUCR
-set_location_assignment PIN_63 -to sFS
-set_location_assignment PIN_64 -to sSETADDR
-set_location_assignment PIN_65 -to NBCLKINT
+set_location_assignment PIN_87 -to BUSACK
+set_location_assignment PIN_86 -to Busreq
+set_location_assignment PIN_106 -to CHARCOUNT[3]
+set_location_assignment PIN_104 -to CHARCOUNT[2]
+set_location_assignment PIN_101 -to CHARCOUNT[1]
+set_location_assignment PIN_99 -to CHARCOUNT[0]
+set_location_assignment PIN_135 -to CHARDATA[7]
+set_location_assignment PIN_132 -to CHARDATA[6]
+set_location_assignment PIN_128 -to CHARDATA[5]
+set_location_assignment PIN_126 -to CHARDATA[4]
+set_location_assignment PIN_124 -to CHARDATA[3]
+set_location_assignment PIN_120 -to CHARDATA[2]
+set_location_assignment PIN_115 -to CHARDATA[1]
+set_location_assignment PIN_113 -to CHARDATA[0]
+set_location_assignment PIN_84 -to CLOCKIN
+set_location_assignment PIN_100 -to CSYNC
+set_location_assignment PIN_136 -to DATA[7]
+set_location_assignment PIN_133 -to DATA[6]
+set_location_assignment PIN_129 -to DATA[5]
+set_location_assignment PIN_127 -to DATA[4]
+set_location_assignment PIN_125 -to DATA[3]
+set_location_assignment PIN_121 -to DATA[2]
+set_location_assignment PIN_119 -to DATA[1]
+set_location_assignment PIN_114 -to DATA[0]
+set_location_assignment PIN_50 -to ENABLE
+set_location_assignment PIN_83 -to NBCOPINT
+set_location_assignment PIN_103 -to PXLOUT
+set_location_assignment PIN_80 -to TVCLK
+set_location_assignment PIN_53 -to VIDADDR[15]
+set_location_assignment PIN_55 -to VIDADDR[14]
+set_location_assignment PIN_59 -to VIDADDR[13]
+set_location_assignment PIN_64 -to VIDADDR[12]
+set_location_assignment PIN_66 -to VIDADDR[11]
+set_location_assignment PIN_68 -to VIDADDR[10]
+set_location_assignment PIN_70 -to VIDADDR[9]
+set_location_assignment PIN_72 -to VIDADDR[8]
+set_location_assignment PIN_54 -to VIDADDR[7]
+set_location_assignment PIN_58 -to VIDADDR[6]
+set_location_assignment PIN_60 -to VIDADDR[5]
+set_location_assignment PIN_65 -to VIDADDR[4]
+set_location_assignment PIN_67 -to VIDADDR[3]
+set_location_assignment PIN_69 -to VIDADDR[2]
+set_location_assignment PIN_71 -to VIDADDR[1]
+set_location_assignment PIN_73 -to VIDADDR[0]
+set_location_assignment PIN_38 -to sRV
+set_location_assignment PIN_42 -to s80L
+set_location_assignment PIN_44 -to s3240
+set_location_assignment PIN_49 -to sVIDEO9
+set_location_assignment PIN_39 -to sUCR
+set_location_assignment PIN_43 -to sFS
+set_location_assignment PIN_46 -to sSETADDR
+set_location_assignment PIN_85 -to NBCLKINT
+
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name SYNTHESIS_SEED 1
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BUSACK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to Busreq
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CHARCOUNT[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CHARCOUNT[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CHARCOUNT[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CHARCOUNT[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CHARDATA[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CHARDATA[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CHARDATA[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CHARDATA[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CHARDATA[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CHARDATA[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CHARDATA[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CHARDATA[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLOCKIN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CSYNC
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DATA[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DATA[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DATA[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DATA[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DATA[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DATA[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DATA[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DATA[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ENABLE
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to NBCLKINT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to NBCOPINT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PXLOUT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PXLOUT2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to s80L
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to s3240
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sFS
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sRV
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sSETADDR
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sUCR
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to sVIDEO9
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TEST
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TVCLK
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VIDADDR[15]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VIDADDR[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VIDADDR[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VIDADDR[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VIDADDR[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VIDADDR[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VIDADDR[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VIDADDR[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VIDADDR[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VIDADDR[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VIDADDR[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VIDADDR[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VIDADDR[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VIDADDR[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VIDADDR[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to VIDADDR[0]
+set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
+set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DCLK_AFTER_CONFIGURATION "COMPILER CONFIGURED"
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_NEAR_END_VMEAS "HALF VCCIO" -fall
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -rise
+set_global_assignment -name OUTPUT_IO_TIMING_FAR_END_VMEAS "HALF SIGNAL SWING" -fall
+set_location_assignment PIN_10 -to LED1
+set_location_assignment PIN_11 -to LED2
+set_location_assignment PIN_28 -to LED3
+set_location_assignment PIN_30 -to LED4
+set_location_assignment PIN_31 -to LED5
+set_location_assignment PIN_32 -to LED6
+set_location_assignment PIN_33 -to LED7
+set_location_assignment PIN_34 -to LED8
+set_location_assignment PIN_89 -to BTN1
+set_location_assignment PIN_88 -to BTN2
+set_location_assignment PIN_144 -to CLK4
+set_location_assignment PIN_24 -to SysClk
+set_location_assignment PIN_110 -to SysClk4
+set_location_assignment PIN_112 -to SysClk16
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLK4
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PXLCLKOUT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SysClk
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SysClk4
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SysClk16
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED3
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED4
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED5
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED6
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED7
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to LED8
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BTN1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BTN2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to BTN3
+set_location_assignment PIN_2 -to M1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to M1
+set_global_assignment -name VHDL_FILE NBVideoContr.vhd
+set_global_assignment -name QIP_FILE myPLL.qip
+set_global_assignment -name CDF_FILE output_files/NBVideoContr.cdf
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_location_assignment PIN_105 -to PXLOUT2
+set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
+set_global_assignment -name SMART_RECOMPILE ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_COMBO_LOGIC ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_ASYNCHRONOUS_SIGNAL_PIPELINING ON
+set_global_assignment -name PHYSICAL_SYNTHESIS_REGISTER_DUPLICATION ON
+set_global_assignment -name CYCLONEII_OPTIMIZATION_TECHNIQUE SPEED
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
