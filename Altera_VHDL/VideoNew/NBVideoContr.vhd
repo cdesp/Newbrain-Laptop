@@ -38,12 +38,12 @@ entity NBVideoContr is
 			  --VIDEO SIGNALS
 			  sUCR:in STD_LOGIC; --10 PIXEL PER CHAR
 			  s80L:in STD_LOGIC; -- 80 CHARS PER LINE (MEANS 1 PIXEL HORIZ)
-			  s3240:in STD_LOGIC; --
+			  s3240:in STD_LOGIC; -- narrow graphics screen
 			  sFS:in STD_LOGIC; --
 			  sRV:in STD_LOGIC; -- REVERSE FIELD
 			--  TVP:in STD_LOGIC; -- eNABLE
 			  sSETADDR: in STD_LOGIC;	
-			  sVIDEO9: in STD_LOGIC;  -- 1 WHEN VIDEO ADDR IS BIG			  
+			  sVIDEO9: in STD_LOGIC;  -- 1 WHEN low VIDEO ADDR start from 1
 			  TVCLK: OUT STD_LOGIC;
 			  Busreq:out STD_LOGIC;
 			 -- HSYNCO:out STD_LOGIC;
@@ -52,6 +52,9 @@ entity NBVideoContr is
 			  TEST:OUT STD_LOGIC;
 			  NBCLKINT:out STD_LOGIC;
 			  NBCOPINT:out STD_LOGIC;
+			  
+			  Q7:in STD_LOGIC;
+			  QD7:out STD_LOGIC;
 
 			  PXLCLKOUT:out STD_LOGIC;
 			  CLK4:in STD_LOGIC;
@@ -198,7 +201,12 @@ signal prenxtchar:std_logic;
 signal char80,getdata:std_LOGIC;
 signal charsperline:integer range 0 to 130;--max 128 for text 64 or 128
 signal graphperline:integer range 0 to 130;--max 128 for graph 40 or 80
-
+signal noBusrq:std_logic;
+signal narrowgap:integer range 0 to 10;
+signal charHeight:integer range 0 to 10;
+signal setvideo9:std_logic;
+signal sQ7,sQD7:std_logic;
+Signal tFS:std_logic;
 
 begin
 
@@ -302,294 +310,6 @@ begin
 end process;
 
 
---=================================================================================================
---=================================================================================================
---=================================================================================================
---=================================================================================================
-
---process (pxlclk,videov)
---variable t:boolean;  --bit counter
---
---procedure donextpixel is
---Begin
---	    if char80='0' then
---	--	  t:=not t;
---		  --t:=true;
---	--	 else
---	--	  t:=true; 
---	      if col mod 2=0 then
---		     t:=true;
---		   elsE
---		     t:=false;
---		   end if; 
---		 else 
---		   t:=true; 
---		 end if;
---		 col<=col+1;
---	    if t=true then        
---		  nxtpixel<='1';	 
---		 end if; 
---
---end procedure;
---
---begin
---  
---  if rising_edge(pxlclk) and videov='1' then
---    nxtpixel<='0';	   
---    nxtrow<='0';   
---    if (hcount=leftgap and char80='1') or (hcount=leftgap and char80='0')  then
---	  col<=0;	  
---	  t:=true;
---    elsif col<colend  then	
---	   donextpixel;
---	 elsif col=colend then
---	   nxtrow<='1';
---	 end if; 
---  end if;	 
---end process;
---
---process (pxlclk,col,nxtpixel,hcount)
---begin
---   
---  if hcount=leftgap-2 then
---    getdata<='1';
---	 bitcnt<=7;
---	 stvCLK<='1';
---	 nxtchar<='0';
--- 	-- datacur<=datacurnext;
---	 --charDATACUR<=charDATACURnext;
---  elsif hcount=leftgap-1 then	 
---    nxtchar<='1';
---  elsif hcount=leftgap then
---	 bitcnt<=0;  	 
---	 getdata<='0';
--- 	 datacur<=datacurnext;
---	 charDATACUR<=charDATACURnext;	 
---	 nxtchar<='1';
---	 stvCLK<='0';
---  elsif col=colend then	 
---    nxtchar<='0';
---  elsif rising_edge(pxlclk) and nxtpixel='1'  then
---    getdata<='0';
---    nxtchar<='0';
---    bitcnt<=bitcnt+1; 
---	 stvCLK<='0';
---	 if bitcnt=2 then
---	      
---		stvCLK<='1';
---	 elsif (bitcnt=7 and char80='1') or (bitcnt=7 and char80='0' and col mod 2=1)  then	 
---		nxtchar<='1';
---		datacur<=datacurnext;
---		charDATACUR<=charDATACURnext;
---		
-----	 elsif bitcnt>7 then
--- --     bitcnt<=0; 
---  --    nxtchar<='1';		
---	 end if;	
---  end if;  
---end process;
---
---process (nxtrow,frmst)
---begin
---  if frmst='1' then
---    rows<=0;
---	 nxtline<='0';	  
---  elsif rising_edge(nxtrow) then
---   rows<=rows+1;
---	nxtline<='0';	  
---	if rows mod 10=0 then  -- todo 8 pixel height of char
---	  rowcnt<="0000";
---	  nxtline<='1';	  
---	 else
---	  rowcnt<=rowcnt+1;     
---	end if;
---  end if;	
---
---end process;
---
---process (pxlCLK,nxtchar,hcount,col)
---Begin
---  if rising_edge(pxlCLK) then --and hcount>leftgap+6 then
---    prenxtchar<=nxtchar;
---	if hcount<=leftgap-7 then
---	  chartp<=0;
---	  prenxtchar<='0';
---	elsif nxtchar='1' and ((prenxtchar/=nxtchar and char80='0') or char80='1')   then
---     chartp<=chartp+1; 	  
---	end if;  
---	
---end if;
---
-----   if hcount<leftgap-1 then
-----	  chartp<=0;
-----	elsif hcount<=leftgap+2 then
-----    chartp<=1;
-----	elsif rising_edge(nxtchar) then --and hcount>leftgap+6 then
-----	    chartp<=chartp+1; 
-----	end if;  
---end process;
---
---
---process (nxtline,frmst,rows)
---Begin
---  if frmst='1' then
---    linecnt<=1;
---  elsif rising_edge(nxtline) and rows>3 then --next line
---    linecnt<=linecnt+1;
---  end if;
---end process;
---
---process (pxlclk,frmst,staddr,linecnt,chartp,istext)
---begin
--- if frmst='1' then
---   addr<=to_integer(unsigned(staddr));
--- elsif rising_edge(pxlCLK) then   
---    if isgraph='1' then
---	   addr<=grphaddr+grphdiff*graphperline+chartp;	 --done: change 40 to a var depends on s80l	  
---	 else
---	   addr<=to_integer(unsigned(staddr))+(linecnt-1)*charsperline+chartp ; 	 
---	 end if;
--- end if; 
---end process;
---
---process (frmst,nxtSTADDR)
---Begin
--- -- staddr<=nxtSTADDR&"0000010";
---     if char80='0' then
---	  	  staddr<=nxtSTADDR&"0000010";
---	  else	  
---	     staddr<=nxtSTADDR&"0000100"; 
---	  end if;	  
---End process;
---
---process (pxlCLK,frmst,getdata,col)
---Begin
---  if frmst='1' then
---    zerocnt<=0; 
---	 stmp<='0';
-----  elsif getdata='1' then
-----      DatACUR<=Datain;
-----	   charDATACUR<=chardaTAin; 
-----      if chartp=1 then
-----		  stmp<='1';
-----		 elsE
-----		   stmp<='0'; 
-----		end if;
---  elsif rising_edge(pxlCLK) then
---      if getdata='1' then
---        DatACURnext<=Datain;
---	     charDATACURnext<=chardaTAin; 
---		end if;
---		
---	if isgraph='1' then
---	  if (nxtpixel='1' and bitcnt=7 and char80='0') or (nxtpixel='1' and bitcnt=0 and char80='1') then
---      DatACURnext<=Datain;	 
---		if chartp=3 then
---		  if grphdiff=3 and datacur=128 then
---		    stmp<='1';
---		  end if;
---		end if;
---		
---		if chartp=10 then
---		  if grphdiff=10 then
---		     DatACURnext<="00000001";
---		  elsIF grphdiff=11 then	  
---		      DatACURnext<="00000010";
---		  elsIF grphdiff=12 then	  
---		      DatACURnext<="00000100";
---		  elsIF grphdiff=13 then	  
---		      DatACURnext<="00001000";
---		  elsIF grphdiff=14 then	  
---		      DatACURnext<="00010000";
---		  elsIF grphdiff=15 then	  
---		      DatACURnext<="00100000";
---		  elsIF grphdiff=16 then	  
---		      DatACURnext<="01000000";
---		  elsIF grphdiff=17 then	  
---		      DatACURnext<="10000000";				
---		  end if;		
---		end if;
---		if chartp=3 then
---		  if grphdiff=10 then
---		      DatACURnext<="00000001";
---		  elsIF grphdiff=11 then	  
---		      DatACURnext<="00000001";
---		  elsIF grphdiff=12 then	  
---		      DatACURnext<="00000001";
---		  elsIF grphdiff=13 then	  
---		      DatACURnext<="00000001";
---		  elsIF grphdiff=15 then	  
---		      DatACURnext<="10000000";
---		  elsIF grphdiff=16 then	  
---		      DatACURnext<="10000000";
---		  elsIF grphdiff=17 then	  
---		      DatACURnext<="10000000";
---		  elsIF grphdiff=18 then	  
---		      DatACURnext<="10000000";				
---		  end if;		
---		end if;
---		
---   	if datacur=3 then
---		  stmp<='1';
---		end if;
---	  end if; 		
---	else
---	  stmp<='0';
---   -- if (nxtpixel='1' and bitcnt=0 and char80='0') or (nxtpixel='1' and bitcnt=0 and char80='1')then
---	   if (nxtpixel='1' and bitcnt=7 and char80='0') 
---		 or (nxtpixel='1' and bitcnt=0 and char80='1') or col=6  then
---      DatACURnext<=Datain;
---	   charDATACURnext<=chardaTAin;  
---   	 if screenend='0' and isgraph='0' and dataCur="00000000" then
---	      zerocnt<=zerocnt+1;
---	    else 
---	      zerocnt<=0;
---       end if;
---	 end if;	 
---	end if;
---	
---  end if;	 
---end process;
---
---
---
---process (pxlCLK,zerocnt,frmst,istext,isgraph,screenend,rows)
---Begin
---   if frmst='1' or rows>249 then
---    istext<='1';
---	 isgraph<='0';
---	 screenend<='0';
---  elsif rising_edge(pxlCLK) then
---    if istext='1' and zerocnt=2 then 
---      istext<='0';
---		
---    end if;	 
---    if istext='0' and isgraph='0' and zerocnt=4 then --todo get all graphs
---      isgraph<='1';
---  	   grphaddr<=addr-4;
---  	   grphrow<=rows;
---    end if;	 
---    if (istext='0' and isgraph='0' and zerocnt=0) then -- or rows>249 then
---     screenend<='1';
---    end if;	  
---  end if; 
---End process;
---
---Process (pxlCLK)
---Begin
--- if rising_edge(pxlCLK) then
---   if istext='1' then
---     pxl<=charDATACUR(bitcnt);   
---	elsif isgraph='1' then
---     pxl<=DATACUR(bitcnt);
---	else 
---	  pxl<='0';
---	end if;  
--- end if;
---
---End process;
-
-
 process (pxlcLK,frmst,hcount)
 Variable vcol:integer range 0 to 650;
 Variable vrow:integer range 0 to 255;
@@ -601,6 +321,7 @@ variable z,testz:integer range 0 to 20;
 variable enter:boolean;
 Variable vgraphstart:integer range 0 to 32767;
 Variable vgraphrow:integer range 0 to 255;
+
 Begin
   if frmst='1' then
 	 sTVCLK<='0';
@@ -610,15 +331,23 @@ Begin
 	 screenend<='0';
     vrow:=0; 
 	 vline:=0;
+	 noBusrq<='0';
     if char80='0' then
    	  staddr<=nxtSTADDR&"0000010";
     else	  
 	     staddr<=nxtSTADDR&"0000100"; 
 	 end if;	  
+	 if setvideo9='1' then
+	  	  staddr(6)<='1';
+	end if;
   elsif rising_edge(pxlclk) and videov='1' then
+  
    sTVCLK<='0';
    enter:=(hcount>=leftgap-7 and hcount<=leftgap+colend and vcount=41) or (hcount>leftgap and hcount<=leftgap+colend);
-	
+	--enter:=enter and noBusrq='0';
+	if hcount<leftgap then
+	 noBusrq<='0';
+	end if; 	
 	if hcount=leftgap-8 then
     vcol:=0;  
 	 vchar:=0;	
@@ -629,50 +358,56 @@ Begin
 	end if;
 	if hcount=leftgap-2 then
 	 DataCURnext<=Datain;
-	 CharDataCURnext<=charDataIN;	  
+	 sQD7<=Datain(7);	 
 	end if;
+	if hcount=leftgap-1 then
+	  CharDataCURnext<=charDataIN;	 
+	end if;  
 	if hcount=leftgap then
 	 vcol:=0;
 	 b:=0;
 	 z:=0;
 	 Datacur<=DataCURnext;
-	 CharDatacur<=CharDataCURnext;
+	 CharDatacur<=CharDataCURnext;	
+	 sQD7<=DataCURnext(7);    
     if datACURnext="00000000" then
      z:=1;
     end if;	 
 	end if;
 	
-	vrcnt:=vrow mod 10;-- todo : for 8 pixel char height
+	vrcnt:=vrow mod charHeight;-- Done : for 8 pixel char height   was 10
 	rowcnt<=std_logic_vector(to_unsigned( vrcnt, 4));  -- 0 to 8 or 0 to 10 
 	
 	if isgraph='1' then
+	 if s3240='0' then
      addr<=vgraphstart+(vrow-vgraphrow)*graphperline+vchar;
-	  	 -- addr<=to_integer(unsigned(staddr))+vline*charsperline+vrcnt*graphperline+vchar;	 
-
+	 else --narrow screen
+	   
+	   addr<=vgraphstart+(vrow-vgraphrow)*(graphperline-(2*narrowgap))+vchar-narrowgap;
+	 end if;
 	else
 	  addr<=to_integer(unsigned(staddr))+vline*charsperline+vchar;	 
-	  
 	end if; 
-	
-	if vgraphstart=1218 then
-	 stmp<='1';
-	end if; 
-	
-	
+		
 	linecnt<=vline;
 	chartp<=vchar;
    
 	col<=vcol;
 	rows<=vrow;
-	--	 b:=vcol mod 8;bitcnt<=b;		
+		
+	if noBusrq='0' then
 	if b=0 then 
 	 Datacur<=DataCURnext;
-	 CharDatacur<=CharDataCURnext;	
+	 CharDatacur<=CharDataCURnext;
+	 sRVUP <= DataCURnext(7); 			 
 	 if hcount>leftgap+1 and hcount<=leftgap+colend then
    	 if (isgraph='0') then
 		   if DataCURnext="00000000" then
 	        z:=z+1;
 	      else 
+			  if istext='1' and testz=1 then -- line ended release the cpu
+			    noBusrq<='1';
+			  end if;	 
   	        z:=0; 	
 	      end if;
 		end if;	
@@ -685,7 +420,15 @@ Begin
 		  end if;
 		  if istext='0' and isgraph='0' and testz=4 then
 		   isgraph<='1';
-			vgraphstart:=addr-3;
+			if s3240='0' then
+			  vgraphstart:=addr-3;
+			else 
+			  if char80='0' then
+	         vgraphstart:=addr+1;
+			  else
+			   vgraphstart:=addr+5;
+			  end if; 
+			end if;
 			vgraphrow:=vrow;
 		  end if;
 		  if istext='0' and isgraph='0' and z=0  then
@@ -693,21 +436,34 @@ Begin
 		  end if; 
       end if;
 	 end if;	
-	elsif b=2 then
-	 sTVCLK<='1';
-	elsif b=6 then  
+	elsif b=5 then
+	 sTVCLK<='1';	 
+	elsif b=3 then  
+	 --sTVCLK<='1';
 	 DataCURnext<=Datain;
-	 CharDataCURnext<=charDataIN;
+	 sQ7<=Q7;	 
+	elsif b=4 then  
+	 sTVCLK<='1';
+	 sQD7<=DataCURnext(7);
+	elsif b=6 then	  
+	  sTVCLK<='1';
+	  CharDataCURnext<=charDataIN;
 	end if; 
+	end if;  --nobusrq
+	
 	
 	if istext='1' then
      pxl<=CharDataCUR(bitcnt);
 	elsif isgraph='1' then
-	  pxl<=DataCUR(bitcnt);
+	 pxl<=DataCUR(bitcnt);
+	 if s3240='1' then	   
+	   if vchar<=narrowgap or vchar>graphperline-narrowgap then --narrow screen skip 4 or 8 bytes at start and 4 at the end
+		 pxl<='0';
+		end if; 
+	 end if; 
 	else 
 	  pxl<='0';
 	end if;  
-	
 
 	zerocnt<=testz;
 	
@@ -727,7 +483,7 @@ Begin
 	 end if;	
 	 if vcol=colend then	  
 	  vrow:=vrow+1;
-	  vline:=integer(vrow/10);
+	  vline:=integer(vrow/charHeight);--was 10
 	 end if; 
 	end if;--enter
 	
@@ -745,19 +501,31 @@ begin
 	     nxtSTADDR<="00000101";
       ELSIF sSETADDR='1' AND BUSACK='1'   THEN  -- FROM Z80		
 			nxtSTADDR<=DATAin ;			
+			setvideo9<='0'; 
 			--nxtSTADDR<="00000101";
+		elsE
+        if svideo9='1' then
+	       setvideo9<='1'; 
+	     end if;	
 		END IF;	
 		
 	end if;
 end process;
 
+	QD7<='0' WHEN sFS='0' AND ISTEXT='1'
+	     ELSE sQD7;
+	
 	--sTvCLK <='1' when bitcnt=7 else '0';
+	RVUP <= sRVUP WHEN sFS='0' AND ISTEXT='1'
+	     ELSE '0';
+   	
+	RVF <= sRV XOR RVUP;
 
    Vaddr<=std_logic_vector(to_unsigned(addr, 15));    
 	
    DATAin <= DATA ;
 	CHARDATAin <=CHARDATA;	
-   VIDADDR <= '0'&Vaddr when busack='0' else (others=>'Z');
+   VIDADDR <= '0'&Vaddr when busack='0' and sBusReq='0' else (others=>'Z');
 	TVCLK <= sTVCLK;
 	CHARCOUNT <= rowcnt;  
 	NBCOPINT <= '0' WHEN copcnt>=1 and copcnt<=4 else '1'; -- every 12,5 ms
@@ -766,7 +534,7 @@ end process;
 	videov <= '1' when (vcount>40) and (vcount<=40+251) else '0';--visible lines
 	csync <= hsync xnor vsync when (vcount<7) or (vcount>309) or (hcount<=80) else '1'  ;  	
 
-   PXLOUT<= pxlshft or pxltest  when hcount>leftgap and hcount<=leftgap+640 and videov='1' and busack='0' 
+   PXLOUT<= (pxlshft XOR RVF) or pxltest  when hcount>leftgap and hcount<=leftgap+640 and videov='1' and busack='0' 
 			else '0';
 	--pxlOUT2<=pxltest when hcount>leftgap and hcount<=leftgap+640+1 and videov='1' and busack='0';
 	
@@ -803,20 +571,29 @@ end process;
  --Video Signals
  		
 	--this is for the whole 1024 pixels OF 250 line maybe more
-	enbus1<='1' when (hcount>leftgap-48) and (hcount<leftgap+640+8) else '0'; --128 Enabled Bus Request
+	enbus1<='1' when (hcount>leftgap-40) and (hcount<leftgap+640) and (vcount>40 and vcount <291) else '0'; --128 Enabled Bus Request
 	
-	sBusReq <= '0' when (vcount>40 and vcount <291) and enbus1='1' and  enable='1' else '1'; -- active low	
+	--sBusReq <= '0' when enbus1='1' and  enable='1' and nobusrq='0' else '1'; -- active low	
+	sBusReq <= '0' when enbus1='1' and  enable='1' else '1'; -- active low	
 	BusReq<=sBusReq;
 	
 
 	
 	pxlSHFT<='0' when screenend='1'
 	    else pxl ;
-	 --else pxlShft;
-
-	
-	--byteval<=CharDataIN when bitcnt=0 and istext='1'
-	  --  else DataIN when bitcnt=0 and isgraph='1';
+	colend<=640;
+	--colend<=320 when char80='0'
+	--	else 640;
+	char80<=s80l;-- or btn2;
+   charsperline<=64 when char80='0'
+	 else 128;
+   graphperline<=40 when char80='0'
+	 else 80;
+   narrowgap<=4 when char80='0'
+	 else 8;
+	grphdiff<= rows-grphrow when rows>=grphrow
+	  else 0;
+   charHeight<=10 when sUCR='0' else 8;
 		
    clk8<= not clk8 when rising_edge(c16);
 	
@@ -827,23 +604,19 @@ end process;
 	PXLCLKOUT<=PXLCLK; 
 	 
 --	TEST<=clk8;  
-	colend<=640;
-	--colend<=320 when char80='0'
-	--	else 640;
+	
 		
 
    Led1<=ENABLE;	
-	Led2<='1' when bitcnt>4 else '0';	    
-	Led3<='1' WHEN STADDR="00000101"
-	     ELSE '0';
-		  
-	Led4<='0' when frmst='1'
-	    else '1' when zerocnt=4 and vcount<155;
+	Led2<=sFS;	    
+	Led3<='1' WHEN STADDR="000001010000010"
+	     ELSE '0';		  
+	Led4<='0';
 		 
 	Led5<=isgraph;	
 	Led6<=istext;	
 	Led7<=stmp;
-	Led8<=char80;	
+	Led8<=sUCR;	
 
 	sysClk16<=C16;--out
 	sysClk4<=C4;--out
@@ -854,15 +627,6 @@ end process;
 	Vclock<=c16;
 	--cpuClock<=c4;
 
-	char80<=s80l or btn2;
-   charsperline<=64 when char80='0'
-	 else 128;
-   graphperline<=40 when char80='0'
-	 else 80;
-
-
-	grphdiff<= rows-grphrow when rows>=grphrow
-	  else 0;
 	
 	myPLL_inst : work.myPLL PORT MAP (
 		areset	 => areset_sig,
