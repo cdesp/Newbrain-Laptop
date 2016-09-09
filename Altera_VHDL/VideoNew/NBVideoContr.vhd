@@ -201,7 +201,7 @@ signal prenxtchar:std_logic;
 signal char80,getdata:std_LOGIC;
 signal charsperline:integer range 0 to 130;--max 128 for text 64 or 128
 signal graphperline:integer range 0 to 130;--max 128 for graph 40 or 80
-signal noBusrq:std_logic;
+signal noBusrq,noBusrq2:std_logic;
 signal narrowgap:integer range 0 to 10;
 signal charHeight:integer range 0 to 10;
 signal setvideo9:std_logic;
@@ -345,13 +345,15 @@ Begin
    sTVCLK<='0';
    enter:=(hcount>=leftgap-7 and hcount<=leftgap+colend and vcount=41) or (hcount>leftgap and hcount<=leftgap+colend);
 	--enter:=enter and noBusrq='0';
-	if hcount<leftgap then
-	 noBusrq<='0';
-	end if; 	
+--	if hcount<leftgap then
+--	 noBusrq<='0';
+--	 testz:=0;
+--	end if; 	
 	if hcount=leftgap-8 then
     vcol:=0;  
 	 vchar:=0;	
 	 b:=0; 
+	 testz:=0;	 
 	end if; 
 	if hcount=leftgap-4 then
 	  sTVCLK<='1';
@@ -364,6 +366,7 @@ Begin
 	  CharDataCURnext<=charDataIN;	 
 	end if;  
 	if hcount=leftgap then
+	 nobusrq<='0';
 	 vcol:=0;
 	 b:=0;
 	 z:=0;
@@ -573,7 +576,8 @@ end process;
 	--this is for the whole 1024 pixels OF 250 line maybe more
 	enbus1<='1' when (hcount>leftgap-40) and (hcount<leftgap+640) and (vcount>40 and vcount <291) else '0'; --128 Enabled Bus Request
 	
-	--sBusReq <= '0' when enbus1='1' and  enable='1' and nobusrq='0' else '1'; -- active low	
+	nobusrq2<=nobusrq when  hcount>leftgap+8 else '0'; --1 means that we suppress busrq
+	--sBusReq <= '0' when enbus1='1' and  enable='1' and nobusrq2='0' else '1'; -- active low	
 	sBusReq <= '0' when enbus1='1' and  enable='1' else '1'; -- active low	
 	BusReq<=sBusReq;
 	

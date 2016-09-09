@@ -426,9 +426,8 @@ end process;
 --	 ELSE '0';
 	--Z80 INTERRUPT IN
    FRMFREQ<='0' WHEN CLK50='0'  AND frmfreqon='0'
-		 ELSE '1' WHEN	(IRQ='0' and  VADDRLow=x"04" ) 
-		 ELSE '1' WHEN IRQ='0' and  VADDRLow=x"14" AND RDin='0' --4/5/2016
-		-- ELSE '1' WHEN frmfreqon='1'
+		 ELSE '1' WHEN	(IRQ='0' and  VADDRLow=x"04" ) or frmfreqon='1' --9/9/2016 frfreqon
+		-- ELSE '1' WHEN IRQ='0' and  VADDRLow=x"14" AND RDin='0' --4/5/2016 9/9/2016 commented
 	    ELSE FRMFREQ;
    FRMFREQpre<=FRMFREQ;
    COPINT <='0' WHEN CLKCOP='0' 
@@ -440,7 +439,8 @@ end process;
 	TEST1<=COPINT;
 	
 	KB_Int <= not Scan_DAV ;
-	INT <= FRMFREQpre and COPINTpre and KB_int ; -- ACTIVE LOW
+	--INT <= FRMFREQpre and COPINTpre and KB_int ; -- ACTIVE LOW
+	INT <= FRMFREQ and COPINT and KB_int ; -- ACTIVE LOW --9/9/2016
 	PS2_CLK<= '0' WHEN KB_INT='0' ELSE 'Z';
 	KB_Stop<='1' WHEN KB_Int='0'  and mydata=x"77" --BREAK KEY
 	   ELSE  '0' WHEN COPCTL=x"D0"
@@ -532,7 +532,8 @@ end process;
    DATAout <= 
 			 COPCTL2 WHEN IRQ='0' and  RDin='0' AND  VADDRLow=x"06"
 	  ELSE mydata WHEN IRQ='0' AND RDin='0' AND VADDRLow=KBPORT -- from ps/2 data
-	  ELSE COPINTpre&'1'&FRMFREQpre&"00101" WHEN IRQ='0' and  RDin='0' AND  VADDRLow=x"14" --IN 20 STATUS REGISTER
+	--  ELSE COPINTpre&'1'&FRMFREQpre&"00101" WHEN IRQ='0' and  RDin='0' AND  VADDRLow=x"14" --IN 20 STATUS REGISTER
+	  ELSE COPINT&'1'&FRMFREQ&"00101" WHEN IRQ='0' and  RDin='0' AND  VADDRLow=x"14" --IN 20 STATUS REGISTER 9/9/2016
 																				--bit 1 is pwrup should be 0 when we are ready
      ELSE COPCTL WHEN IRQ='0' AND RDin='0' AND VADDRLow=x"3"	
 	  ELSE "101000"&CTS&RX WHEN IRQ='0' AND RDin='0' AND VADDRLow=x"16"	--IN 22 GET V24 SIGNALS (ZEROES NOT USED)

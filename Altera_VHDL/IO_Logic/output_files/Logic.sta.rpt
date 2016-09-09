@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for Logic
-Wed May 04 18:38:57 2016
+Fri Sep 09 19:55:30 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -148,50 +148,50 @@ No paths to report.
 ; -20.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|Scan_DAVi    ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 17.000     ;
 ; -17.000 ; RevRamRom                         ; RevRRset                          ; RevRRset     ; CLOCK       ; 1.000        ; -5.000     ; 9.000      ;
 ; -14.000 ; PS2Main:Inst_PS2Main|Scan_DAVi    ; PS2Main:Inst_PS2Main|Scan_DAVi    ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 11.000     ;
-; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
-; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Scan_Code[4] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Scan_Code[1] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Scan_Code[5] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
-; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Scan_Code[3] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Scan_Code[7] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Scan_Code[4] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Scan_Code[3] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Scan_Code[2] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Scan_Code[0] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
-; -13.000 ; PS2Main:Inst_PS2Main|S_Reg[6]     ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
-; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
-; -13.000 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
-; -13.000 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
-; -13.000 ; PS2Main:Inst_PS2Main|Scan_Code[6] ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
-; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
-; -13.000 ; PS2Main:Inst_PS2Main|S_Reg[4]     ; PS2Main:Inst_PS2Main|Scan_Code[4] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
-; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Scan_Code[4] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
-; -13.000 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Scan_Code[4] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
-; -13.000 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Scan_Code[4] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
-; -13.000 ; PS2Main:Inst_PS2Main|Scan_Code[4] ; PS2Main:Inst_PS2Main|Scan_Code[4] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
-; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Scan_Code[4] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|S_Reg[1]     ; PS2Main:Inst_PS2Main|Scan_Code[1] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Scan_Code[1] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Scan_Code[1] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Scan_Code[1] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|Scan_Code[1] ; PS2Main:Inst_PS2Main|Scan_Code[1] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Scan_Code[1] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; PS2Main:Inst_PS2Main|S_Reg[6]     ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; PS2Main:Inst_PS2Main|Scan_Code[6] ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|S_Reg[5]     ; PS2Main:Inst_PS2Main|Scan_Code[5] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Scan_Code[5] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Scan_Code[5] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Scan_Code[5] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|Scan_Code[5] ; PS2Main:Inst_PS2Main|Scan_Code[5] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Scan_Code[5] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
-; -13.000 ; PS2Main:Inst_PS2Main|S_Reg[3]     ; PS2Main:Inst_PS2Main|Scan_Code[3] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
-; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Scan_Code[3] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
-; -13.000 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Scan_Code[3] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
-; -13.000 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Scan_Code[3] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
-; -13.000 ; PS2Main:Inst_PS2Main|Scan_Code[3] ; PS2Main:Inst_PS2Main|Scan_Code[3] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
-; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Scan_Code[3] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|S_Reg[7]     ; PS2Main:Inst_PS2Main|Scan_Code[7] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Scan_Code[7] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Scan_Code[7] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Scan_Code[7] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|Scan_Code[7] ; PS2Main:Inst_PS2Main|Scan_Code[7] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Scan_Code[7] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; PS2Main:Inst_PS2Main|S_Reg[4]     ; PS2Main:Inst_PS2Main|Scan_Code[4] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Scan_Code[4] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Scan_Code[4] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Scan_Code[4] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; PS2Main:Inst_PS2Main|Scan_Code[4] ; PS2Main:Inst_PS2Main|Scan_Code[4] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Scan_Code[4] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; PS2Main:Inst_PS2Main|S_Reg[3]     ; PS2Main:Inst_PS2Main|Scan_Code[3] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Scan_Code[3] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Scan_Code[3] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Scan_Code[3] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; PS2Main:Inst_PS2Main|Scan_Code[3] ; PS2Main:Inst_PS2Main|Scan_Code[3] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
+; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Scan_Code[3] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|S_Reg[2]     ; PS2Main:Inst_PS2Main|Scan_Code[2] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Scan_Code[2] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Scan_Code[2] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
@@ -204,6 +204,15 @@ No paths to report.
 ; -13.000 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Scan_Code[0] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|Scan_Code[0] ; PS2Main:Inst_PS2Main|Scan_Code[0] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
 ; -13.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Scan_Code[0] ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 10.000     ;
+; -12.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Scan_DAVi    ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Scan_DAVi    ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Scan_DAVi    ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
 ; -12.000 ; PS2Main:Inst_PS2Main|Filter[7]    ; PS2Main:Inst_PS2Main|Filter[6]    ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
 ; -12.000 ; PS2Main:Inst_PS2Main|Filter[6]    ; PS2Main:Inst_PS2Main|Filter[5]    ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
 ; -12.000 ; PS2Main:Inst_PS2Main|Filter[5]    ; PS2Main:Inst_PS2Main|Filter[4]    ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
@@ -229,129 +238,120 @@ No paths to report.
 ; -12.000 ; PS2Main:Inst_PS2Main|Filter[2]    ; PS2Main:Inst_PS2Main|Fall_Clk     ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
 ; -12.000 ; PS2Main:Inst_PS2Main|Filter[1]    ; PS2Main:Inst_PS2Main|Fall_Clk     ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
 ; -12.000 ; PS2Main:Inst_PS2Main|Filter[0]    ; PS2Main:Inst_PS2Main|Fall_Clk     ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
-; -12.000 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
-; -12.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
-; -12.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
-; -12.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
-; -12.000 ; PS2Main:Inst_PS2Main|PS2_Datr     ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
-; -12.000 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
-; -12.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
-; -12.000 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
-; -12.000 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
-; -12.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
-; -12.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
-; -12.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
-; -12.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
-; -12.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
+; -12.000 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; CLOCK        ; CLOCK       ; 1.000        ; 0.000      ; 9.000      ;
 +---------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Hold: 'CLOCK'                                                                                                                                       ;
-+-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                         ; To Node                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
-; 5.000 ; PS2Main:Inst_PS2Main|Filter[7]    ; PS2Main:Inst_PS2Main|Filter[6]    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Filter[6]    ; PS2Main:Inst_PS2Main|Filter[5]    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Filter[5]    ; PS2Main:Inst_PS2Main|Filter[4]    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Filter[4]    ; PS2Main:Inst_PS2Main|Filter[3]    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Filter[3]    ; PS2Main:Inst_PS2Main|Filter[2]    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Filter[2]    ; PS2Main:Inst_PS2Main|Filter[1]    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Filter[1]    ; PS2Main:Inst_PS2Main|Filter[0]    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|PS2_Clk_f    ; PS2Main:Inst_PS2Main|PS2_Clk_f    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Filter[7]    ; PS2Main:Inst_PS2Main|PS2_Clk_f    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Filter[6]    ; PS2Main:Inst_PS2Main|PS2_Clk_f    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Filter[5]    ; PS2Main:Inst_PS2Main|PS2_Clk_f    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Filter[4]    ; PS2Main:Inst_PS2Main|PS2_Clk_f    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Filter[3]    ; PS2Main:Inst_PS2Main|PS2_Clk_f    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Filter[2]    ; PS2Main:Inst_PS2Main|PS2_Clk_f    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Filter[1]    ; PS2Main:Inst_PS2Main|PS2_Clk_f    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Filter[0]    ; PS2Main:Inst_PS2Main|PS2_Clk_f    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|PS2_Clk_f    ; PS2Main:Inst_PS2Main|Fall_Clk     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Filter[7]    ; PS2Main:Inst_PS2Main|Fall_Clk     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Filter[6]    ; PS2Main:Inst_PS2Main|Fall_Clk     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Filter[5]    ; PS2Main:Inst_PS2Main|Fall_Clk     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Filter[4]    ; PS2Main:Inst_PS2Main|Fall_Clk     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Filter[3]    ; PS2Main:Inst_PS2Main|Fall_Clk     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Filter[2]    ; PS2Main:Inst_PS2Main|Fall_Clk     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Filter[1]    ; PS2Main:Inst_PS2Main|Fall_Clk     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Filter[0]    ; PS2Main:Inst_PS2Main|Fall_Clk     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|PS2_Datr     ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|State        ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Scan_DAVi    ; PS2Main:Inst_PS2Main|Scan_DAVi    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Scan_DAVi    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Scan_DAVi    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Scan_DAVi    ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|PS2_Datr     ; PS2Main:Inst_PS2Main|S_Reg[8]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|S_Reg[8]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|S_Reg[8]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|S_Reg[8]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|S_Reg[8]     ; PS2Main:Inst_PS2Main|S_Reg[8]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|S_Reg[8]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|S_Reg[8]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|S_Reg[8]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|S_Reg[8]     ; PS2Main:Inst_PS2Main|S_Reg[7]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|S_Reg[7]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|S_Reg[7]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|S_Reg[7]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|S_Reg[7]     ; PS2Main:Inst_PS2Main|S_Reg[7]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|S_Reg[7]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|S_Reg[7]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|S_Reg[7]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|S_Reg[7]     ; PS2Main:Inst_PS2Main|S_Reg[6]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|S_Reg[6]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|S_Reg[6]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|S_Reg[6]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|S_Reg[6]     ; PS2Main:Inst_PS2Main|S_Reg[6]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|S_Reg[6]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|S_Reg[6]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|S_Reg[6]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|S_Reg[6]     ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Scan_Code[6] ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|Scan_Code[6] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|S_Reg[6]     ; PS2Main:Inst_PS2Main|S_Reg[5]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3]   ; PS2Main:Inst_PS2Main|S_Reg[5]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Fall_Clk     ; PS2Main:Inst_PS2Main|S_Reg[5]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|State        ; PS2Main:Inst_PS2Main|S_Reg[5]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|S_Reg[5]     ; PS2Main:Inst_PS2Main|S_Reg[5]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2]   ; PS2Main:Inst_PS2Main|S_Reg[5]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1]   ; PS2Main:Inst_PS2Main|S_Reg[5]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[0]   ; PS2Main:Inst_PS2Main|S_Reg[5]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-; 5.000 ; PS2Main:Inst_PS2Main|S_Reg[5]     ; PS2Main:Inst_PS2Main|S_Reg[4]     ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
-+-------+-----------------------------------+-----------------------------------+--------------+-------------+--------------+------------+------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'CLOCK'                                                                                                                                   ;
++-------+---------------------------------+---------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                       ; To Node                         ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------+---------------------------------+--------------+-------------+--------------+------------+------------+
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[0] ; PS2Main:Inst_PS2Main|Bit_Cnt[0] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Fall_Clk   ; PS2Main:Inst_PS2Main|Bit_Cnt[0] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3] ; PS2Main:Inst_PS2Main|Bit_Cnt[0] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|State      ; PS2Main:Inst_PS2Main|Bit_Cnt[0] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2] ; PS2Main:Inst_PS2Main|Bit_Cnt[0] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1] ; PS2Main:Inst_PS2Main|Bit_Cnt[0] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Scan_DAVi  ; PS2Main:Inst_PS2Main|Scan_DAVi  ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3] ; PS2Main:Inst_PS2Main|Scan_DAVi  ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Fall_Clk   ; PS2Main:Inst_PS2Main|Scan_DAVi  ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|State      ; PS2Main:Inst_PS2Main|Scan_DAVi  ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Filter[7]  ; PS2Main:Inst_PS2Main|Filter[6]  ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Filter[6]  ; PS2Main:Inst_PS2Main|Filter[5]  ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Filter[5]  ; PS2Main:Inst_PS2Main|Filter[4]  ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Filter[4]  ; PS2Main:Inst_PS2Main|Filter[3]  ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Filter[3]  ; PS2Main:Inst_PS2Main|Filter[2]  ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Filter[2]  ; PS2Main:Inst_PS2Main|Filter[1]  ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Filter[1]  ; PS2Main:Inst_PS2Main|Filter[0]  ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|PS2_Clk_f  ; PS2Main:Inst_PS2Main|PS2_Clk_f  ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Filter[7]  ; PS2Main:Inst_PS2Main|PS2_Clk_f  ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Filter[6]  ; PS2Main:Inst_PS2Main|PS2_Clk_f  ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Filter[5]  ; PS2Main:Inst_PS2Main|PS2_Clk_f  ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Filter[4]  ; PS2Main:Inst_PS2Main|PS2_Clk_f  ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Filter[3]  ; PS2Main:Inst_PS2Main|PS2_Clk_f  ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Filter[2]  ; PS2Main:Inst_PS2Main|PS2_Clk_f  ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Filter[1]  ; PS2Main:Inst_PS2Main|PS2_Clk_f  ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Filter[0]  ; PS2Main:Inst_PS2Main|PS2_Clk_f  ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|PS2_Clk_f  ; PS2Main:Inst_PS2Main|Fall_Clk   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Filter[7]  ; PS2Main:Inst_PS2Main|Fall_Clk   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Filter[6]  ; PS2Main:Inst_PS2Main|Fall_Clk   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Filter[5]  ; PS2Main:Inst_PS2Main|Fall_Clk   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Filter[4]  ; PS2Main:Inst_PS2Main|Fall_Clk   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Filter[3]  ; PS2Main:Inst_PS2Main|Fall_Clk   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Filter[2]  ; PS2Main:Inst_PS2Main|Fall_Clk   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Filter[1]  ; PS2Main:Inst_PS2Main|Fall_Clk   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Filter[0]  ; PS2Main:Inst_PS2Main|Fall_Clk   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1] ; PS2Main:Inst_PS2Main|Bit_Cnt[1] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Fall_Clk   ; PS2Main:Inst_PS2Main|Bit_Cnt[1] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[0] ; PS2Main:Inst_PS2Main|Bit_Cnt[1] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3] ; PS2Main:Inst_PS2Main|Bit_Cnt[1] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|State      ; PS2Main:Inst_PS2Main|Bit_Cnt[1] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2] ; PS2Main:Inst_PS2Main|Bit_Cnt[2] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1] ; PS2Main:Inst_PS2Main|Bit_Cnt[2] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Fall_Clk   ; PS2Main:Inst_PS2Main|Bit_Cnt[2] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[0] ; PS2Main:Inst_PS2Main|Bit_Cnt[2] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3] ; PS2Main:Inst_PS2Main|Bit_Cnt[2] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|State      ; PS2Main:Inst_PS2Main|Bit_Cnt[2] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|State      ; PS2Main:Inst_PS2Main|State      ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2] ; PS2Main:Inst_PS2Main|State      ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1] ; PS2Main:Inst_PS2Main|State      ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[0] ; PS2Main:Inst_PS2Main|State      ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|PS2_Datr   ; PS2Main:Inst_PS2Main|State      ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Fall_Clk   ; PS2Main:Inst_PS2Main|State      ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3] ; PS2Main:Inst_PS2Main|State      ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|State      ; PS2Main:Inst_PS2Main|Bit_Cnt[3] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Fall_Clk   ; PS2Main:Inst_PS2Main|Bit_Cnt[3] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2] ; PS2Main:Inst_PS2Main|Bit_Cnt[3] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1] ; PS2Main:Inst_PS2Main|Bit_Cnt[3] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[0] ; PS2Main:Inst_PS2Main|Bit_Cnt[3] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3] ; PS2Main:Inst_PS2Main|Bit_Cnt[3] ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|PS2_Datr   ; PS2Main:Inst_PS2Main|S_Reg[8]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3] ; PS2Main:Inst_PS2Main|S_Reg[8]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Fall_Clk   ; PS2Main:Inst_PS2Main|S_Reg[8]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|State      ; PS2Main:Inst_PS2Main|S_Reg[8]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|S_Reg[8]   ; PS2Main:Inst_PS2Main|S_Reg[8]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2] ; PS2Main:Inst_PS2Main|S_Reg[8]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1] ; PS2Main:Inst_PS2Main|S_Reg[8]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[0] ; PS2Main:Inst_PS2Main|S_Reg[8]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|S_Reg[8]   ; PS2Main:Inst_PS2Main|S_Reg[7]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3] ; PS2Main:Inst_PS2Main|S_Reg[7]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Fall_Clk   ; PS2Main:Inst_PS2Main|S_Reg[7]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|State      ; PS2Main:Inst_PS2Main|S_Reg[7]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|S_Reg[7]   ; PS2Main:Inst_PS2Main|S_Reg[7]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2] ; PS2Main:Inst_PS2Main|S_Reg[7]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1] ; PS2Main:Inst_PS2Main|S_Reg[7]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[0] ; PS2Main:Inst_PS2Main|S_Reg[7]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|S_Reg[7]   ; PS2Main:Inst_PS2Main|S_Reg[6]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3] ; PS2Main:Inst_PS2Main|S_Reg[6]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Fall_Clk   ; PS2Main:Inst_PS2Main|S_Reg[6]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|State      ; PS2Main:Inst_PS2Main|S_Reg[6]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|S_Reg[6]   ; PS2Main:Inst_PS2Main|S_Reg[6]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2] ; PS2Main:Inst_PS2Main|S_Reg[6]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1] ; PS2Main:Inst_PS2Main|S_Reg[6]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[0] ; PS2Main:Inst_PS2Main|S_Reg[6]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|S_Reg[6]   ; PS2Main:Inst_PS2Main|S_Reg[5]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3] ; PS2Main:Inst_PS2Main|S_Reg[5]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Fall_Clk   ; PS2Main:Inst_PS2Main|S_Reg[5]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|State      ; PS2Main:Inst_PS2Main|S_Reg[5]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|S_Reg[5]   ; PS2Main:Inst_PS2Main|S_Reg[5]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2] ; PS2Main:Inst_PS2Main|S_Reg[5]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1] ; PS2Main:Inst_PS2Main|S_Reg[5]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[0] ; PS2Main:Inst_PS2Main|S_Reg[5]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|S_Reg[5]   ; PS2Main:Inst_PS2Main|S_Reg[4]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[3] ; PS2Main:Inst_PS2Main|S_Reg[4]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Fall_Clk   ; PS2Main:Inst_PS2Main|S_Reg[4]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|State      ; PS2Main:Inst_PS2Main|S_Reg[4]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|S_Reg[4]   ; PS2Main:Inst_PS2Main|S_Reg[4]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[2] ; PS2Main:Inst_PS2Main|S_Reg[4]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[1] ; PS2Main:Inst_PS2Main|S_Reg[4]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|Bit_Cnt[0] ; PS2Main:Inst_PS2Main|S_Reg[4]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
+; 5.000 ; PS2Main:Inst_PS2Main|S_Reg[4]   ; PS2Main:Inst_PS2Main|S_Reg[3]   ; CLOCK        ; CLOCK       ; 0.000        ; 0.000      ; 9.000      ;
++-------+---------------------------------+---------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 +------------------------------------------------------------------------------------------------------+
@@ -662,11 +662,10 @@ No paths to report.
 ; RD          ; DATA[2]     ; 32.000 ; 24.000 ; 24.000 ; 32.000 ;
 ; RD          ; DATA[3]     ;        ; 22.000 ; 22.000 ;        ;
 ; RD          ; DATA[4]     ; 32.000 ; 24.000 ; 24.000 ; 32.000 ;
-; RD          ; DATA[5]     ; 32.000 ; 40.000 ; 40.000 ; 32.000 ;
+; RD          ; DATA[5]     ; 32.000 ; 24.000 ; 24.000 ; 32.000 ;
 ; RD          ; DATA[6]     ; 23.000 ; 22.000 ; 22.000 ; 23.000 ;
 ; RD          ; DATA[7]     ; 24.000 ; 24.000 ; 24.000 ; 24.000 ;
-; RD          ; INT         ;        ; 40.000 ; 40.000 ;        ;
-; RD          ; TEST        ;        ; 31.000 ; 31.000 ;        ;
+; RD          ; INT         ;        ; 24.000 ; 24.000 ;        ;
 ; RD          ; TEST1       ;        ; 15.000 ; 15.000 ;        ;
 ; RESET       ; EPRWR       ; 23.000 ;        ;        ; 23.000 ;
 ; RX          ; DATA[0]     ; 15.000 ;        ;        ; 15.000 ;
@@ -994,7 +993,7 @@ No paths to report.
 ; BUSACK      ; RS232SEL    ; 15.000 ;        ;        ; 15.000 ;
 ; BUSACK      ; RTS         ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; BUSACK      ; SETADDR     ; 15.000 ;        ;        ; 15.000 ;
-; BUSACK      ; TEST        ; 31.000 ; 40.000 ; 40.000 ; 31.000 ;
+; BUSACK      ; TEST        ; 15.000 ; 40.000 ; 40.000 ; 15.000 ;
 ; BUSACK      ; TEST1       ; 15.000 ;        ;        ; 15.000 ;
 ; BUSACK      ; TX          ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; BUSACK      ; VIDEO9      ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
@@ -1062,7 +1061,6 @@ No paths to report.
 ; RD          ; DATA[6]     ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; RD          ; DATA[7]     ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; RD          ; INT         ;        ; 24.000 ; 24.000 ;        ;
-; RD          ; TEST        ;        ; 31.000 ; 31.000 ;        ;
 ; RD          ; TEST1       ;        ; 15.000 ; 15.000 ;        ;
 ; RESET       ; EPRWR       ; 23.000 ;        ;        ; 23.000 ;
 ; RX          ; DATA[0]     ; 15.000 ;        ;        ; 15.000 ;
@@ -1082,7 +1080,7 @@ No paths to report.
 ; VADDRLow[0] ; LCDRS       ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; VADDRLow[0] ; RTS         ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; VADDRLow[0] ; SETADDR     ; 15.000 ;        ;        ; 15.000 ;
-; VADDRLow[0] ; TEST        ; 32.000 ; 31.000 ; 31.000 ; 32.000 ;
+; VADDRLow[0] ; TEST        ; 32.000 ; 15.000 ; 15.000 ; 32.000 ;
 ; VADDRLow[0] ; TEST1       ;        ; 15.000 ; 15.000 ;        ;
 ; VADDRLow[0] ; TX          ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; VADDRLow[0] ; VIDEO9      ;        ; 15.000 ; 15.000 ;        ;
@@ -1103,7 +1101,7 @@ No paths to report.
 ; VADDRLow[1] ; LCDRS       ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; VADDRLow[1] ; RTS         ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; VADDRLow[1] ; SETADDR     ;        ; 15.000 ; 15.000 ;        ;
-; VADDRLow[1] ; TEST        ; 32.000 ; 31.000 ; 31.000 ; 32.000 ;
+; VADDRLow[1] ; TEST        ; 32.000 ; 15.000 ; 15.000 ; 32.000 ;
 ; VADDRLow[1] ; TEST1       ;        ; 15.000 ; 15.000 ;        ;
 ; VADDRLow[1] ; TX          ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; VADDRLow[1] ; VIDEO9      ; 24.000 ; 15.000 ; 15.000 ; 24.000 ;
@@ -1124,7 +1122,7 @@ No paths to report.
 ; VADDRLow[2] ; LCDRS       ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; VADDRLow[2] ; RTS         ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; VADDRLow[2] ; SETADDR     ;        ; 15.000 ; 15.000 ;        ;
-; VADDRLow[2] ; TEST        ; 31.000 ; 40.000 ; 40.000 ; 31.000 ;
+; VADDRLow[2] ; TEST        ; 15.000 ; 40.000 ; 40.000 ; 15.000 ;
 ; VADDRLow[2] ; TEST1       ; 15.000 ;        ;        ; 15.000 ;
 ; VADDRLow[2] ; TX          ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; VADDRLow[2] ; VIDEO9      ; 24.000 ; 15.000 ; 15.000 ; 24.000 ;
@@ -1152,7 +1150,7 @@ No paths to report.
 ; VADDRLow[3] ; RS232SEL    ;        ; 15.000 ; 15.000 ;        ;
 ; VADDRLow[3] ; RTS         ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; VADDRLow[3] ; SETADDR     ; 15.000 ;        ;        ; 15.000 ;
-; VADDRLow[3] ; TEST        ; 40.000 ; 31.000 ; 31.000 ; 40.000 ;
+; VADDRLow[3] ; TEST        ; 40.000 ; 15.000 ; 15.000 ; 40.000 ;
 ; VADDRLow[3] ; TEST1       ;        ; 15.000 ; 15.000 ;        ;
 ; VADDRLow[3] ; TX          ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; VADDRLow[3] ; VIDEO9      ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
@@ -1174,13 +1172,13 @@ No paths to report.
 ; VADDRLow[4] ; DATA[7]     ; 15.000 ; 15.000 ; 15.000 ; 15.000 ;
 ; VADDRLow[4] ; DISPEN      ; 32.000 ; 24.000 ; 24.000 ; 32.000 ;
 ; VADDRLow[4] ; EPRWR       ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
-; VADDRLow[4] ; INT         ; 24.000 ; 40.000 ; 40.000 ; 24.000 ;
+; VADDRLow[4] ; INT         ; 24.000 ; 24.000 ; 24.000 ; 24.000 ;
 ; VADDRLow[4] ; LCDEN       ;        ; 15.000 ; 15.000 ;        ;
 ; VADDRLow[4] ; LCDRS       ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; VADDRLow[4] ; RS232SEL    ;        ; 15.000 ; 15.000 ;        ;
 ; VADDRLow[4] ; RTS         ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; VADDRLow[4] ; SETADDR     ;        ; 15.000 ; 15.000 ;        ;
-; VADDRLow[4] ; TEST        ; 31.000 ; 31.000 ; 31.000 ; 31.000 ;
+; VADDRLow[4] ; TEST        ; 40.000 ; 15.000 ; 15.000 ; 40.000 ;
 ; VADDRLow[4] ; TEST1       ; 15.000 ;        ;        ; 15.000 ;
 ; VADDRLow[4] ; TX          ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; VADDRLow[4] ; VIDEO9      ; 24.000 ; 15.000 ; 15.000 ; 24.000 ;
@@ -1208,7 +1206,7 @@ No paths to report.
 ; VADDRLow[5] ; RS232SEL    ; 15.000 ;        ;        ; 15.000 ;
 ; VADDRLow[5] ; RTS         ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; VADDRLow[5] ; SETADDR     ;        ; 15.000 ; 15.000 ;        ;
-; VADDRLow[5] ; TEST        ; 40.000 ; 31.000 ; 31.000 ; 40.000 ;
+; VADDRLow[5] ; TEST        ; 40.000 ; 15.000 ; 15.000 ; 40.000 ;
 ; VADDRLow[5] ; TEST1       ;        ; 15.000 ; 15.000 ;        ;
 ; VADDRLow[5] ; TX          ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; VADDRLow[5] ; VIDEO9      ; 24.000 ; 15.000 ; 15.000 ; 24.000 ;
@@ -1236,7 +1234,7 @@ No paths to report.
 ; VADDRLow[6] ; RS232SEL    ;        ; 15.000 ; 15.000 ;        ;
 ; VADDRLow[6] ; RTS         ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; VADDRLow[6] ; SETADDR     ;        ; 15.000 ; 15.000 ;        ;
-; VADDRLow[6] ; TEST        ; 40.000 ; 31.000 ; 31.000 ; 40.000 ;
+; VADDRLow[6] ; TEST        ; 40.000 ; 15.000 ; 15.000 ; 40.000 ;
 ; VADDRLow[6] ; TEST1       ;        ; 15.000 ; 15.000 ;        ;
 ; VADDRLow[6] ; TX          ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; VADDRLow[6] ; VIDEO9      ; 24.000 ; 15.000 ; 15.000 ; 24.000 ;
@@ -1264,7 +1262,7 @@ No paths to report.
 ; VADDRLow[7] ; RS232SEL    ;        ; 15.000 ; 15.000 ;        ;
 ; VADDRLow[7] ; RTS         ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; VADDRLow[7] ; SETADDR     ;        ; 15.000 ; 15.000 ;        ;
-; VADDRLow[7] ; TEST        ; 40.000 ; 31.000 ; 31.000 ; 40.000 ;
+; VADDRLow[7] ; TEST        ; 40.000 ; 15.000 ; 15.000 ; 40.000 ;
 ; VADDRLow[7] ; TEST1       ;        ; 15.000 ; 15.000 ;        ;
 ; VADDRLow[7] ; TX          ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; VADDRLow[7] ; VIDEO9      ; 24.000 ; 15.000 ; 15.000 ; 24.000 ;
@@ -1317,7 +1315,7 @@ No paths to report.
 ; sIORQ       ; RS232SEL    ;        ; 15.000 ; 15.000 ;        ;
 ; sIORQ       ; RTS         ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; sIORQ       ; SETADDR     ;        ; 15.000 ; 15.000 ;        ;
-; sIORQ       ; TEST        ; 40.000 ; 31.000 ; 31.000 ; 40.000 ;
+; sIORQ       ; TEST        ; 40.000 ; 15.000 ; 15.000 ; 40.000 ;
 ; sIORQ       ; TEST1       ;        ; 15.000 ; 15.000 ;        ;
 ; sIORQ       ; TX          ; 23.000 ; 15.000 ; 15.000 ; 23.000 ;
 ; sIORQ       ; VIDEO9      ; 24.000 ; 15.000 ; 15.000 ; 24.000 ;
@@ -1346,7 +1344,7 @@ No paths to report.
 ; sM1         ; RS232SEL    ; 15.000 ;        ;        ; 15.000 ;
 ; sM1         ; RTS         ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; sM1         ; SETADDR     ; 15.000 ;        ;        ; 15.000 ;
-; sM1         ; TEST        ; 31.000 ; 40.000 ; 40.000 ; 31.000 ;
+; sM1         ; TEST        ; 15.000 ; 40.000 ; 40.000 ; 15.000 ;
 ; sM1         ; TEST1       ; 15.000 ;        ;        ; 15.000 ;
 ; sM1         ; TX          ; 15.000 ; 23.000 ; 23.000 ; 15.000 ;
 ; sM1         ; VIDEO9      ; 15.000 ; 24.000 ; 24.000 ; 15.000 ;
@@ -1402,9 +1400,9 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 31    ; 31   ;
-; Unconstrained Input Port Paths  ; 440   ; 440  ;
+; Unconstrained Input Port Paths  ; 439   ; 439  ;
 ; Unconstrained Output Ports      ; 37    ; 37   ;
-; Unconstrained Output Port Paths ; 412   ; 412  ;
+; Unconstrained Output Port Paths ; 411   ; 411  ;
 +---------------------------------+-------+------+
 
 
@@ -1414,7 +1412,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed May 04 18:38:55 2016
+    Info: Processing started: Fri Sep 09 19:55:28 2016
 Info: Command: quartus_sta Logic -c Logic
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -1463,6 +1461,9 @@ Warning (332125): Found combinational loop of 2 nodes
     Warning (332126): Node "COPINT~9|dataout"
     Warning (332126): Node "COPINT~9|[1]"
 Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "COPCTL2[4]~37|dataout"
+    Warning (332126): Node "COPCTL2[4]~37|[0]"
+Warning (332125): Found combinational loop of 2 nodes
     Warning (332126): Node "COPCTL2[2]~43|dataout"
     Warning (332126): Node "COPCTL2[2]~43|[1]"
 Warning (332125): Found combinational loop of 5 nodes
@@ -1472,8 +1473,8 @@ Warning (332125): Found combinational loop of 5 nodes
     Warning (332126): Node "KB_Stop~13|pexpin"
     Warning (332126): Node "KB_Stop~13|[0]"
 Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "FRMFREQ~24|dataout"
-    Warning (332126): Node "FRMFREQ~24|[0]"
+    Warning (332126): Node "FRMFREQ~13|dataout"
+    Warning (332126): Node "FRMFREQ~13|[0]"
 Warning (332125): Found combinational loop of 2 nodes
     Warning (332126): Node "ENABLEREG[0]~40|dataout"
     Warning (332126): Node "ENABLEREG[0]~40|[1]"
@@ -1481,32 +1482,29 @@ Warning (332125): Found combinational loop of 2 nodes
     Warning (332126): Node "COPCTL2[5]~40|dataout"
     Warning (332126): Node "COPCTL2[5]~40|[0]"
 Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "COPCTL2[4]~37|dataout"
-    Warning (332126): Node "COPCTL2[4]~37|[0]"
-Warning (332125): Found combinational loop of 2 nodes
     Warning (332126): Node "COPCTL2[0]~49|dataout"
     Warning (332126): Node "COPCTL2[0]~49|[0]"
-Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "COPCTL[6]~46|dataout"
-    Warning (332126): Node "COPCTL[6]~46|[1]"
-Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "COPCTL[4]~54|dataout"
-    Warning (332126): Node "COPCTL[4]~54|[1]"
 Warning (332125): Found combinational loop of 2 nodes
     Warning (332126): Node "COPCTL[1]~62|dataout"
     Warning (332126): Node "COPCTL[1]~62|[1]"
 Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "COPCTL[6]~46|dataout"
+    Warning (332126): Node "COPCTL[6]~46|[1]"
+Warning (332125): Found combinational loop of 2 nodes
     Warning (332126): Node "COPCTL[5]~50|dataout"
     Warning (332126): Node "COPCTL[5]~50|[1]"
-Warning (332125): Found combinational loop of 2 nodes
-    Warning (332126): Node "COPCTL[3]~58|dataout"
-    Warning (332126): Node "COPCTL[3]~58|[1]"
 Warning (332125): Found combinational loop of 2 nodes
     Warning (332126): Node "COPCTL[2]~66|dataout"
     Warning (332126): Node "COPCTL[2]~66|[1]"
 Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "COPCTL[3]~58|dataout"
+    Warning (332126): Node "COPCTL[3]~58|[1]"
+Warning (332125): Found combinational loop of 2 nodes
     Warning (332126): Node "COPCTL[7]~42|dataout"
     Warning (332126): Node "COPCTL[7]~42|[1]"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "COPCTL[4]~54|dataout"
+    Warning (332126): Node "COPCTL[4]~54|[1]"
 Warning (332125): Found combinational loop of 2 nodes
     Warning (332126): Node "COPCTL[0]~38|dataout"
     Warning (332126): Node "COPCTL[0]~38|[1]"
@@ -1532,7 +1530,7 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 88 warnings
     Info: Peak virtual memory: 370 megabytes
-    Info: Processing ended: Wed May 04 18:38:57 2016
+    Info: Processing ended: Fri Sep 09 19:55:30 2016
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
