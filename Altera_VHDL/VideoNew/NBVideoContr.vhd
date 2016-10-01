@@ -29,7 +29,7 @@ entity NBVideoContr is
 			  ENABLE: in STD_LOGIC; -- enable disable video	
 			  BUSACK: in STD_LOGIC; -- Bus Ack
 			  DATA : in  std_logic_vector(8-1 downto 0) ; 
-           VIDADDR : out  std_logic_vector(16-1 downto 0) ;           
+           VIDADDR : inout  std_logic_vector(16-1 downto 0) ;           
 			  CLOCKIN : in  STD_LOGIC;
            PXLOUT : out  STD_LOGIC;
 			  PXLOUT2 : out  STD_LOGIC;			  	
@@ -59,6 +59,7 @@ entity NBVideoContr is
 			  PXLCLKOUT:out STD_LOGIC;
 			  CLK4:in STD_LOGIC;
 			  M1:in STD_LOGIC;
+			  VidIsol:out STD_LOGIC;
 			  
 			  SysClk:in STD_LOGIC;
 			  SysClk16:out STD_LOGIC;
@@ -97,7 +98,18 @@ constant TestPat  :std_logic_vector(8-1 downto 0):="10011001";
 Signal staddr:std_logic_vector(15-1 downto 0);--:="00000101";
 --Signal grphaddr:std_logic_vector(15-1 downto 0);--:="00000101";
 Signal nxtstaddr:std_logic_vector(8-1 downto 0):="00000101";
+Signal nxtstaddr1:std_logic_vector(8-1 downto 0):="00000101";
+Signal nxtstaddr2:std_logic_vector(8-1 downto 0):="00000101";
+Signal nxtstaddr3:std_logic_vector(8-1 downto 0):="00000101";
+signal nxtcnt:integer:=0;
+
 Signal VAddr:std_logic_vector(15-1 downto 0);
+Signal RAMAddr:std_logic_vector(13-1 downto 0);
+signal RAMDATAin: std_logic_vector(8-1 downto 0);
+signal RAMDATAout: std_logic_vector(8-1 downto 0);
+signal RAMDATAoutRev: std_logic_vector(8-1 downto 0);
+
+signal RAMWe: std_logic;
 Signal Addr:integer range 0 to 32767;
 Signal grphaddr:integer range 0 to 32767;
 Signal bitcnt : integer range 0 to 7:=0;
@@ -205,7 +217,7 @@ signal noBusrq,noBusrq2:std_logic;
 signal narrowgap:integer range 0 to 10;
 signal charHeight:integer range 0 to 10;
 signal setvideo9:std_logic;
-signal sQ7,sQD7:std_logic;
+signal sQ7,sQD7,sQD72:std_logic;
 Signal tFS:std_logic;
 
 begin
@@ -345,10 +357,10 @@ Begin
    sTVCLK<='0';
    enter:=(hcount>=leftgap-7 and hcount<=leftgap+colend and vcount=41) or (hcount>leftgap and hcount<=leftgap+colend);
 	--enter:=enter and noBusrq='0';
---	if hcount<leftgap then
---	 noBusrq<='0';
+	--if hcount<leftgap then
+	-- noBusrq<='0';
 --	 testz:=0;
---	end if; 	
+	--end if; 	
 	if hcount=leftgap-8 then
     vcol:=0;  
 	 vchar:=0;	
@@ -358,12 +370,14 @@ Begin
 	if hcount=leftgap-4 then
 	  sTVCLK<='1';
 	end if;
-	if hcount=leftgap-2 then
+	--if hcount=leftgap-2 then
+	if hcount=leftgap-3 then --1/10/2016
 	 DataCURnext<=Datain;
 	 sQD7<=Datain(7);	 
 	end if;
 	if hcount=leftgap-1 then
-	  CharDataCURnext<=charDataIN;	 
+	 -- CharDataCURnext<=charDataIN;	 --1/10/2016
+	  CharDataCURnext<= RAMDATAoutRev;
 	end if;  
 	if hcount=leftgap then
 	 nobusrq<='0';
@@ -401,7 +415,7 @@ Begin
 	if noBusrq='0' then
 	if b=0 then 
 	 Datacur<=DataCURnext;
-	 CharDatacur<=CharDataCURnext;
+	 CharDatacur<=CharDataCURnext;	 
 	 sRVUP <= DataCURnext(7); 			 
 	 if hcount>leftgap+1 and hcount<=leftgap+colend then
    	 if (isgraph='0') then
@@ -438,9 +452,7 @@ Begin
 		   screenend<='1';
 		  end if; 
       end if;
-	 end if;	
-	elsif b=5 then
-	 sTVCLK<='1';	 
+	 end if;		
 	elsif b=3 then  
 	 --sTVCLK<='1';
 	 DataCURnext<=Datain;
@@ -448,9 +460,12 @@ Begin
 	elsif b=4 then  
 	 sTVCLK<='1';
 	 sQD7<=DataCURnext(7);
+   elsif b=5 then
+	 sTVCLK<='1';	 	 
 	elsif b=6 then	  
-	  sTVCLK<='1';
-	  CharDataCURnext<=charDataIN;
+	 sTVCLK<='1';
+	  --CharDataCURnext<=charDataIN; --1/10/2016
+	  CharDataCURnext<= RAMDATAoutRev;
 	end if; 
 	end if;  --nobusrq
 	
@@ -502,21 +517,38 @@ begin
      --get start address from NB through out 9,a
       IF BTN1='1' THEN
 	     nxtSTADDR<="00000101";
+		 -- setvideo9<='0'; 
       ELSIF sSETADDR='1' AND BUSACK='1'   THEN  -- FROM Z80		
 			nxtSTADDR<=DATAin ;			
-			setvideo9<='0'; 
+			if nxtcnt=0 then
+		     nxtSTADDR1<=DATAin ;			 	
+			  nxtSTADDR2<=DATAin ;			 	
+			  nxtSTADDR3<=DATAin ;			 	
+			  nxtcnt<=3;
+			else
+	        nxtSTADDR1<=nxtSTADDR2;
+			  nxtSTADDR2<=nxtSTADDR3;
+			  nxtSTADDR3<=DATAin;  
+			end if;
+			
+			if nxtSTADDR1=nxtSTADDR2 and nxtSTADDR1=nxtSTADDR3 then
+			  nxtSTADDR<=nxtSTADDR1 ;			
+			end if;
+			
+		--	setvideo9<='0'; 
 			--nxtSTADDR<="00000101";
 		elsE
-        if svideo9='1' then
-	       setvideo9<='1'; 
-	     end if;	
+      --  if svideo9='1' then
+	   --    setvideo9<='1'; 
+	   --  end if;	
 		END IF;	
 		
 	end if;
 end process;
 
-	QD7<='0' WHEN sFS='0' AND ISTEXT='1'
+	sQD72<='0' WHEN sFS='0' AND ISTEXT='1'
 	     ELSE sQD7;
+	QD7<=sQD72;
 	
 	--sTvCLK <='1' when bitcnt=7 else '0';
 	RVUP <= sRVUP WHEN sFS='0' AND ISTEXT='1'
@@ -525,10 +557,21 @@ end process;
 	RVF <= sRV XOR RVUP;
 
    Vaddr<=std_logic_vector(to_unsigned(addr, 15));    
-	
-   DATAin <= DATA ;
+	RAMaddr<=sUCR&rowcnt&sQD72&DataCURnext(7-1 downto 0);
+	   --     1     4     1       7
+	DATAin <= DATA ;
 	CHARDATAin <=CHARDATA;	
+	--VIDADDR <= '0'&Vaddr when vidisol='0' else (others=>'Z');
    VIDADDR <= '0'&Vaddr when busack='0' and sBusReq='0' else (others=>'Z');
+	VidIsol<= '0' when busack='0' and sBusReq='0'
+	  else '1';
+	
+--	setvideo9<='1' when svideo9='1' AND BUSACK='1'
+--	    else '0' when sSETADDR='1' AND BUSACK='1'
+--		 else setvideo9;
+	setvideo9<='0';
+	   --    
+	
 	TVCLK <= sTVCLK;
 	CHARCOUNT <= rowcnt;  
 	NBCOPINT <= '0' WHEN copcnt>=1 and copcnt<=4 else '1'; -- every 12,5 ms
@@ -555,10 +598,11 @@ end process;
 		-- else '1' when chartp=1  and (rows mod 8=0)
 		-- else '1' when chartp=2  and (rows mod 16=0)
 		 --else '1' when nxtchar='1' and rows>10
+		  --'1' when nobusrq2='1'
 		   '1' when hcount=leftgap and (rows mod 4=0)
-			else '1' when isgraph='1' and (hcount=leftgap-2 or hcount=leftgap-3)
-			else '1' when istext='1' and (hcount=leftgap-2 or hcount=leftgap-3)
-			else '1' when screenend='1' and (hcount=leftgap-5 or hcount=leftgap-4)
+			--else '1' when isgraph='1' and (hcount=leftgap-2 or hcount=leftgap-3)
+			--else '1' when istext='1' and (hcount=leftgap-2 or hcount=leftgap-3)
+			--else '1' when screenend='1' and (hcount=leftgap-5 or hcount=leftgap-4)
 			--else '1' when zerocnt=2 and bitcnt<3
 			--else '1' when zerocnt=4
 			
@@ -576,9 +620,9 @@ end process;
 	--this is for the whole 1024 pixels OF 250 line maybe more
 	enbus1<='1' when (hcount>leftgap-40) and (hcount<leftgap+640) and (vcount>40 and vcount <291) else '0'; --128 Enabled Bus Request
 	
-	nobusrq2<=nobusrq when  hcount>leftgap+8 else '0'; --1 means that we suppress busrq
-	--sBusReq <= '0' when enbus1='1' and  enable='1' and nobusrq2='0' else '1'; -- active low	
-	sBusReq <= '0' when enbus1='1' and  enable='1' else '1'; -- active low	
+	nobusrq2<=nobusrq when  hcount>leftgap+8  else '0';
+	sBusReq <= '0' when enbus1='1' and  enable='1' and nobusrq2='0' else '1'; -- active low	
+	--sBusReq <= '0' when enbus1='1' and  enable='1' else '1'; -- active low	
 	BusReq<=sBusReq;
 	
 
@@ -612,7 +656,7 @@ end process;
 		
 
    Led1<=ENABLE;	
-	Led2<=sFS;	    
+	Led2<=setVideo9;	    
 	Led3<='1' WHEN STADDR="000001010000010"
 	     ELSE '0';		  
 	Led4<='0';
@@ -640,6 +684,15 @@ end process;
 		c2			 => c8,
 		locked	 => locked_sig
 	);
+	
+	myRam_inst : work.RAM8k PORT MAP (
+	  Clock => pxlclk,
+	  wren      => RAMWe,
+	  address => RamAddr,
+	  data => RAMDATAin,
+	  q => RAMDATAout
+	);
+	RAMDATAoutRev<=RAMDATAout(0)&RAMDATAout(1)&RAMDATAout(2)&RAMDATAout(3)&RAMDATAout(4)&RAMDATAout(5)&RAMDATAout(6)&RAMDATAout(7);
 	
 end Behavioral;
 
