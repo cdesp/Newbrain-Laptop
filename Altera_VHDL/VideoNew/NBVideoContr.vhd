@@ -361,32 +361,41 @@ Begin
 	-- noBusrq<='0';
 --	 testz:=0;
 	--end if; 	
-	if hcount=leftgap-8 then
+	if hcount=leftgap-7 then
     vcol:=0;  
 	 vchar:=0;	
 	 b:=0; 
 	 testz:=0;	 
 	end if; 
+	if hcount=leftgap-5 then --1/10/2016
+	 DataCURnext<=Datain;
+	 sQD7<=Datain(7);	 
+	end if; 
 	if hcount=leftgap-4 then
-	  sTVCLK<='1';
+	 sTVCLK<='1';
+	 sQD7<=DataCURnext(7);
 	end if;
 	--if hcount=leftgap-2 then
 	if hcount=leftgap-3 then --1/10/2016
-	 DataCURnext<=Datain;
-	 sQD7<=Datain(7);	 
+	sTVCLK<='1';
+--	 DataCURnext<=Datain;
+	 --Datacurnext<="01001110";
+	 --sQD7<=Datain(7);	 
 	end if;
-	if hcount=leftgap-1 then
+	if hcount=leftgap-2 then
+	 sTVCLK<='1';
 	 -- CharDataCURnext<=charDataIN;	 --1/10/2016
-	  CharDataCURnext<= RAMDATAoutRev;
+	 -- CharDataCURnext<= RAMDATAoutRev; 16/12
 	end if;  
 	if hcount=leftgap then
 	 nobusrq<='0';
 	 vcol:=0;
 	 b:=0;
 	 z:=0;
-	 Datacur<=DataCURnext;
-	 CharDatacur<=CharDataCURnext;	
-	 sQD7<=DataCURnext(7);    
+--	 Datacur<=DataCURnext;	 
+--	 CharDatacur<=CharDataCURnext;	
+	 --CharDatacurnext<="11001100";
+--	 sQD7<=DataCURnext(7);    
     if datACURnext="00000000" then
      z:=1;
     end if;	 
@@ -416,7 +425,7 @@ Begin
 	if b=0 then 
 	 Datacur<=DataCURnext;
 	 CharDatacur<=CharDataCURnext;	 
-	 sRVUP <= DataCURnext(7); 			 
+	 sRVUP <= DataCURnext(7); 		     
 	 if hcount>leftgap+1 and hcount<=leftgap+colend then
    	 if (isgraph='0') then
 		   if DataCURnext="00000000" then
@@ -459,13 +468,16 @@ Begin
 	 sQ7<=Q7;	 
 	elsif b=4 then  
 	 sTVCLK<='1';
-	 sQD7<=DataCURnext(7);
+	 sQD7<=DataCURnext(7);	 
    elsif b=5 then
 	 sTVCLK<='1';	 	 
 	elsif b=6 then	  
 	 sTVCLK<='1';
 	  --CharDataCURnext<=charDataIN; --1/10/2016
-	  CharDataCURnext<= RAMDATAoutRev;
+	 -- CharDataCURnext<= RAMDATAoutRev;	 --from internal ram  16/12
+	elsif b=7 then 
+     sQD7<='0';-- 16/12	
+	 
 	end if; 
 	end if;  --nobusrq
 	
@@ -491,7 +503,7 @@ Begin
 	 if (char80='1') then
 	   vchar:=integer(vcol / 8)+1; -- 8 for hi or 16 for low def
 	 else 
-	   vchar:=integer(vcol / 16)+1; -- 8 for hi or 16 for low def
+	   vchar:=integer(vcol / 16)+1; --  8 for hi or 16 for low def
 	 end if;	
 	 vcol:=vcol+1;	 
 	 if (char80='0') then --and (vcol mod 2=0)) then
@@ -517,7 +529,7 @@ begin
      --get start address from NB through out 9,a
       IF BTN1='1' THEN
 	     nxtSTADDR<="00000101";
-		 -- setvideo9<='0'; 
+		  setvideo9<='0'; 
       ELSIF sSETADDR='1' AND BUSACK='1'   THEN  -- FROM Z80		
 			nxtSTADDR<=DATAin ;			
 			if nxtcnt=0 then
@@ -535,18 +547,18 @@ begin
 			  nxtSTADDR<=nxtSTADDR1 ;			
 			end if;
 			
-		--	setvideo9<='0'; 
+			setvideo9<='0'; 
 			--nxtSTADDR<="00000101";
 		elsE
-      --  if svideo9='1' then
-	   --    setvideo9<='1'; 
-	   --  end if;	
+        if svideo9='1' AND BUSACK='1' then
+	       setvideo9<='1'; 
+	     end if;	
 		END IF;	
 		
 	end if;
 end process;
 
-	sQD72<='0' WHEN sFS='0' AND ISTEXT='1'
+	sQD72<='0' WHEN sFS='0' AND ISTEXT='1' 
 	     ELSE sQD7;
 	QD7<=sQD72;
 	
@@ -558,9 +570,12 @@ end process;
 
    Vaddr<=std_logic_vector(to_unsigned(addr, 15));    
 	RAMaddr<=sUCR&rowcnt&sQD72&DataCURnext(7-1 downto 0);
-	   --     1     4     1       7
+	    --     1     4     1       7
+	CharDataCURnext<= RAMDATAoutRev when (bitcnt=6) or (hcount=leftgap-2) else CharDataCURnext;	 --from internal ram  16/12
+	
+	   
 	DATAin <= DATA ;
-	CHARDATAin <=CHARDATA;	
+	CHARDATAin <=CHARDATA;	--from external char eprom
 	--VIDADDR <= '0'&Vaddr when vidisol='0' else (others=>'Z');
    VIDADDR <= '0'&Vaddr when busack='0' and sBusReq='0' else (others=>'Z');
 	VidIsol<= '0' when busack='0' and sBusReq='0'
@@ -569,7 +584,7 @@ end process;
 --	setvideo9<='1' when svideo9='1' AND BUSACK='1'
 --	    else '0' when sSETADDR='1' AND BUSACK='1'
 --		 else setvideo9;
-	setvideo9<='0';
+--	setvideo9<='0';
 	   --    
 	
 	TVCLK <= sTVCLK;
@@ -581,7 +596,8 @@ end process;
 	csync <= hsync xnor vsync when (vcount<7) or (vcount>309) or (hcount<=80) else '1'  ;  	
 
    PXLOUT<= (pxlshft XOR RVF) or pxltest  when hcount>leftgap and hcount<=leftgap+640 and videov='1' and busack='0' 
-			else '0';
+	      ELSE '0' XOR RVF WHEN hcount>leftgap and hcount<=leftgap+640 and videov='1'
+			else '0' ;
 	--pxlOUT2<=pxltest when hcount>leftgap and hcount<=leftgap+640+1 and videov='1' and busack='0';
 	
 	pxltest <=	--'0';
