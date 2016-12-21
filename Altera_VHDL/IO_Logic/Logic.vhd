@@ -425,14 +425,37 @@ end process;
 --	TWOO  <= '1' WHEN IRQ='0' and  VADDRLow=x"02"
 --	 ELSE '0';
 	--Z80 INTERRUPT IN
-   FRMFREQ<='0' WHEN CLK50='0'  AND frmfreqon='0'
-		 ELSE '1' WHEN	(IRQ='0' and  VADDRLow=x"04" ) or frmfreqon='1' --9/9/2016 frfreqon
-		-- ELSE '1' WHEN IRQ='0' and  VADDRLow=x"14" AND RDin='0' --4/5/2016 9/9/2016 commented
-	    ELSE FRMFREQ;
+	process (clk50,genclk)
+	begin
+ 	  if  (genclk='1' and IRQ='0' and  VADDRLow=x"04" ) or frmfreqon='1' then
+		  FRMFREQ<='1';
+
+     elsif falling_edge(clk50) then
+		 if  frmfreqon='0' then
+		  FRMFREQ<='0';		 
+	    end if;
+	  end if;
+	end process;
+
+	process (CLKCOP,genclk)
+	begin
+	  if  genclk='1' and IRQ='0' and  VADDRLow=x"14" AND RDin='0' then
+		  COPINT<='1';		  
+	  elsif falling_edge(CLKCOP) then
+		  COPINT<='0';		 	    
+	  end if;
+	end process;
+
+	
+ --  FRMFREQ<='0' WHEN CLK50='0'  AND frmfreqon='0' and rising_edge(GENCLK)
+--		 ELSE '1' WHEN	(IRQ='0' and  VADDRLow=x"04" ) or frmfreqon='1' --9/9/2016 frfreqon
+--		-- ELSE '1' WHEN IRQ='0' and  VADDRLow=x"14" AND RDin='0' --4/5/2016 9/9/2016 commented
+--	    ELSE FRMFREQ;
    FRMFREQpre<=FRMFREQ;
-   COPINT <='0' WHEN CLKCOP='0' 
-	    ELSE '1' WHEN IRQ='0' and  VADDRLow=x"14" AND RDin='0' --was WRin='0' 7/2/2016 ,VADDRLow=x"06" 4/5/2016
-		 ELSE COPINT;
+--   COPINT <='0' WHEN CLKCOP='0' 
+--	    ELSE '1' WHEN IRQ='0' and  VADDRLow=x"14" AND RDin='0' --was WRin='0' 7/2/2016 ,VADDRLow=x"06" 4/5/2016
+--	   -- ELSE '1' WHEN IRQ='0' and  VADDRLow=x"06" AND WRin='0' --was WRin='0' 7/2/2016 ,VADDRLow=x"06" 20/12/2016
+--		 ELSE COPINT;
 	COPINTpre<=COPINT;
 	
 	TEST<=FRMFREQ;

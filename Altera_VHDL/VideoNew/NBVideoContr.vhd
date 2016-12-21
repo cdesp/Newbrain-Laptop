@@ -185,7 +185,7 @@ constant SSc : integer :=40; --640 div 8
 
 --signal clk:std_logic;
 --signal clktmp:std_logic:='0';
-signal copcnt:integer range 0 to 195:=0;
+signal copcnt:integer range 0 to 200:=0;
 
 
 --signal sBusReq:std_logic;
@@ -219,6 +219,7 @@ signal charHeight:integer range 0 to 10;
 signal setvideo9:std_logic;
 signal sQ7,sQD7,sQD72:std_logic;
 Signal tFS:std_logic;
+signal ccc:integer range 0 to 12;
 
 begin
 
@@ -237,20 +238,27 @@ end process;
 
 
 vcounter: process (vclock)
+
 begin
         if rising_edge(vclock) then 
             if hcount>maxpixels then 
-                if vcount>maxlines then --312 including the 0
+               -- if vcount>maxlines then --312 including the 0
+					 if vcount>maxlines then --312 including the 0
                     vcount <= 1;
+						  ccc<=ccc+1;		
                 else 
                     vcount <= vcount + 1;						  
                 end if;
-                if copcnt>=195 then -- 194 CAUSE WE START FROM 1 IF START FROM 0 NOT COMPILE
-                    copcnt <= 1;
+                if copcnt>199 then --199ok 194 CAUSE WE START FROM 1 IF START FROM 0 NOT COMPILE
+                    copcnt <= 1;						  				  
                 else 
                     copcnt <= copcnt + 1;						  
                 end if;
-					 
+					 if ccc>=7 then --every 140ms should have both interrupts
+					   ccc<=0;
+					   --vcount<=1;
+					   copcnt<=1;	
+					 end if;	
             end if;
         end if; 
 end process;
@@ -589,8 +597,8 @@ end process;
 	
 	TVCLK <= sTVCLK;
 	CHARCOUNT <= rowcnt;  
-	NBCOPINT <= '0' WHEN copcnt>=1 and copcnt<=4 else '1'; -- every 12,5 ms
-	NBCLKINT  <= '0' when vcount>=1 and vcount<=4 else '1'; -- every 20 ms
+	NBCOPINT <= '0'  WHEN copcnt=1 and busack<='1'  else '1'; -- every 12,5 ms should be 12,8 was <=4
+	NBCLKINT  <= '0' when vcount=2 and busack<='1'  else '1'; -- every 20 ms
 	frmst <= '1' WHEN VCOUNT=41 and hcount= leftgap-8 ELSE '0';
 	videov <= '1' when (vcount>40) and (vcount<=40+251) else '0';--visible lines
 	csync <= hsync xnor vsync when (vcount<7) or (vcount>309) or (hcount<=80) else '1'  ;  	
