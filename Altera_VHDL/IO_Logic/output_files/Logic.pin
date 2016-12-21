@@ -76,7 +76,7 @@ RS232SEL                     : 12        : output : TTL               :         
 VCCIO                        : 13        : power  :                   : 5.0V    :           :                
 TDI                          : 14        : input  : TTL               :         :           : N              
 A15                          : 15        : input  : TTL               :         :           : Y              
-REVO                         : 16        : output : TTL               :         :           : N              
+TEST                         : 16        : output : TTL               :         :           : N              
 sIORQ                        : 17        : input  : TTL               :         :           : Y              
 MREQ                         : 18        : input  : TTL               :         :           : Y              
 GND                          : 19        : gnd    :                   :         :           :                
@@ -94,7 +94,7 @@ EPRWR                        : 30        : output : TTL               :         
 sTVPower                     : 31        : output : TTL               :         :           : N              
 GND                          : 32        : gnd    :                   :         :           :                
 IOH                          : 33        : output : TTL               :         :           : Y              
-RS232INT                     : 34        : input  : TTL               :         :           : N              
+TEST1                        : 34        : output : TTL               :         :           : N              
 CTS                          : 35        : input  : TTL               :         :           : Y              
 RX                           : 36        : input  : TTL               :         :           : Y              
 TX                           : 37        : output : TTL               :         :           : Y              
@@ -116,8 +116,8 @@ s3240                        : 52        : output : TTL               :         
 VCCIO                        : 53        : power  :                   : 5.0V    :           :                
 sRV                          : 54        : output : TTL               :         :           : Y              
 sFS                          : 55        : output : TTL               :         :           : Y              
-TEST                         : 56        : output : TTL               :         :           : N              
-TEST1                        : 57        : output : TTL               :         :           : N              
+REVO                         : 56        : output : TTL               :         :           : N              
+RS232INT                     : 57        : input  : TTL               :         :           : N              
 VADDRLow[7]                  : 58        : input  : TTL               :         :           : Y              
 GND                          : 59        : gnd    :                   :         :           :                
 VADDRLow[6]                  : 60        : input  : TTL               :         :           : Y              

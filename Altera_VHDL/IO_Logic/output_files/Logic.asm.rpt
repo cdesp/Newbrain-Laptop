@@ -1,5 +1,5 @@
 Assembler report for Logic
-Fri Sep 09 19:55:27 2016
+Tue Dec 20 18:19:02 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Fri Sep 09 19:55:27 2016 ;
+; Assembler Status      ; Successful - Tue Dec 20 18:19:02 2016 ;
 ; Revision Name         ; Logic                                 ;
 ; Top-level Entity Name ; Logic                                 ;
 ; Family                ; MAX7000S                              ;
@@ -89,7 +89,7 @@ applicable agreement for further details.
 +----------------+-------------------------------------------------------------------------------------------------+
 ; Device         ; EPM7128SLC84-15                                                                                 ;
 ; JTAG usercode  ; 0x00000000                                                                                      ;
-; Checksum       ; 0x0018E474                                                                                      ;
+; Checksum       ; 0x0018F4E1                                                                                      ;
 +----------------+-------------------------------------------------------------------------------------------------+
 
 
@@ -99,13 +99,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Sep 09 19:55:27 2016
+    Info: Processing started: Tue Dec 20 18:19:00 2016
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Logic -c Logic
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 374 megabytes
-    Info: Processing ended: Fri Sep 09 19:55:27 2016
-    Info: Elapsed time: 00:00:00
+    Info: Processing ended: Tue Dec 20 18:19:02 2016
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 

@@ -10,6 +10,30 @@ Type  : Hold 'CLOCK'
 Slack : 5.000
 TNS   : 0.000
 
+Type  : Recovery 'CLK50'
+Slack : -23.500
+TNS   : -23.500
+
+Type  : Recovery 'CLKCOP'
+Slack : -3.500
+TNS   : -3.500
+
+Type  : Removal 'CLKCOP'
+Slack : -4.000
+TNS   : -4.000
+
+Type  : Removal 'CLK50'
+Slack : 16.000
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'CLK50'
+Slack : -5.500
+TNS   : -11.000
+
+Type  : Minimum Pulse Width 'CLKCOP'
+Slack : -5.500
+TNS   : -11.000
+
 Type  : Minimum Pulse Width 'RevRRset'
 Slack : -5.500
 TNS   : -11.000

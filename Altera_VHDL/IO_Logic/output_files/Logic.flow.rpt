@@ -1,5 +1,5 @@
 Flow report for Logic
-Fri Sep 09 19:55:30 2016
+Tue Dec 20 18:19:06 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,14 +40,14 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+
 ; Flow Summary                                                                ;
 +---------------------------+-------------------------------------------------+
-; Flow Status               ; Successful - Fri Sep 09 19:55:27 2016           ;
+; Flow Status               ; Successful - Tue Dec 20 18:19:02 2016           ;
 ; Quartus II 64-Bit Version ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name             ; Logic                                           ;
 ; Top-level Entity Name     ; Logic                                           ;
 ; Family                    ; MAX7000S                                        ;
 ; Device                    ; EPM7128SLC84-15                                 ;
 ; Timing Models             ; Final                                           ;
-; Total macrocells          ; 101 / 128 ( 79 % )                              ;
+; Total macrocells          ; 100 / 128 ( 78 % )                              ;
 ; Total pins                ; 65 / 68 ( 96 % )                                ;
 +---------------------------+-------------------------------------------------+
 
@@ -57,7 +57,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 09/09/2016 19:55:21 ;
+; Start date & time ; 12/20/2016 18:18:51 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Logic               ;
 +-------------------+---------------------+
@@ -68,7 +68,7 @@ applicable agreement for further details.
 +--------------------------+------------------------------+---------------+-------------+------------+
 ; Assignment Name          ; Value                        ; Default Value ; Entity Name ; Section Id ;
 +--------------------------+------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID    ; 146396995915.147344012003768 ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID    ; 146396995915.148225073105852 ; --            ; --          ; --         ;
 ; PROJECT_OUTPUT_DIRECTORY ; output_files                 ; --            ; --          ; --         ;
 +--------------------------+------------------------------+---------------+-------------+------------+
 
@@ -78,11 +78,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:03     ; 1.0                     ; 486 MB              ; 00:00:03                           ;
-; Fitter                    ; 00:00:01     ; 1.0                     ; 480 MB              ; 00:00:01                           ;
-; Assembler                 ; 00:00:00     ; 1.0                     ; 374 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 370 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:06     ; --                      ; --                  ; 00:00:06                           ;
+; Analysis & Synthesis      ; 00:00:06     ; 1.0                     ; 475 MB              ; 00:00:03                           ;
+; Fitter                    ; 00:00:02     ; 1.0                     ; 480 MB              ; 00:00:01                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 374 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 370 MB              ; 00:00:01                           ;
+; Total                     ; 00:00:13     ; --                      ; --                  ; 00:00:06                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

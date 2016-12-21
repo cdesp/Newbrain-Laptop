@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Logic
-Fri Sep 09 19:55:23 2016
+Tue Dec 20 18:18:56 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -43,12 +43,12 @@ applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +-----------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Fri Sep 09 19:55:23 2016           ;
+; Analysis & Synthesis Status ; Successful - Tue Dec 20 18:18:56 2016           ;
 ; Quartus II 64-Bit Version   ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name               ; Logic                                           ;
 ; Top-level Entity Name       ; Logic                                           ;
 ; Family                      ; MAX7000S                                        ;
-; Total macrocells            ; 100                                             ;
+; Total macrocells            ; 99                                              ;
 ; Total pins                  ; 61                                              ;
 +-----------------------------+-------------------------------------------------+
 
@@ -155,15 +155,15 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------+----------------------+
 ; Resource             ; Usage                ;
 +----------------------+----------------------+
-; Logic cells          ; 100                  ;
-; Total registers      ; 36                   ;
+; Logic cells          ; 99                   ;
+; Total registers      ; 38                   ;
 ; I/O pins             ; 61                   ;
-; Shareable expanders  ; 15                   ;
-; Parallel expanders   ; 12                   ;
+; Shareable expanders  ; 14                   ;
+; Parallel expanders   ; 11                   ;
 ; Maximum fan-out node ; BUSACK               ;
-; Maximum fan-out      ; 61                   ;
-; Total fan-out        ; 1185                 ;
-; Average fan-out      ; 6.73                 ;
+; Maximum fan-out      ; 57                   ;
+; Total fan-out        ; 1129                 ;
+; Average fan-out      ; 6.49                 ;
 +----------------------+----------------------+
 
 
@@ -172,7 +172,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+------------+------+-----------------------------+--------------+
 ; Compilation Hierarchy Node ; Macrocells ; Pins ; Full Hierarchy Name         ; Library Name ;
 +----------------------------+------------+------+-----------------------------+--------------+
-; |Logic                     ; 100        ; 61   ; |Logic                      ; work         ;
+; |Logic                     ; 99         ; 61   ; |Logic                      ; work         ;
 ;    |PS2Main:Inst_PS2Main|  ; 44         ; 0    ; |Logic|PS2Main:Inst_PS2Main ; work         ;
 +----------------------------+------------+------+-----------------------------+--------------+
 
@@ -182,8 +182,6 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------------------+---------------------+------------------------+
 ; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
 +-----------------------------------------------------+---------------------+------------------------+
-; COPINT                                              ; GND                 ; yes                    ;
-; FRMFREQ                                             ; GND                 ; yes                    ;
 ; ENABLEREG[2]                                        ; ENABLEREG           ; yes                    ;
 ; VidCTRsig[3]                                        ; VidCTRsig           ; yes                    ;
 ; VidCTRsig[6]                                        ; VidCTRsig           ; yes                    ;
@@ -209,7 +207,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; COPCTL[6]                                           ; COPCTL              ; yes                    ;
 ; COPCTL[7]                                           ; COPCTL              ; yes                    ;
 ; KB_Stop                                             ; GND                 ; yes                    ;
-; Number of user-specified and inferred latches = 27  ;                     ;                        ;
+; Number of user-specified and inferred latches = 25  ;                     ;                        ;
 +-----------------------------------------------------+---------------------+------------------------+
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
@@ -268,7 +266,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Sep 09 19:55:20 2016
+    Info: Processing started: Tue Dec 20 18:18:50 2016
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Logic -c Logic
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file flipflop.vhd
@@ -291,37 +289,41 @@ Warning (10036): Verilog HDL or VHDL warning at Logic.vhd(203): object "MREQnot"
 Warning (10036): Verilog HDL or VHDL warning at Logic.vhd(203): object "BUSACKnot" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at Logic.vhd(203): object "RevRAmRomnot" assigned a value but never read
 Warning (10036): Verilog HDL or VHDL warning at Logic.vhd(204): object "BUSACKr" assigned a value but never read
-Info (10041): Inferred latch for "sLCDRS" at Logic.vhd(569)
-Info (10041): Inferred latch for "sVideo9" at Logic.vhd(556)
-Info (10041): Inferred latch for "COPCTL2[0]" at Logic.vhd(526)
-Info (10041): Inferred latch for "COPCTL2[1]" at Logic.vhd(526)
-Info (10041): Inferred latch for "COPCTL2[2]" at Logic.vhd(526)
-Info (10041): Inferred latch for "COPCTL2[3]" at Logic.vhd(526)
-Info (10041): Inferred latch for "COPCTL2[4]" at Logic.vhd(526)
-Info (10041): Inferred latch for "COPCTL2[5]" at Logic.vhd(526)
-Info (10041): Inferred latch for "COPCTL2[6]" at Logic.vhd(526)
-Info (10041): Inferred latch for "COPCTL2[7]" at Logic.vhd(526)
-Info (10041): Inferred latch for "COPCTL[0]" at Logic.vhd(511)
-Info (10041): Inferred latch for "COPCTL[1]" at Logic.vhd(511)
-Info (10041): Inferred latch for "COPCTL[2]" at Logic.vhd(511)
-Info (10041): Inferred latch for "COPCTL[3]" at Logic.vhd(511)
-Info (10041): Inferred latch for "COPCTL[4]" at Logic.vhd(511)
-Info (10041): Inferred latch for "COPCTL[5]" at Logic.vhd(511)
-Info (10041): Inferred latch for "COPCTL[6]" at Logic.vhd(511)
-Info (10041): Inferred latch for "COPCTL[7]" at Logic.vhd(511)
-Info (10041): Inferred latch for "ENABLEREG[0]" at Logic.vhd(496)
-Info (10041): Inferred latch for "ENABLEREG[2]" at Logic.vhd(496)
-Info (10041): Inferred latch for "ENABLEREG[4]" at Logic.vhd(496)
-Info (10041): Inferred latch for "ENABLEREG[5]" at Logic.vhd(496)
-Info (10041): Inferred latch for "VidCTRsig[0]" at Logic.vhd(474)
-Info (10041): Inferred latch for "VidCTRsig[1]" at Logic.vhd(474)
-Info (10041): Inferred latch for "VidCTRsig[2]" at Logic.vhd(474)
-Info (10041): Inferred latch for "VidCTRsig[3]" at Logic.vhd(474)
-Info (10041): Inferred latch for "VidCTRsig[6]" at Logic.vhd(474)
-Info (10041): Inferred latch for "EPRWRsig" at Logic.vhd(463)
-Info (10041): Inferred latch for "KB_Stop" at Logic.vhd(445)
-Info (10041): Inferred latch for "COPINT" at Logic.vhd(433)
-Info (10041): Inferred latch for "FRMFREQ" at Logic.vhd(428)
+Warning (10492): VHDL Process Statement warning at Logic.vhd(430): signal "IRQ" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Logic.vhd(430): signal "VADDRLow" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Logic.vhd(430): signal "frmfreqon" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Logic.vhd(442): signal "IRQ" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Logic.vhd(442): signal "VADDRLow" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Logic.vhd(442): signal "RDin" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info (10041): Inferred latch for "sLCDRS" at Logic.vhd(592)
+Info (10041): Inferred latch for "sVideo9" at Logic.vhd(579)
+Info (10041): Inferred latch for "COPCTL2[0]" at Logic.vhd(549)
+Info (10041): Inferred latch for "COPCTL2[1]" at Logic.vhd(549)
+Info (10041): Inferred latch for "COPCTL2[2]" at Logic.vhd(549)
+Info (10041): Inferred latch for "COPCTL2[3]" at Logic.vhd(549)
+Info (10041): Inferred latch for "COPCTL2[4]" at Logic.vhd(549)
+Info (10041): Inferred latch for "COPCTL2[5]" at Logic.vhd(549)
+Info (10041): Inferred latch for "COPCTL2[6]" at Logic.vhd(549)
+Info (10041): Inferred latch for "COPCTL2[7]" at Logic.vhd(549)
+Info (10041): Inferred latch for "COPCTL[0]" at Logic.vhd(534)
+Info (10041): Inferred latch for "COPCTL[1]" at Logic.vhd(534)
+Info (10041): Inferred latch for "COPCTL[2]" at Logic.vhd(534)
+Info (10041): Inferred latch for "COPCTL[3]" at Logic.vhd(534)
+Info (10041): Inferred latch for "COPCTL[4]" at Logic.vhd(534)
+Info (10041): Inferred latch for "COPCTL[5]" at Logic.vhd(534)
+Info (10041): Inferred latch for "COPCTL[6]" at Logic.vhd(534)
+Info (10041): Inferred latch for "COPCTL[7]" at Logic.vhd(534)
+Info (10041): Inferred latch for "ENABLEREG[0]" at Logic.vhd(519)
+Info (10041): Inferred latch for "ENABLEREG[2]" at Logic.vhd(519)
+Info (10041): Inferred latch for "ENABLEREG[4]" at Logic.vhd(519)
+Info (10041): Inferred latch for "ENABLEREG[5]" at Logic.vhd(519)
+Info (10041): Inferred latch for "VidCTRsig[0]" at Logic.vhd(497)
+Info (10041): Inferred latch for "VidCTRsig[1]" at Logic.vhd(497)
+Info (10041): Inferred latch for "VidCTRsig[2]" at Logic.vhd(497)
+Info (10041): Inferred latch for "VidCTRsig[3]" at Logic.vhd(497)
+Info (10041): Inferred latch for "VidCTRsig[6]" at Logic.vhd(497)
+Info (10041): Inferred latch for "EPRWRsig" at Logic.vhd(486)
+Info (10041): Inferred latch for "KB_Stop" at Logic.vhd(468)
 Info (12128): Elaborating entity "d_ff_srss" for hierarchy "d_ff_srss:Inst_disp_FFmem"
 Info (12128): Elaborating entity "PS2Main" for hierarchy "PS2Main:Inst_PS2Main"
 Warning (14025): LATCH primitive "COPCTL2[1]" is permanently disabled
@@ -346,6 +348,7 @@ Info (12131): Elaborated megafunction instantiation "PS2Main:Inst_PS2Main|lpm_ad
 Info (12131): Elaborated megafunction instantiation "PS2Main:Inst_PS2Main|lpm_add_sub:Add0|altshift:carry_ext_latency_ffs", which is child of megafunction instantiation "PS2Main:Inst_PS2Main|lpm_add_sub:Add0"
 Info (13014): Ignored 3 buffer(s)
     Info (13019): Ignored 3 SOFT buffer(s)
+Info (13000): Registers with preset signals will power-up high
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "NMI" is stuck at VCC
 Info (280013): Promoted pin-driven signal(s) to global signal
@@ -353,16 +356,16 @@ Info (280013): Promoted pin-driven signal(s) to global signal
 Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "RS232INT"
     Warning (15610): No output dependent on input pin "sWAIT"
-Info (21057): Implemented 176 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 174 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 27 output pins
     Info (21060): Implemented 11 bidirectional pins
-    Info (21063): Implemented 100 macrocells
-    Info (21073): Implemented 15 shareable expanders
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 20 warnings
-    Info: Peak virtual memory: 486 megabytes
-    Info: Processing ended: Fri Sep 09 19:55:23 2016
-    Info: Elapsed time: 00:00:03
+    Info (21063): Implemented 99 macrocells
+    Info (21073): Implemented 14 shareable expanders
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 26 warnings
+    Info: Peak virtual memory: 475 megabytes
+    Info: Processing ended: Tue Dec 20 18:18:56 2016
+    Info: Elapsed time: 00:00:06
     Info: Total CPU time (on all processors): 00:00:03
 
 
