@@ -6,6 +6,7 @@
 	GLOBAL RS_TX
 	GLOBAL RS_RX
 	GLOBAL RS_TXT
+	GLOBAL RS_KEYRD
 	GLOBAL SERERR ;SET ON MAIN
 
 	;DEVSER EQU $20 ; SET ON MAIN
@@ -126,6 +127,11 @@ RSRXLP: IN      A,(LSR)        	; fetch the conrtol register
         POP     AF
         RET		
 	
+; ZF=1 IF NO CHAR SENT
+; ZF=0 IF CHAR WAITING T BE RECEIVED
+RS_KEYRD:IN      A,(LSR)        	; fetch the conrtol register
+         BIT     0,A             ; bit will be set if UART has data        
+         RET	
 
 SHLCD:	PUSH AF
 	;CALL LCDLN2
