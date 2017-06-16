@@ -1,5 +1,5 @@
 Flow report for Logic
-Tue Dec 20 18:19:06 2016
+Sat Dec 31 19:59:03 2016
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+
 ; Flow Summary                                                                ;
 +---------------------------+-------------------------------------------------+
-; Flow Status               ; Successful - Tue Dec 20 18:19:02 2016           ;
+; Flow Status               ; Successful - Sat Dec 31 19:58:58 2016           ;
 ; Quartus II 64-Bit Version ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name             ; Logic                                           ;
 ; Top-level Entity Name     ; Logic                                           ;
@@ -48,7 +48,7 @@ applicable agreement for further details.
 ; Device                    ; EPM7128SLC84-15                                 ;
 ; Timing Models             ; Final                                           ;
 ; Total macrocells          ; 100 / 128 ( 78 % )                              ;
-; Total pins                ; 65 / 68 ( 96 % )                                ;
+; Total pins                ; 64 / 68 ( 94 % )                                ;
 +---------------------------+-------------------------------------------------+
 
 
@@ -57,7 +57,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 12/20/2016 18:18:51 ;
+; Start date & time ; 12/31/2016 19:58:45 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; Logic               ;
 +-------------------+---------------------+
@@ -68,7 +68,7 @@ applicable agreement for further details.
 +--------------------------+------------------------------+---------------+-------------+------------+
 ; Assignment Name          ; Value                        ; Default Value ; Entity Name ; Section Id ;
 +--------------------------+------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID    ; 146396995915.148225073105852 ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID    ; 146396995915.148320712507120 ; --            ; --          ; --         ;
 ; PROJECT_OUTPUT_DIRECTORY ; output_files                 ; --            ; --          ; --         ;
 +--------------------------+------------------------------+---------------+-------------+------------+
 
@@ -78,10 +78,10 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:06     ; 1.0                     ; 475 MB              ; 00:00:03                           ;
-; Fitter                    ; 00:00:02     ; 1.0                     ; 480 MB              ; 00:00:01                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 374 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 370 MB              ; 00:00:01                           ;
+; Analysis & Synthesis      ; 00:00:06     ; 1.0                     ; 486 MB              ; 00:00:03                           ;
+; Fitter                    ; 00:00:04     ; 1.0                     ; 480 MB              ; 00:00:01                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 374 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 370 MB              ; 00:00:01                           ;
 ; Total                     ; 00:00:13     ; --                      ; --                  ; 00:00:06                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 

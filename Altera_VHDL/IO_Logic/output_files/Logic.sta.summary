@@ -15,12 +15,12 @@ Slack : -23.500
 TNS   : -23.500
 
 Type  : Recovery 'CLKCOP'
-Slack : -3.500
-TNS   : -3.500
+Slack : -7.500
+TNS   : -7.500
 
 Type  : Removal 'CLKCOP'
-Slack : -4.000
-TNS   : -4.000
+Slack : 0.000
+TNS   : 0.000
 
 Type  : Removal 'CLK50'
 Slack : 16.000
