@@ -67,7 +67,6 @@ set_location_assignment PIN_77 -to DATA[1]
 set_location_assignment PIN_79 -to DATA[0]
 set_location_assignment PIN_25 -to DISPEN
 set_location_assignment PIN_21 -to INT
-set_location_assignment PIN_33 -to IOH
 set_location_assignment PIN_18 -to MREQ
 set_location_assignment PIN_20 -to NMI
 set_location_assignment PIN_5 -to RESET
@@ -81,10 +80,8 @@ set_location_assignment PIN_8 -to sWAIT
 set_location_assignment PIN_4 -to sM1
 set_location_assignment PIN_17 -to sIORQ
 set_location_assignment PIN_49 -to SETADDR
-set_location_assignment PIN_34 -to TWOO
-set_location_assignment PIN_31 -to HALTO
+set_location_assignment PIN_33 -to TWOO
 set_location_assignment PIN_10 -to WR
-set_location_assignment PIN_30 -to ZEROO
 set_location_assignment PIN_58 -to VADDRLow[7]
 set_location_assignment PIN_60 -to VADDRLow[6]
 set_location_assignment PIN_61 -to VADDRLow[5]
@@ -107,3 +104,5 @@ set_location_assignment PIN_35 -to CTS
 set_location_assignment PIN_39 -to RTS
 set_location_assignment PIN_37 -to TX
 set_location_assignment PIN_36 -to RX
+set_location_assignment PIN_34 -to EPRWR
+set_location_assignment PIN_56 -to sTVPower

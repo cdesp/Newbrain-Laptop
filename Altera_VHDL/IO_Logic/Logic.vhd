@@ -104,8 +104,8 @@ Port (
 			  REVO:out STD_LOGIC; --	
 			  EPRWR:out STD_LOGIC; --	
 			  
-			  TEST:out STD_LOGIC; --
-			  TEST1:out STD_LOGIC; --
+		--	  TEST:out STD_LOGIC; --
+		--	  TEST1:out STD_LOGIC; --
 			 -- IKB:out STD_LOGIC; --
 			 CTS:in STD_LOGIC; -- v24 cts
 			 RTS:out STD_LOGIC; -- v24 rts
@@ -116,9 +116,9 @@ Port (
 			  LCDRS:out STD_LOGIC; -- PUT RS = DATA(1) 
 			  LCDEN:out STD_LOGIC; ----LCD 16x2 selected WHEN 1
 			  
-		--	  HALTO:out STD_LOGIC; --	
-		--	  ZEROO:out STD_LOGIC; --	
-		--	  TWOO:out STD_LOGIC; --
+			 -- HALTO:out STD_LOGIC; --	
+			--  ZEROO:out STD_LOGIC; --	
+			  TWOO:out STD_LOGIC; --
 			  IOH:out STD_LOGIC; --			  
 			  DISPEN:out STD_LOGIC --	
 			  );
@@ -237,6 +237,9 @@ SIGNAL frmfreqon:std_logic:='1';
 
 signal sLCDEN:std_logic:='0';
 signal sLCDRS:std_logic:='0';
+
+signal sT1:std_logic:='0';
+signal sT2:std_logic:='0';
 
 --signal copcnt:integer range 0 to 32;
 --SIGNAL sCopint:std_logic:='1';
@@ -414,7 +417,7 @@ end process;
 --		    ELSE	'1' when RevRamRom='1'
 --			 ELSE '0';
 --INTERRUPT HANDLER
-	IOH<=IRQ;
+	--IOH<=IRQ;
 	IRQ <= '0' WHEN sIORQ='0' and BUSACK='1' and sM1='1' 
 	 ELSE  '1';
 	 
@@ -458,8 +461,8 @@ end process;
 --		 ELSE COPINT;
 	COPINTpre<=COPINT;
 	
-	TEST<=FRMFREQ;
-	TEST1<=COPINT;
+--	TEST<=FRMFREQ;
+--	TEST1<=COPINT;
 	
 	KB_Int <= not Scan_DAV ;
 	--INT <= FRMFREQpre and COPINTpre and KB_int ; -- ACTIVE LOW
@@ -487,6 +490,12 @@ end process;
 		    ELSE '0' WHEN IRQ='0' and  VADDRLow=x"7D" --125 EPROM NOT WRITEABLE		
 	       ELSE '0' WHEN RESET='0'
 		    ELSE EPRWRsig;
+   EPRWR <= not EPRWRsig; --34
+	sT1<=	Data(0) WHEN IRQ='0' and  VADDRLow=90 and WRin='0'   --124 EPROM WRITABLE	 
+	 else sT1;
+	TWOO <= sT1;--33
+
+	
 	dispreset <= '1' WHEN IRQ='0' and  VADDRLow=x"7E" --126
 	 ELSE '0'; 
 	dispset <= '1' WHEN IRQ='0' and  VADDRLow=x"7F" --127
@@ -564,7 +573,7 @@ end process;
 	  --ELSE (others=>'Z');	    																		
 	
 	--IKB <= KB_INT;
-	EPRWR <=NOT EPRWRsig;
+	
 	
 	sUCR<=sUCRsig;
 	s80L<=s80Lsig;

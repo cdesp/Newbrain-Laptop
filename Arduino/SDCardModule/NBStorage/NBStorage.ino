@@ -214,7 +214,7 @@ boolean butRECPressed(){
 
 
 boolean butPlayPressed(){
-
+ 
   boolean res= digitalRead(butPlay)==HIGH;
   do {} while (digitalRead(butPlay)!=LOW); //wait for release
  if (res) {Serial.println(F("PL"));delay(butdel);}
