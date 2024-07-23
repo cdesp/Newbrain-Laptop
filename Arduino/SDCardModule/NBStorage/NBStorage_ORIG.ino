@@ -1,11 +1,8 @@
-
-
-
 #include <SPI.h>
 #include <SD.h>
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>  // F Malpartida's NewLiquidCrystal library
-//#include <MemoryFree.h>
+#include <MemoryFree.h>
 #include <SoftwareSerial.h>
 
 #define butPlay A0
@@ -24,17 +21,18 @@
 
 //LCD 16x2
 #define I2C_ADDR    0x27  // Define I2C Address for controller
-#define BACKLIGHT_PIN     13
 
 SoftwareSerial   NBSerial(RX, TX, false); // RX, TX
 LiquidCrystal_I2C lcd(I2C_ADDR, 16, 2); // set the LCD address to 0x27 for a 16 chars and 2 line display
 
 //SD Card
 #define  cspin 10
+//  sck pin 13 
+// mosi pin 11
+// miso pin 12
 
-
-
-
+//Sound beeper
+#define buzpin 9
 
 char t[20];
 int totalFiles=0;
@@ -79,16 +77,40 @@ void setup() {
   while (!Serial) {
     ; // wait for serial port to connect. Needed for native USB port only
   }
+  Serial.println(F("Serial OK."));
 
+  pinMode(butPlay, INPUT);
+  pinMode(butREC, INPUT);
+  pinMode(butPrev, INPUT);
+  pinMode(butNext, INPUT);
+  pinMode(butStop, INPUT);  
+
+  
+  pinMode(CTSpin, INPUT_PULLUP);
+  pinMode(RTSpin, OUTPUT);
+//  pinMode(TX, OUTPUT);
+
+
+  pinMode(buzpin, OUTPUT);  
+  
+  // Switch on the backlight
+  lcd.init();
+  lcd.backlight();
+  lcd.clear();
+  lcd.print(F("LCD OK!!!")); delay(1000);
+  Serial.println(F("LCD OK."));
 
   Serial.print(F("Initializing SD card..."));
 
   if (!SD.begin(cspin)) {
     Serial.println(F("failed!"));
+    lcd.clear();
+    lcd.print(F("SD CARD FAILED!"));
     return;
   }
   Serial.println(F("done."));
-
+  lcd.clear();
+  lcd.print(F("SD CARD OK!!!"));delay(1000);
 
 
   /*
@@ -136,30 +158,25 @@ void setup() {
     else Serial.println("err open root");*/
 
   //  scanWire();
-  // Switch on the backlight
-  lcd.init();
-  // Switch on the backlight 
-  lcd.backlight();
-  lcd.clear();
-  lcd.print(F("LCD OK!!!")); 
-  delay(2000);
+
 
 
   openRoot();
 
-  pinMode(CTSpin, INPUT_PULLUP);
-  pinMode(RTSpin, OUTPUT);
 
   RTSON();
   NBSerial.begin(9600);
 
-  pinMode(butPlay, INPUT);
-  pinMode(butREC, INPUT);
-  pinMode(butPrev, INPUT);
-  pinMode(butNext, INPUT);
-  pinMode(butStop, INPUT);  
+
 
   Serial.println(F("done!"));
+  beep();delay(500);beep();delay(200);beep();
+  
+}
+
+
+void beep(){
+ tone(buzpin, 1000 , 80);
 }
 
 boolean butStopPressed(){
@@ -197,7 +214,7 @@ boolean butRECPressed(){
 
 
 boolean butPlayPressed(){
-
+ 
   boolean res= digitalRead(butPlay)==HIGH;
   do {} while (digitalRead(butPlay)!=LOW); //wait for release
  if (res) {Serial.println(F("PL"));delay(butdel);}
@@ -268,7 +285,6 @@ boolean sendChar(char c) {
   do { brk=butStopPressed(); } while ((CTS() == HIGH) and (not brk)); //if NB can read
   if (!brk)   
     NBSerial.write(c);  //send
-  else NBSerial.flush();  //5/7/2024 to clear send buffer;  
   RTSON();
 
   return !brk;
@@ -307,7 +323,7 @@ void sendSelectedFile() {
     // read from the file until there's nothing else in it:
     while (myFile.available()) {
       i++;
-      if (i % 200 == 0) { // every 10 bytes
+      if (i % 50 == 0) { // every 10 bytes
         lcd.setCursor(12, 1);
         b = !b;
         if (b)
@@ -472,6 +488,7 @@ void printfile() {
 }
 
 void printDirectory(){
+     lcdprintline1("READING DIRECTORY");
      if (strcmp(curDir.name(),"/")==0)
        strcpy(t, "ROOT DIR");
      else {
@@ -487,7 +504,10 @@ void printDirectory(){
 
 void loop() {
   //char ts[10];
+  
+  
   char ch = Serial.read();
+  if (int(ch)==-1) {
   if (butNextPressed()) ch='w';
   else
   if (butPrevPressed()) ch='q';
@@ -497,19 +517,24 @@ void loop() {
   if (butRECPressed()) ch='r';
   else
   if (butStopPressed()) ch='x';
-
+  }
   
+ //Serial.print(int(ch),DEC);
+  if (int(ch)>0) {Serial.print("Button=");Serial.write(ch);Serial.println("");}
  
   switch (ch) {
 
     
     case 'q': prevFile(); //button 1
+      beep();
       printfile();
       break;
     case 'w': nextFile(); //button 2
+      beep();
       printfile();
       break;
     case 'o'://open dir or send file              //button 3 select or play
+      beep();
       if (curFile.isDirectory()){
         openCurrentDirectory(curFile,false);
         printDirectory();
@@ -518,16 +543,15 @@ void loop() {
       else sendSelectedFile(); //send to NB
 
       break;
-    case 'r': lcdprintline1("AGN TO RECORD?");delay(butdel);
+    case 'r': beep();lcdprintline1("AGN TO RECORD?  ");//delay(butdel);
               do {
-                if (butRECPressed()) {lcdprintline1("RECORDING");NBRecord();printDirectory();
-                        printfile();break;}
-                if (butStopPressed()) {printDirectory(); break;}
-                } while (true);
-              
-
+                if (butStopPressed()) {Serial.println("Cancel Record");printDirectory(); break;}
+                else
+                 if (butRECPressed()) {lcdprintline1("RECORDING");NBRecord();printDirectory();
+                        printfile();break;}                
+                } while (true);              
       break;
-      case 'x': openRoot();
+      case 'x': beep();openRoot();
                 break;
     /*
     case 'p':myFile=SD.open("DESP");
@@ -536,8 +560,8 @@ void loop() {
              printDirectory(myFile,0);
              myFile.close();
              break;*/
- //   case 'f':  Serial.print(F("freeMemory()="));
-  //    Serial.println(freeMemory());
+    case 'f':  Serial.print(F("freeMemory()="));
+      Serial.println(freeMemory());
       break;
     case 'g'://get a file from NB
       break;
@@ -556,6 +580,11 @@ void loop() {
              break;
     case 'm':RTSOFF();
              break;   
+    case ',':digitalWrite(TX, HIGH);
+             break;                
+    case '.':digitalWrite(TX, LOW);
+             break;                             
   }
 
 }
+

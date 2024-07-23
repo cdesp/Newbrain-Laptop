@@ -36,8 +36,8 @@
 # -------------------------------------------------------------------------- #
 
 
-set_global_assignment -name FAMILY "Cyclone IV E"
-set_global_assignment -name DEVICE EP4CE6E22C6
+set_global_assignment -name FAMILY MAX7000S
+set_global_assignment -name DEVICE Auto
 set_global_assignment -name TOP_LEVEL_ENTITY NBVideoContr
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:06:07  JUNE 19, 2016"
